@@ -147,7 +147,7 @@ body {
       }
 
       &:hover::after {
-        transform: scale(1.5);
+        transform: rotate(180deg);
         opacity: 0;
       }
     }
