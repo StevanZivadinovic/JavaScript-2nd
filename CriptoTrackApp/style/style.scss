@@ -1,0 +1,88 @@
+body{
+    background-color: orange;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    h1{
+        z-index: 1;
+    }
+    .keepLoader{
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 98%;
+        margin: 10% auto;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+    //   tr:nth-child(even) {
+    //     background-color: grey !important;
+    //   }
+    //   tr:nth-child(odd) {
+    //     background-color: white !important;
+    //   }
+      .positive{
+          color:green
+      }
+      .negative{
+          color:red      }
+
+        .inputField{
+          
+            .amount{
+                width: 100%;
+                padding: 0;
+                margin-right: 2%;
+            }
+
+            input[pattern]:invalid{
+              border:2px solid red;
+              border-radius: 2px;
+              outline: none;
+            }
+            input[pattern]:valid{
+              border:2px solid green;
+              outline: none;
+              border-radius: 2px;
+            }
+            button{
+                width: 100%;
+            }
+        }
+}
+
+
+.paran{
+ 
+
+        background-color: grey !important;   
+    
+}
+.neparan{
+    background-color: white !important;
+}

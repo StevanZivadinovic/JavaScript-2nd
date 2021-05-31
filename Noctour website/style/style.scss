@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url("./../img/hero.jpg");
+  background-position: top;
+  background-size: cover;
+  // https://bennettfeely.com/clippy/
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  position: relative;
+
+  .logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+
+    .logo {
+      height: 35px;
+      animation: moveInLeft 2s ease-out;
+      animation-delay: 0.2s; //ako ne stavis delay, nesto blokira, baguje
+    }
+  }
+
+  .text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .heading-primary {
+      color: #fff;
+      &-main {
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+        animation-name: moveInLeft;
+        animation-duration: 3s;
+        // animation-delay: -1s;
+        //ako stavis minus vrednost, animacija ce da krene od 1s,
+        //odnosno kao da je bowser pokrenut i radi vec jednu sekundu
+
+        animation-iteration-count: 1; //ponavlja animaciju naznaceni broj puta
+        animation-timing-function: ease-out;
+        backface-visibility: hidden; //ne dozvoljava neka nekontolisana pomeranja na kraju animacije
+        //koja se desavaju bez posebnog razloga
+      }
+      &-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 15.5px;
+        animation-name: moveInRight;
+        animation-duration: 3s;
+        animation-timing-function: ease-out;
+        backface-visibility: hidden;
+        color: rgb(196, 72, 72);
+      }
+    }
+  }
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    80% {
+      opacity: 0.9;
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  // crtl+D za selektovanje vise istih reci
+
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    80% {
+      opacity: 0.9;
+      transform: translateX(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+    .btnDiv {
+     
+      text-align: center;
+      margin-top: 10%;
+      
+      
+      .btn {
+          margin: 0 auto;
+          width: 40%;
+          background-color: #fff;
+          color: #777;
+          text-decoration: none;
+          padding: 15px 40px; 
+          display: inline-block;//daje licni prostor inline elementu
+          border-radius: 100px;
+          transition: all .2s;
+          &:hover{
+              transform: translateY(-3px);
+              cursor: pointer;
+              box-shadow: 0 10px 20px rgba(0,0,0,.2);
+ 
+            }
+        &:active{
+                transform: translateY(-1px);
+                cursor: pointer;
+                box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        }
+
+
+    }
+
+  }
+}
