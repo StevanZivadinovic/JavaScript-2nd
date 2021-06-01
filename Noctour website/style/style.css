@@ -144,6 +144,28 @@ body {
   display: inline-block;
   border-radius: 100px;
   transition: all 0.2s;
+  -webkit-animation: btnMove 1s ease-out 0.2s;
+          animation: btnMove 1s ease-out 0.2s;
+}
+@-webkit-keyframes btnMove {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes btnMove {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 .header .btnDiv .btn:hover {
   transform: translateY(-3px);

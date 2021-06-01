@@ -121,6 +121,20 @@ body {
       display: inline-block; //daje licni prostor inline elementu
       border-radius: 100px;
       transition: all 0.2s;
+      animation: btnMove 1s ease-out 0.2s;//poslednja vrednost je animation-delay;
+
+      @keyframes btnMove {
+        0%{
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        100%{
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+
       &:hover {
         transform: translateY(-3px);
         cursor: pointer;
@@ -153,3 +167,4 @@ body {
     }
   }
 }
+
