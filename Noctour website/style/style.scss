@@ -168,4 +168,13 @@ body {
     }
   }
 }
-
+.prvi{
+height: 50vh;
+z-index: -1;
+background-color: rebeccapurple;
+}
+.prvi .moj  {
+  z-index: 1;
+  height: 30vh;
+  background-color: orange;
+}
