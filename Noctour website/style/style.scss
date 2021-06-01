@@ -122,7 +122,8 @@ body {
       border-radius: 100px;
       transition: all 0.2s;
       animation: btnMove 1s ease-out 0.2s;//poslednja vrednost je animation-delay;
-
+      animation-fill-mode: backwards;//omogucava da i pre nego animacija zapocne
+      //bude primenjen stil animacije koji je definisan za 0% momenat
       @keyframes btnMove {
         0%{
           opacity: 0;

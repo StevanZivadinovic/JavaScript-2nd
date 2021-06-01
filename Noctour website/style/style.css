@@ -146,6 +146,8 @@ body {
   transition: all 0.2s;
   -webkit-animation: btnMove 1s ease-out 0.2s;
           animation: btnMove 1s ease-out 0.2s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 @-webkit-keyframes btnMove {
   0% {
