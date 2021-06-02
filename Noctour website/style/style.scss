@@ -29,26 +29,26 @@ body {
   clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
   position: relative;
 
-  .logo-box {
+  .header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 
-    .logo {
+    .header__logo {
       height: 3.5rem;
       animation: moveInLeft 2s ease-out;
       animation-delay: 0.2s; //ako ne stavis delay, nesto blokira, baguje
     }
   }
 
-  .text-box {
+  .header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     .heading-primary {
       color: #fff;
-      &-main {
+      &--main {
         display: block;
         font-size: 6rem;
         font-weight: 400;
@@ -64,7 +64,7 @@ body {
         backface-visibility: hidden; //ne dozvoljava neka nekontolisana pomeranja na kraju animacije
         //koja se desavaju bez posebnog razloga
       }
-      &-sub {
+      &--sub {
         display: block;
         font-size: 2rem;
         font-weight: 700;
@@ -115,7 +115,6 @@ body {
 
     .btn {
       position: relative;
-      margin: 0 auto;
       width: 40%;
       background-color: #fff;
       color: #777;
