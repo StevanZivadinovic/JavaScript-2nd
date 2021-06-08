@@ -1,3 +1,12 @@
+@import url('./abstracts/functions.scss');//donju crtu ne moras da upisujes kad importujes parcijalni fajl
+@import url('./abstracts/mixins.scss');
+@import './abstracts/variables';//kad importujes fajl koji sadrzi samo promenljive
+//onda ga ovako importujes, bez url
+
+
+@import './components/header.scss';
+
+
 * {
   margin: 0;
   padding: 0;
@@ -5,169 +14,15 @@
 }
 
 html{
-  font-size: 10px;
+  font-size: 10px;//ovo definise vrednost jednog rem-a (1 rem);
 }
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
+  color: $color-grey;
 }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 131, 0.8)
-    ),
-    url("./../img/hero.jpg");
-  background-position: top;
-  background-size: cover;
-  // https://bennettfeely.com/clippy/
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-  position: relative;
 
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-
-    .header__logo {
-      height: 3.5rem;
-      animation: moveInLeft 2s ease-out;
-      animation-delay: 0.2s; //ako ne stavis delay, nesto blokira, baguje
-    }
-  }
-
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .heading-primary {
-      color: #fff;
-      &--main {
-        display: block;
-        font-size: 6rem;
-        font-weight: 400;
-        letter-spacing: 3.5rem;
-        animation-name: moveInLeft;
-        animation-duration: 3s;
-        // animation-delay: -1s;
-        //ako stavis minus vrednost, animacija ce da krene od 1s,
-        //odnosno kao da je bowser pokrenut i radi vec jednu sekundu
-
-        animation-iteration-count: 1; //ponavlja animaciju naznaceni broj puta
-        animation-timing-function: ease-out;
-        backface-visibility: hidden; //ne dozvoljava neka nekontolisana pomeranja na kraju animacije
-        //koja se desavaju bez posebnog razloga
-      }
-      &--sub {
-        display: block;
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 1.55rem;
-        animation-name: moveInRight;
-        animation-duration: 3s;
-        animation-timing-function: ease-out;
-        backface-visibility: hidden;
-        color: rgb(196, 72, 72);
-      }
-    }
-  }
-
-  @keyframes moveInLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-10rem);
-    }
-    80% {
-      opacity: 0.9;
-      transform: translateX(1rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-  // crtl+D za selektovanje vise istih reci
-
-  @keyframes moveInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(10rem);
-    }
-    80% {
-      opacity: 0.9;
-      transform: translateX(-1rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-
-  .btnDiv {
-    text-align: center;
-    margin-top: 10%;
-
-    .btn {
-      position: relative;
-      width: 40%;
-      background-color: #fff;
-      color: #777;
-      text-decoration: none;
-      padding: 1.5rem 4rem;
-      display: inline-block; //daje licni prostor inline elementu
-      border-radius: 10rem;
-      transition: all 0.2s;
-      animation: btnMove 1s ease-out 0.2s;//poslednja vrednost je animation-delay;
-      animation-fill-mode: backwards;//omogucava da i pre nego animacija zapocne
-      //bude primenjen stil animacije koji je definisan za 0% momenat
-      @keyframes btnMove {
-        0%{
-          opacity: 0;
-          transform: translateY(10rem);
-        }
-        100%{
-          opacity: 1;
-          transform: translateY(0px);
-        }
-      }
-
-
-      &:hover {
-        transform: translateY(-.3rem);
-        cursor: pointer;
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-      }
-      &:active {
-        transform: translateY(-.1rem);
-        cursor: pointer;
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-      }
-
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: "";
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        // display: inline-block;
-        background-color: #fff;
-        border-radius: 10rem;
-        transition: all 0.2s;
-      }
-
-      &:hover::after {
-        transform: rotate(180deg);
-        opacity: 0;
-      }
-    }
-  }
-}
 

@@ -1,21 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 10px;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: #777;
-}
-
+@import url("./abstracts/functions.scss");
+@import url("./abstracts/mixins.scss");
+@import url("./abstracts/variables.scss");
+@import url("./abstracts/animations");
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("./../img/hero.jpg");
@@ -197,4 +183,22 @@ body {
 .header .btnDiv .btn:hover::after {
   transform: rotate(180deg);
   opacity: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
 }/*# sourceMappingURL=style.css.map */
