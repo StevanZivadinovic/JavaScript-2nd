@@ -231,7 +231,7 @@ body {
 .row {
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 4rem auto 0 auto;
 }
 .row .col-1-of-2 {
   width: calc((100%-1rem)/2);
@@ -241,7 +241,7 @@ body {
 }
 
 .heading-secondary {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8));
