@@ -8,7 +8,7 @@
 
 .btn-text {
 
-    transition: all .2s;
+    transition: all .2s;//ovo mozes da upises i u &:link,&:visited isti efekat
     &:link,
     &:visited{
         text-decoration: none;
@@ -17,8 +17,14 @@
         padding: 3px;
         display: inline-block;
     }
+    &:hover{
+        background-color: $color-green;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    }
     &:active{
-        transform: translateY(-2px);
+        transform: translateY(1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
     }
 
 }
