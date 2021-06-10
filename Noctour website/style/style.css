@@ -210,6 +210,39 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.composition {
+  position: relative;
+}
+.composition__img {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.2s;
+}
+.composition__img--p1 {
+  top: -2rem;
+  left: 0;
+}
+.composition__img--p2 {
+  top: 2rem;
+  right: 0;
+}
+.composition__img--p3 {
+  top: 11rem;
+  left: 20%;
+}
+.composition__img:hover {
+  outline: 1.5rem solid rgba(24, 121, 87, 0.8);
+  outline-offset: 1rem;
+  transform: scale(1.05);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.composition:hover .composition__img:not(:hover) {
+  transform: scale(0.95);
+}
+
 * {
   margin: 0;
   padding: 0;
