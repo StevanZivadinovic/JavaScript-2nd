@@ -1,6 +1,6 @@
 
 import './style/style.css'
-import Maps from './Maps';
+import Maps from './components/Maps';
 
 
 

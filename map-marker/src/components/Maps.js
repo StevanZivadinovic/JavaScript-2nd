@@ -1,26 +1,41 @@
-import React from 'react'
+import React from 'react';
+import {useState} from 'react';
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps"
-
+import mapStyle from './mapStyle';
 export default function Maps() {
+  const [markers, setMarkers] = useState([]);
   const MapWithAMarker = withScriptjs(withGoogleMap(props =>
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{ lat: 43.32, lng: 21.90 }}
+      defaultOptions={{styles:mapStyle}}
       onClick={e=>{
-        console.log(e.latLng.lat(),e.latLng.lng());
+        console.log(e.latLng.lat(),e.latLng.lng(),e);
+        setMarkers(current=>[
+          ...current,
+          {
+            lat:e.latLng.lat(),
+            lng:e.latLng.lng(),
+            time: new Date()
+          }
+        ])
       }}
     >
       <Marker
         position={{ lat: 43.32, lng: 21.95 }}
       />
+      {markers.map(marker=>{
+        <Marker key={marker.time.toISOString()} position={{lat:marker.lat,
+        lng:marker.lng}}></Marker>
+      })}
     </GoogleMap>
   ));
   return (
-    <div>
+    <div style={{width:"80%" ,height:"80vh"}}>
        <MapWithAMarker
   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFP3MnkJZdkGIWdsYpkOQRyEDTgucdQ-Y&v=3.exp&libraries=geometry,drawing,places"
   loadingElement={<div style={{ height: `100%` }} />}
-  containerElement={<div style={{ height: `400px` }} />}
+  containerElement={<div style={{ height: `100%` }} />}
   mapElement={<div style={{ height: `100%` }} />}
 />
     </div>
