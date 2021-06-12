@@ -1,10 +1,14 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps"
 import mapStyle from './mapStyle';
 export default function Maps() {
   const [markers, setMarkers] = useState([]);
+  
+      // useEffect(()=>{
+
   const MapWithAMarker = withScriptjs(withGoogleMap(props =>
+
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{ lat: 43.32, lng: 21.90 }}
@@ -24,12 +28,21 @@ export default function Maps() {
       <Marker
         position={{ lat: 43.32, lng: 21.95 }}
       />
+      {/* marker.time.toISOString() */}
+      {console.log(markers)}
       {markers.map(marker=>{
-        <Marker key={marker.time.toISOString()} position={{lat:marker.lat,
-        lng:marker.lng}}></Marker>
+    
+       return <Marker
+         key={Math.random()} 
+        position={{ lat:marker.lat, lng: marker.lng }}
+        >
+
+        </Marker>
       })}
     </GoogleMap>
   ));
+  
+// },[props])
   return (
     <div style={{width:"80%" ,height:"80vh"}}>
        <MapWithAMarker
