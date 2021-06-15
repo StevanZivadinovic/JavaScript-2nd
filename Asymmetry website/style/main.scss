@@ -1,4 +1,5 @@
-@import './introduction.scss'; 
+@import './components/introduction'; 
+@import './components/variables.scss';
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,11 +8,13 @@
 
 body{
     background-image: url(./../Assets/background-desktop.jpg);
-    background-size:100% !important; //ekran mi je pravougaonog oblika pa iz tog
+    background-size:100% 100%; //ekran mi je pravougaonog oblika tj slika ima malu visinu, pa se ne uklapa, pa iz tog
     //razloga nisam postavio 100% ili cover opciju za background-size
-    // background-position: center;
+    //vec sam ovako odradio
     background-repeat: no-repeat;
     position: relative;
+    height: 100vh;//i ovo sam dodao da bi resio problem sa background-image-om
+    
     
 
 }
