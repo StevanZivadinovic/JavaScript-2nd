@@ -1,3 +1,21 @@
+.mainIntroduction {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: red;
+  background-image: url(./../Assets/background-desktop.jpg);
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+  position: relative;
 }/*# sourceMappingURL=main.css.map */
