@@ -44,6 +44,7 @@
                 text-align: center;
                 font-family: 'Poppins', sans-serif; 
                 font-weight: normal;
+                font-size: 1.2rem;
                 
             }
            
@@ -60,6 +61,12 @@
             }
             button{
                 margin: 0 auto;
+                padding: .6rem 5rem;
+                background-color: $green;
+                color: $white;
+                outline: none;
+                border: none;
+                font-family: 'Poppins', sans-serif; 
             }
         }
 }
