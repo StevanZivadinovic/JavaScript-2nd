@@ -1,12 +1,13 @@
 .mainIntroduction {
-  width: 60%;
+  width: 70%;
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
-  background-color: rgba(242, 242, 242, 0.5);
+  background-color: rgba(242, 242, 242, 0.8);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .mainIntroduction__logo {
   width: 100%;
@@ -20,15 +21,46 @@
 .mainIntroduction__mainDiv {
   width: 100%;
   margin: 0 auto;
+  height: 75vh;
+  display: flex;
+  flex: content;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1rem;
 }
 .mainIntroduction__mainDiv img {
+  margin: 0 auto;
   width: 50%;
+  outline: 0.8rem solid #f2f2f2;
+  box-shadow: 0rem 0rem 0.5rem 0.7rem rgba(51, 51, 51, 0.4);
+}
+.mainIntroduction__mainDiv p {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+.mainIntroduction__mainDiv h1 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+.mainIntroduction__mainDiv button {
+  margin: 0 auto;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {

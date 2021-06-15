@@ -1,13 +1,14 @@
 @import '../components/variables.scss';
 .mainIntroduction{
-    width: 60%;
+    width: 70%;
     position: absolute;
     top: 0;
     right: 0;
     height: 100vh;
-    background-color: rgba($color: $white, $alpha: .5);
+    background-color: rgba($color: $white, $alpha: .8);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     
    
 
@@ -24,8 +25,41 @@
         &__mainDiv{
             width: 100%;
             margin: 0 auto; 
+            height: 75vh;
+            display: flex;
+            flex: content;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            font-size: 1rem;
             img{
+                margin: 0 auto;
                 width: 50%;
+                outline: .8rem solid $white;
+                box-shadow: 0rem 0rem .5rem  .7rem rgba($grey, .4);
+            }
+            p{
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                font-family: 'Poppins', sans-serif; 
+                font-weight: normal;
+                
+            }
+           
+            
+            h1{
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: 'Poppins', sans-serif; 
+                font-weight: bold;
+               
+               
+            }
+            button{
+                margin: 0 auto;
             }
         }
 }
