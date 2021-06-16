@@ -1,16 +1,63 @@
 @import '../components/variables.scss';
+
+@mixin mobile {
+    @media screen and (max-width:280px) {
+        @content;
+    }
+}
 .mainIntroduction{
     width: 70%;
-    position: absolute;
-    top: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    float: right;
     height: 100vh;
     background-color: rgba($color: $white, $alpha: .8);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-   
+    position: relative;
+
+    @include mobile(){
+        width: 85%;
+    }
+    &__visualization{
+        position: absolute;
+        top: 0;
+        left: -30px;
+        width: 60px;
+        height: 100vh;
+        display: flex;
+        @include mobile(){
+            left: -23px;
+            width: 30px;
+        }
+        &--part1{
+            width: 20px;
+            height: 100vh;
+            background-color: rgba($color: $green, $alpha: .8);
+            clip-path: polygon(0% 50%, 100% 45%, 100% 100%, 0% 100%)
+            
+        }
+        &--part2{
+            width: 20px;
+            height: 100vh;
+            background-color: rgba($color: $green, $alpha: 1);
+            clip-path: polygon(0% 20%, 100% 25%, 100% 100%, 0% 100%)
+
+        }
+        &--part3{
+            width: 20px;
+            height: 100vh;
+            background-color: rgba($color: $green, $alpha: .5);
+            clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);
+            @include mobile(){
+               display: none;
+            }
+
+        }
+
+    }
 
         &__logo{
         width: 100%;
@@ -30,13 +77,21 @@
             flex: content;
             flex-direction: column;
             justify-content: space-between;
-            
             font-size: 1rem;
+            @include mobile(){
+                height: 60vh;
+
+            }
             img{
                 margin: 0 auto;
                 width: 50%;
                 outline: .8rem solid $white;
                 box-shadow: 0rem 0rem .5rem  .7rem rgba($grey, .4);
+                @include mobile(){
+                    outline: .4rem solid $white;
+                    width: 70%;
+
+                }
             }
             p{
                 width: 80%;
@@ -45,6 +100,11 @@
                 font-family: 'Poppins', sans-serif; 
                 font-weight: normal;
                 font-size: 1.2rem;
+                @include mobile(){
+                    
+                    font-size: .9rem;
+
+                }
                 
             }
            
@@ -56,6 +116,12 @@
                 text-transform: uppercase;
                 font-family: 'Poppins', sans-serif; 
                 font-weight: bold;
+                @include mobile(){
+                    font-size: 1.4rem;
+                    width: 90%;
+                    margin-top: 3rem;
+                    margin-bottom: -5rem;
+                }
                
                
             }
@@ -67,6 +133,18 @@
                 outline: none;
                 border: none;
                 font-family: 'Poppins', sans-serif; 
+            }
+        }
+        &__copyright{
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif; 
+            font-weight: normal;
+            @include mobile(){
+                font-size: .9rem;
+            }
+            p{
+                padding: 20px 0;
+                text-align: center;
             }
         }
 }

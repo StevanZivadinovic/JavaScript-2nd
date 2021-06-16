@@ -1,13 +1,57 @@
 .mainIntroduction {
   width: 70%;
-  position: absolute;
-  top: 0;
-  right: 0;
+  float: right;
   height: 100vh;
   background-color: rgba(242, 242, 242, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction {
+    width: 85%;
+  }
+}
+.mainIntroduction__visualization {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 60px;
+  height: 100vh;
+  display: flex;
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction__visualization {
+    left: -23px;
+    width: 30px;
+  }
+}
+.mainIntroduction__visualization--part1 {
+  width: 20px;
+  height: 100vh;
+  background-color: rgba(0, 142, 153, 0.8);
+  -webkit-clip-path: polygon(0% 50%, 100% 45%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 50%, 100% 45%, 100% 100%, 0% 100%);
+}
+.mainIntroduction__visualization--part2 {
+  width: 20px;
+  height: 100vh;
+  background-color: #008e99;
+  -webkit-clip-path: polygon(0% 20%, 100% 25%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 20%, 100% 25%, 100% 100%, 0% 100%);
+}
+.mainIntroduction__visualization--part3 {
+  width: 20px;
+  height: 100vh;
+  background-color: rgba(0, 142, 153, 0.5);
+  -webkit-clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction__visualization--part3 {
+    display: none;
+  }
 }
 .mainIntroduction__logo {
   width: 100%;
@@ -28,11 +72,22 @@
   justify-content: space-between;
   font-size: 1rem;
 }
+@media screen and (max-width: 280px) {
+  .mainIntroduction__mainDiv {
+    height: 60vh;
+  }
+}
 .mainIntroduction__mainDiv img {
   margin: 0 auto;
   width: 50%;
   outline: 0.8rem solid #f2f2f2;
   box-shadow: 0rem 0rem 0.5rem 0.7rem rgba(51, 51, 51, 0.4);
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction__mainDiv img {
+    outline: 0.4rem solid #f2f2f2;
+    width: 70%;
+  }
 }
 .mainIntroduction__mainDiv p {
   width: 80%;
@@ -42,6 +97,11 @@
   font-weight: normal;
   font-size: 1.2rem;
 }
+@media screen and (max-width: 280px) {
+  .mainIntroduction__mainDiv p {
+    font-size: 0.9rem;
+  }
+}
 .mainIntroduction__mainDiv h1 {
   width: 80%;
   margin: 0 auto;
@@ -49,6 +109,14 @@
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction__mainDiv h1 {
+    font-size: 1.4rem;
+    width: 90%;
+    margin-top: 3rem;
+    margin-bottom: -5rem;
+  }
 }
 .mainIntroduction__mainDiv button {
   margin: 0 auto;
@@ -58,6 +126,20 @@
   outline: none;
   border: none;
   font-family: "Poppins", sans-serif;
+}
+.mainIntroduction__copyright {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+@media screen and (max-width: 280px) {
+  .mainIntroduction__copyright {
+    font-size: 0.9rem;
+  }
+}
+.mainIntroduction__copyright p {
+  padding: 20px 0;
+  text-align: center;
 }
 
 * {
@@ -76,4 +158,9 @@ body {
   background-repeat: no-repeat;
   position: relative;
   height: 100vh;
+}
+@media screen and (max-width: 280px) {
+  body {
+    background-image: url(./../Assets/background-mob.jpg);
+  }
 }/*# sourceMappingURL=main.css.map */

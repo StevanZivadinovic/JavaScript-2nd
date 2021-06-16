@@ -8,6 +8,11 @@
 html{
     font-size: 10px;
 }
+@mixin mobile {
+    @media screen and (max-width:280px) {
+        @content;
+    }
+}
 body{
     background-image: url(./../Assets/background-desktop.jpg);
     background-size:100% 100%; //ekran mi je pravougaonog oblika tj slika ima malu visinu, pa se ne uklapa, pa iz tog
@@ -17,7 +22,9 @@ body{
     background-repeat: no-repeat;
     position: relative;
     height: 100vh;//i ovo sam dodao da bi resio problem sa background-image-om
-    
+    @include mobile{
+        background-image: url(./../Assets/background-mob.jpg);
+    }
     
 
 }
