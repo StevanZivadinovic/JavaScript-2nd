@@ -1,0 +1,43 @@
+@import './variables';
+@mixin mobile {
+    @media screen and (max-width:280px) {
+        @content;
+    }
+}
+
+.quiz{
+    width: 60%;
+    @include mobile(){
+        width: 85%;
+    }
+}
+.quiz__mainDiv{
+    h2{
+        width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+
+    @include mobile() {
+        font-size: 1.4rem;
+        width: 90%;
+      }
+    }
+}
+
+.quiz__buttons{
+    margin-top: 2rem;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--button{
+        width: 45%;
+
+        @include mobile(){
+           width: 80%;
+        }
+    }
+}

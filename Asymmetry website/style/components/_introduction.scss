@@ -24,8 +24,8 @@
     &__visualization{
         position: absolute;
         top: 0;
-        left: -30px;
-        width: 60px;
+        left: -23px;
+        width: 45px;
         height: 100vh;
         display: flex;
         @include mobile(){
@@ -33,21 +33,21 @@
             width: 30px;
         }
         &--part1{
-            width: 20px;
+            width: 15px;
             height: 100vh;
             background-color: rgba($color: $green, $alpha: .8);
             clip-path: polygon(0% 50%, 100% 45%, 100% 100%, 0% 100%)
             
         }
         &--part2{
-            width: 20px;
+            width: 16px;
             height: 100vh;
             background-color: rgba($color: $green, $alpha: 1);
             clip-path: polygon(0% 20%, 100% 25%, 100% 100%, 0% 100%)
 
         }
         &--part3{
-            width: 20px;
+            width: 15px;
             height: 100vh;
             background-color: rgba($color: $green, $alpha: .5);
             clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);

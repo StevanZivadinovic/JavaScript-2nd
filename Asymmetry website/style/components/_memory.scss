@@ -49,6 +49,9 @@
       height: 10rem;
       margin: 0 auto;
       outline: 0.3rem solid $green;
+      &:hover{
+        cursor: pointer;
+      }
 
       @include mobile(){
         height: 9rem;
