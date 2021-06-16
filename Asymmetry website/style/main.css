@@ -127,6 +127,9 @@
   border: none;
   font-family: "Poppins", sans-serif;
 }
+.mainIntroduction__mainDiv button:hover {
+  cursor: pointer;
+}
 .mainIntroduction__copyright {
   font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
@@ -140,6 +143,44 @@
 .mainIntroduction__copyright p {
   padding: 20px 0;
   text-align: center;
+}
+
+.memory {
+  width: 60%;
+}
+
+.mainMemory {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 40vh;
+}
+.mainMemory--text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+@media screen and (max-width: 280px) {
+  .mainMemory--text {
+    font-size: 1.4rem;
+    width: 90%;
+  }
+}
+.mainMemory__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1.4rem;
+  grid-row-gap: 1.4rem;
+  width: 75%;
+  margin: 0 auto;
+}
+.mainMemory__gallery img {
+  width: 100%;
+  height: 10rem;
+  margin: 0 auto;
+  outline: 0.3rem solid #008e99;
 }
 
 * {
