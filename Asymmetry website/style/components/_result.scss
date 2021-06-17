@@ -1,0 +1,19 @@
+@import './variables';
+
+.buttonsResult{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin: 0 auto;
+    img{
+        width: 2.0rem;
+        height: 2.0rem;
+        outline: none;
+        margin: 0;
+        box-shadow: none;
+        cursor: pointer;
+        border-radius: .3rem;
+      
+    }
+  
+}

@@ -411,6 +411,22 @@
   }
 }
 
+.buttonsResult {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  margin: 0 auto;
+}
+.buttonsResult img {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  margin: 0;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
