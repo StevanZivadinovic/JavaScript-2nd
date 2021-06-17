@@ -11,8 +11,5 @@ document.querySelectorAll('.swipe__buttons')
        console.log('haj',e)
     })
       
-   
-    // document.querySelector('body').addEventListener('mousemove',()=>console.log(),false)
-    // document.querySelector('body').addEventListener('mouseup',()=>console.log(),false)
 
     
