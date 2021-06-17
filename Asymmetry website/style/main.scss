@@ -13,7 +13,7 @@ html{
     font-size: 10px;
 }
 @mixin mobile {
-    @media screen and (max-width:280px) {
+    @media screen and (max-width:320px) {
         @content;
     }
 }

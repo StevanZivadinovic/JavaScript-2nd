@@ -9,7 +9,7 @@
   justify-content: space-between;
   position: relative;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction {
     width: 85%;
   }
@@ -22,7 +22,7 @@
   height: 100vh;
   display: flex;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__visualization {
     left: -23px;
     width: 30px;
@@ -49,7 +49,7 @@
   -webkit-clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 35%, 100% 40%, 100% 100%, 0% 100%);
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__visualization--part3 {
     display: none;
   }
@@ -73,7 +73,7 @@
   justify-content: space-between;
   font-size: 1rem;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__mainDiv {
     height: 60vh;
   }
@@ -84,7 +84,7 @@
   outline: 0.8rem solid #f2f2f2;
   box-shadow: 0rem 0rem 0.5rem 0.7rem rgba(51, 51, 51, 0.4);
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__mainDiv img {
     outline: 0.4rem solid #f2f2f2;
     width: 70%;
@@ -98,7 +98,7 @@
   font-weight: normal;
   font-size: 1.2rem;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__mainDiv p {
     font-size: 0.9rem;
   }
@@ -111,7 +111,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__mainDiv h1 {
     font-size: 1.4rem;
     width: 90%;
@@ -136,7 +136,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: normal;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainIntroduction__copyright {
     font-size: 0.9rem;
   }
@@ -149,7 +149,7 @@
 .memory {
   width: 60%;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .memory {
     width: 85%;
   }
@@ -161,7 +161,7 @@
   flex-direction: column;
   height: 40vh;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainMemory {
     margin-top: -3rem;
     height: 70vh;
@@ -174,7 +174,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainMemory--text {
     font-size: 1.4rem;
     width: 90%;
@@ -188,7 +188,7 @@
   width: 75%;
   margin: 0 auto;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainMemory__gallery {
     grid-template-columns: 1fr 1fr;
   }
@@ -202,7 +202,7 @@
 .mainMemory__gallery img:hover {
   cursor: pointer;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .mainMemory__gallery img {
     height: 9rem;
   }
@@ -211,7 +211,7 @@
 .quiz {
   width: 60%;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .quiz {
     width: 85%;
   }
@@ -224,7 +224,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .quiz__mainDiv h2 {
     font-size: 1.4rem;
     width: 90%;
@@ -241,7 +241,7 @@
 .quiz__buttons--button {
   width: 45%;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .quiz__buttons--button {
     width: 80%;
   }
@@ -250,7 +250,7 @@
 .swipe {
   width: 60%;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .swipe {
     width: 85%;
   }
@@ -268,12 +268,12 @@
   width: 80%;
   margin: 0 auto;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .swipe .swipe__buttons {
     width: 100%;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .swipe .swipe__buttons--button {
     padding: 0.5rem 2rem;
   }
@@ -284,7 +284,7 @@
   width: 60%;
   margin: 0 auto;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   .swipe .triangles {
     width: 100%;
   }
@@ -306,16 +306,39 @@
 .registration {
   width: 60%;
 }
-.registration .registration__registrationForm {
+@media screen and (max-width: 320px) {
+  .registration {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .registration .registration__mainDiv {
+    height: 80vh;
+  }
+}
+.registration .registration__mainDiv h2 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.registration .registration__mainDiv .registration__registrationForm {
   width: 80%;
   margin: 0 auto;
 }
-.registration .registration__registrationForm__normalInput {
+.registration .registration__mainDiv .registration__registrationForm__normalInput {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 0.5rem;
 }
-.registration .registration__registrationForm__normalInput--input {
+@media screen and (max-width: 320px) {
+  .registration .registration__mainDiv .registration__registrationForm__normalInput {
+    grid-template-columns: 1fr;
+  }
+}
+.registration .registration__mainDiv .registration__registrationForm__normalInput--input {
   width: 100%;
   height: 3rem;
   background-color: transparent;
@@ -324,36 +347,41 @@
   color: #333333;
   border: 0.17rem solid rgba(0, 142, 153, 0.8);
 }
-.registration .registration__registrationForm__normalInput--input::-moz-placeholder {
+.registration .registration__mainDiv .registration__registrationForm__normalInput--input::-moz-placeholder {
   color: #333333;
   padding-left: 1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
-.registration .registration__registrationForm__normalInput--input:-ms-input-placeholder {
+.registration .registration__mainDiv .registration__registrationForm__normalInput--input:-ms-input-placeholder {
   color: #333333;
   padding-left: 1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
-.registration .registration__registrationForm__normalInput--input::placeholder {
+.registration .registration__mainDiv .registration__registrationForm__normalInput--input::placeholder {
   color: #333333;
   padding-left: 1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
-.registration .registration__registrationForm__chackboxInput {
+.registration .registration__mainDiv .registration__registrationForm__chackboxInput {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
 }
-.registration .registration__registrationForm__chackboxInput--chackboxSection {
+.registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection {
   display: flex;
   align-items: center;
   width: 65%;
   padding: 0.5rem 0;
 }
-.registration .registration__registrationForm__chackboxInput--chackboxSection--input {
+@media screen and (max-width: 320px) {
+  .registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection {
+    width: 100%;
+  }
+}
+.registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection--input {
   margin-right: 2rem;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -366,16 +394,21 @@
   justify-content: center;
   cursor: pointer;
 }
-.registration .registration__registrationForm__chackboxInput--chackboxSection--input:checked::after {
+.registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection--input:checked::after {
   content: "";
   font-family: "Font Awesome 5 free";
   font-weight: 900;
   color: #f2f2f2;
   font-size: 1rem;
 }
-.registration .registration__registrationForm__chackboxInput--chackboxSection label {
+.registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection label {
   margin: 0 0;
   text-align: left;
+}
+@media screen and (max-width: 320px) {
+  .registration .registration__mainDiv .registration__registrationForm__chackboxInput--chackboxSection label {
+    font-size: 0.9rem;
+  }
 }
 
 * {
@@ -395,7 +428,7 @@ body {
   position: relative;
   height: 100vh;
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   body {
     background-image: url(./../Assets/background-mob.jpg);
   }

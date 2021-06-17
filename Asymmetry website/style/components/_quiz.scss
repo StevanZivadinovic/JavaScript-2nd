@@ -1,6 +1,6 @@
 @import './variables';
 @mixin mobile {
-    @media screen and (max-width:280px) {
+    @media screen and (max-width:320px) {
         @content;
     }
 }
