@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .mainIntroduction {
   width: 70%;
   float: right;
@@ -300,6 +301,81 @@
 }
 .swipe .triangles .triangle2 {
   transform: rotate(90deg);
+}
+
+.registration {
+  width: 60%;
+}
+.registration .registration__registrationForm {
+  width: 80%;
+  margin: 0 auto;
+}
+.registration .registration__registrationForm__normalInput {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 0.5rem;
+}
+.registration .registration__registrationForm__normalInput--input {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  outline: none;
+  color: #333333;
+  border: 0.17rem solid rgba(0, 142, 153, 0.8);
+}
+.registration .registration__registrationForm__normalInput--input::-moz-placeholder {
+  color: #333333;
+  padding-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+.registration .registration__registrationForm__normalInput--input:-ms-input-placeholder {
+  color: #333333;
+  padding-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+.registration .registration__registrationForm__normalInput--input::placeholder {
+  color: #333333;
+  padding-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+.registration .registration__registrationForm__chackboxInput {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.registration .registration__registrationForm__chackboxInput--chackboxSection {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  padding: 0.5rem 0;
+}
+.registration .registration__registrationForm__chackboxInput--chackboxSection--input {
+  margin-right: 2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(0, 142, 153, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.registration .registration__registrationForm__chackboxInput--chackboxSection--input:checked::after {
+  content: "";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+.registration .registration__registrationForm__chackboxInput--chackboxSection label {
+  margin: 0 0;
+  text-align: left;
 }
 
 * {
