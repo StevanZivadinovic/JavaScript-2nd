@@ -8,7 +8,10 @@
     width: 85%;
       .result__mainDiv{
          margin: auto 0;
-         height: 60vh;
+         height: 80vh;
+         @include mobile(){
+          height: 60vh;
+      }
         .buttonsResult{
             display: flex;
             justify-content: space-between;
