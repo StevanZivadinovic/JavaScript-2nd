@@ -1,0 +1,63 @@
+@import './variables';
+@mixin mobile {
+    @media screen and (max-width:280px) {
+        @content;
+    }
+}
+
+.swipe{
+    width: 60%;
+   @include mobile(){
+       width: 85%;
+   }
+    .swipe__mainDiv{
+        h2{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+                font-family: "Poppins", sans-serif;
+                font-weight: bold;
+        }
+       
+    }
+
+    .swipe__buttons{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+
+        @include mobile(){
+            width: 100%;
+        }
+
+        &--button{
+            @include mobile(){
+              padding: .5rem 2rem;
+            }
+        }
+        
+    }
+
+    .triangles{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+        margin: 0 auto;
+        @include mobile(){
+            width: 100%;
+        }
+        .triangle1, .triangle2{
+            clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: $green;
+        }
+        .triangle1{
+            transform: rotate(-90deg);
+        }
+        .triangle2{
+            transform: rotate(90deg);
+        }
+    }
+}
