@@ -1,19 +1,33 @@
 @import './variables';
-
-.buttonsResult{
-    display: flex;
-    justify-content: space-between;
-    width: 35%;
-    margin: 0 auto;
-    img{
-        width: 2.0rem;
-        height: 2.0rem;
-        outline: none;
-        margin: 0;
-        box-shadow: none;
-        cursor: pointer;
-        border-radius: .3rem;
-      
+@mixin mobile {
+    @media screen and (max-width: 320px) {
+      @content;
     }
-  
-}
+  }
+  .result{
+    width: 85%;
+      .result__mainDiv{
+         margin: auto 0;
+         height: 60vh;
+        .buttonsResult{
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+            margin: 0 auto;
+            @include mobile(){
+                width: 50%;
+            }
+            img{
+                width: 2.0rem;
+                height: 2.0rem;
+                outline: none;
+                margin: 0;
+                box-shadow: none;
+                cursor: pointer;
+                border-radius: .3rem;
+              
+            }
+          
+        }
+      }
+  }

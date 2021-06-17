@@ -411,13 +411,25 @@
   }
 }
 
-.buttonsResult {
+.result {
+  width: 85%;
+}
+.result .result__mainDiv {
+  margin: auto 0;
+  height: 60vh;
+}
+.result .result__mainDiv .buttonsResult {
   display: flex;
   justify-content: space-between;
   width: 35%;
   margin: 0 auto;
 }
-.buttonsResult img {
+@media screen and (max-width: 320px) {
+  .result .result__mainDiv .buttonsResult {
+    width: 50%;
+  }
+}
+.result .result__mainDiv .buttonsResult img {
   width: 2rem;
   height: 2rem;
   outline: none;
