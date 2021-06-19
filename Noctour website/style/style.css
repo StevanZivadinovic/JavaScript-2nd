@@ -2,12 +2,12 @@
 @import url("./abstracts/mixins.scss");
 @import url("./abstracts/variables.scss");
 .header {
-  height: 95vh;
+  height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("./../img/hero.jpg");
   background-position: top;
   background-size: cover;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 90vh, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 90vh, 0% 100%);
   position: relative;
 }
 .header .header__logo-box {
@@ -187,7 +187,7 @@
 .section-about {
   width: 100%;
   background-color: #f7f7f7;
-  height: 100vh;
+  height: 70vh;
 }
 
 .btn-text {
@@ -289,6 +289,39 @@
   text-align: center;
 }
 
+.section-features {
+  padding: 5rem 0;
+  height: 65vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("./../../img/nat-4.jpg");
+  background-size: cover;
+}
+.section-features__feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+}
+.section-features__feature-box:hover {
+  transform: rotateY(90deg) scale(1.03);
+  cursor: pointer;
+}
+.section-features__feature-box img {
+  height: 5rem;
+  background-image: linear-gradient(to right, rgba(40, 180, 131, 0.8) rgba(24, 121, 87, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+.section-features__feature-box--heading-tertiary {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -318,6 +351,12 @@ body {
 .row .col-1-of-2:not(:last-child) {
   margin-right: 1rem;
 }
+.row .col-1-of-4 {
+  width: calc((100%-1rem)/4);
+}
+.row .col-1-of-4:not(:last-child) {
+  margin-right: 1rem;
+}
 
 .heading-secondary {
   font-size: 2.5rem;
@@ -329,7 +368,7 @@ body {
   color: transparent;
   text-align: center;
   transition: all 0.2s;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
