@@ -1,0 +1,48 @@
+@import "./../abstracts/variables";
+.section-tours {
+  padding: 5rem 0;
+  height: 80vh;
+  background-color: $color-grey-light;
+
+  .row {
+    justify-content: space-between;
+    width: 70%;
+    height: 30rem;//da bi perspective radilo moras ovde da 
+    //uneses istu visinu kao kod elementa na kom je perespective
+    //primenjen, a to su ovde child elemetnti .card elementa(_side--front, _side-back)
+    .card {
+      perspective: 30rem;
+      -moz-perspective: 150rem;
+      
+
+      
+      &__side {
+          width: 100%;
+        transition: all 1.8s;
+        height: 30rem;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+       
+        &--front {
+          background-color: $color-white;
+         
+        }
+        &--back {
+          background-color: green;
+          transform: rotateY(180deg);
+        }
+      }
+      &:hover .card__side--front {
+        transform: rotateY(180deg);
+      }
+
+      &:hover .card__side--back {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}

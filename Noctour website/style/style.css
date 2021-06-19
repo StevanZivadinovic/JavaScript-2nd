@@ -187,7 +187,9 @@
 .section-about {
   width: 100%;
   background-color: #f7f7f7;
-  height: 70vh;
+  height: 80vh;
+  padding-top: 10vh;
+  margin-top: -10vh;
 }
 
 .btn-text {
@@ -322,6 +324,46 @@
   margin-bottom: 1rem;
 }
 
+.section-tours {
+  padding: 5rem 0;
+  height: 80vh;
+  background-color: #f7f7f7;
+}
+.section-tours .row {
+  justify-content: space-between;
+  width: 70%;
+  height: 30rem;
+}
+.section-tours .row .card {
+  perspective: 30rem;
+  -moz-perspective: 150rem;
+}
+.section-tours .row .card__side {
+  width: 100%;
+  transition: all 1.8s;
+  height: 30rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.section-tours .row .card__side--front {
+  background-color: #fff;
+}
+.section-tours .row .card__side--back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+.section-tours .row .card:hover .card__side--front {
+  transform: rotateY(180deg);
+}
+.section-tours .row .card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -349,6 +391,12 @@ body {
   width: calc((100%-1rem)/2);
 }
 .row .col-1-of-2:not(:last-child) {
+  margin-right: 1rem;
+}
+.row .col-1-of-3 {
+  width: calc((100%-1rem)/3);
+}
+.row .col-1-of-3:not(:last-child) {
   margin-right: 1rem;
 }
 .row .col-1-of-4 {

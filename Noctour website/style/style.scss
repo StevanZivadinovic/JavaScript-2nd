@@ -8,6 +8,7 @@
 @import './components/about';
 @import './components/footer';
 @import './components/features';
+@import './components/tours';
 
 
 
@@ -36,6 +37,17 @@ body {
 
   .col-1-of-2{
     width: calc((100%-1rem)/2);
+   
+
+
+    &:not(:last-child){
+      margin-right: 1rem;
+  
+    }
+  }
+
+  .col-1-of-3{
+    width: calc((100%-1rem)/3);
    
 
 
