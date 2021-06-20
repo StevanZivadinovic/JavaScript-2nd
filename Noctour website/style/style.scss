@@ -103,5 +103,64 @@ body {
   font-weight: 300;
 }
 
+//ovo je izvuceno iz header.scss
+.btnDiv {
+  text-align: center;
+  margin-top: 10%;
+
+  .btn {
+    position: relative;
+    width: 40%;
+    background-color: #fff;
+    color: $color-grey;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; //daje licni prostor inline elementu
+    border-radius: 10rem;
+    transition: all 0.2s;
+    animation: btnMove 1s ease-out 0.2s;//poslednja vrednost je animation-delay;
+    animation-fill-mode: backwards;//omogucava da i pre nego animacija zapocne
+    //bude primenjen stil animacije koji je definisan za 0% momenat
+    @keyframes btnMove {
+      0%{
+        opacity: 0;
+        transform: translateY(10rem);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
 
 
+    &:hover {
+      transform: translateY(-.3rem);
+      cursor: pointer;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+    &:active {
+      transform: translateY(-.1rem);
+      cursor: pointer;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      // display: inline-block;
+      background-color: #fff;
+      border-radius: 10rem;
+      transition: all 0.2s;
+    }
+
+    &:hover::after {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+}

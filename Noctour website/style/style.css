@@ -180,7 +180,7 @@
   transition: all 0.2s;
 }
 .header .btnDiv .btn:hover::after {
-  transform: rotate(180deg);
+  transform: scale(1.2);
   opacity: 0;
 }
 
@@ -332,7 +332,7 @@
 .section-tours .row {
   justify-content: space-between;
   width: 70%;
-  height: 30rem;
+  height: 32rem;
 }
 .section-tours .row .card {
   perspective: 30rem;
@@ -341,24 +341,98 @@
 .section-tours .row .card__side {
   width: 100%;
   transition: all 1.8s;
-  height: 30rem;
+  height: 32rem;
   cursor: pointer;
-  color: white;
   position: absolute;
   top: 0;
   left: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.3rem;
+  overflow: hidden;
 }
 .section-tours .row .card__side--front {
   background-color: #fff;
+  position: relative;
+}
+.section-tours .row .card__side--front .card__side__img {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  height: 45%;
+  background-blend-mode: screen;
+  background-size: cover;
+}
+.section-tours .row .card__side--front .card__side__img--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("./../../img/nat-5.jpg");
+}
+.section-tours .row .card__side--front__heading {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  position: absolute;
+  top: 8rem;
+  right: 1rem;
+  width: 55%;
+}
+.section-tours .row .card__side--front__heading__span {
+  padding: 0.5rem 1rem;
+  -webkit-box-direction-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+.section-tours .row .card__side--front__heading__span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.section-tours .row .card__side--front .ul {
+  padding-top: 2rem;
+}
+.section-tours .row .card__side--front .ul ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  height: 50%;
+}
+.section-tours .row .card__side--front .ul ul li {
+  text-align: center;
+}
+.section-tours .row .card__side--front .ul ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.2);
 }
 .section-tours .row .card__side--back {
-  background-color: green;
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.section-tours .row .card__side--back-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.section-tours .row .card__side .cta {
+  width: 80%;
+  margin: 0 auto;
+  height: 80%;
+}
+.section-tours .row .card__side .cta__only {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.section-tours .row .card__side .cta__price {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 6rem;
+}
+.section-tours .row .card__side .cta .cta__btn {
+  width: 60%;
+  padding: 1rem 1rem;
 }
 .section-tours .row .card:hover .card__side--front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .section-tours .row .card:hover .card__side--back {
   transform: rotateY(0deg);
@@ -434,4 +508,60 @@ body {
   font-size: 1.6rem;
   text-transform: none;
   font-weight: 300;
+}
+
+.btnDiv {
+  text-align: center;
+  margin-top: 10%;
+}
+.btnDiv .btn {
+  position: relative;
+  width: 40%;
+  background-color: #fff;
+  color: #777;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  -webkit-animation: btnMove 1s ease-out 0.2s;
+          animation: btnMove 1s ease-out 0.2s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+@keyframes btnMove {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.btnDiv .btn:hover {
+  transform: translateY(-0.3rem);
+  cursor: pointer;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btnDiv .btn:active {
+  transform: translateY(-0.1rem);
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btnDiv .btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #fff;
+  border-radius: 10rem;
+  transition: all 0.2s;
+}
+.btnDiv .btn:hover::after {
+  transform: scale(1.2);
+  opacity: 0;
 }/*# sourceMappingURL=style.css.map */

@@ -96,7 +96,7 @@
     }
   
   
-   
+   //prekopirano je ovo sve jendom u style.scss
     .btnDiv {
       text-align: center;
       margin-top: 10%;
@@ -152,7 +152,7 @@
         }
   
         &:hover::after {
-          transform: rotate(180deg);
+          transform: scale(1.2);
           opacity: 0;
         }
       }
