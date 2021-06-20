@@ -366,6 +366,12 @@
 .section-tours .row .card__side--front .card__side__img--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("./../../img/nat-5.jpg");
 }
+.section-tours .row .card__side--front .card__side__img--2 {
+  background-image: linear-gradient(to right bottom, rgba(40, 180, 131, 0.8), rgba(24, 121, 87, 0.8)), url("./../../img/nat-6.jpg");
+}
+.section-tours .row .card__side--front .card__side__img--3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("./../../img/nat-7.jpg");
+}
 .section-tours .row .card__side--front__heading {
   font-size: 2rem;
   font-weight: 300;
@@ -386,6 +392,12 @@
 }
 .section-tours .row .card__side--front__heading__span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.section-tours .row .card__side--front__heading__span--2 {
+  background-image: linear-gradient(to right bottom, rgba(40, 180, 131, 0.85), rgba(24, 121, 87, 0.85));
+}
+.section-tours .row .card__side--front__heading__span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
 }
 .section-tours .row .card__side--front .ul {
   padding-top: 2rem;
@@ -426,6 +438,7 @@
   text-transform: uppercase;
   text-align: center;
   font-size: 6rem;
+  font-weight: 300;
 }
 .section-tours .row .card__side .cta .cta__btn {
   width: 60%;
