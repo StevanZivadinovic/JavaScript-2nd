@@ -1,9 +1,14 @@
 @import url('./abstracts/variables.scss');
 
-
+@mixin mobile {
+  @media screen and (max-width:600px) {
+      @content;
+  }
+}
 
 .header {
     height: 100vh;
+    
     background-image: linear-gradient(
         to right bottom,
         rgba(126, 213, 111, 0.8),
@@ -50,6 +55,10 @@
           animation-timing-function: ease-out;
           backface-visibility: hidden; //ne dozvoljava neka nekontolisana pomeranja na kraju animacije
           //koja se desavaju bez posebnog razloga
+          @include mobile(){
+            font-size: 4rem;
+          }
+         
         }
         &--sub {
           display: block;
@@ -61,6 +70,9 @@
           animation-timing-function: ease-out;
           backface-visibility: hidden;
           color: rgb(196, 72, 72);
+          @include mobile(){
+            font-size: 1.3rem;
+          }
         }
       }
     }
@@ -114,6 +126,9 @@
         animation: btnMove 1s ease-out 0.2s;//poslednja vrednost je animation-delay;
         animation-fill-mode: backwards;//omogucava da i pre nego animacija zapocne
         //bude primenjen stil animacije koji je definisan za 0% momenat
+        @include mobile(){
+          width: 50%;
+        }
         @keyframes btnMove {
           0%{
             opacity: 0;

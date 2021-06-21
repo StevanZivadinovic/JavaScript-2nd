@@ -12,6 +12,11 @@
     // background-position: top;
     background-size: cover;
 
+    @include mobile(){
+     
+        height: 100vh;
+      }
+
 
     &__feature-box{
         background-color: rgba($color-white, .8);

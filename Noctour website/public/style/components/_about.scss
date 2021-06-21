@@ -6,7 +6,10 @@
   height: 80vh;
   padding-top: 10vh;
   margin-top: -10vh;
-  
+  @include mobile(){
+    height: 105vh;
+   
+  }
 }
 
 .btn-text {
@@ -34,12 +37,18 @@
 
 .composition{
     position: relative;
+   
+    
     &__img{
         width: 55%;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
         border-radius: 2px;
         position: absolute;
         transition: all .2s;
+        @include mobile(){
+            margin-top: 6rem;
+            
+          }
        
 
         &--p1{

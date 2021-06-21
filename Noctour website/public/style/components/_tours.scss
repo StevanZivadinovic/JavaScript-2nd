@@ -5,12 +5,22 @@
   height: 80vh;
   background-color: $color-grey-light;
 
+  @include mobile(){
+     
+    height: 130vh;
+    padding: 3rem 0;
+  }
+
   .row {
     justify-content: space-between;
     width: 70%;
     height: 32rem;//da bi perspective radio moras ovde da 
     //uneses istu visinu kao kod elementa na kom je perespective
     //primenjen, a to su ovde child elementi .card elementa(_side--front, _side-back)
+    @include mobile(){
+     
+      margin-top: 1rem;
+     }
     .card {
       perspective: 30rem;
       -moz-perspective: 150rem;
@@ -32,7 +42,10 @@
         overflow: hidden;//ako child element strci izvan parenta, to se
         //ovim resava. Konkretno ovde, nije se primenio border-radius, slika na
         //kartici je prekrila uglove pa je to reseno ovim
-        
+        @include mobile(){
+     
+         margin-top: 2rem;
+        }
       
        
 
@@ -118,6 +131,14 @@
           flex-direction: column;
           &-1{
             background-image: linear-gradient(to right bottom , $color-orange-light,$color-orange-dark);
+            
+          }
+          &-2{
+            background-image: linear-gradient(to right bottom , $color-green-light,$color-green-dark);
+            
+          }
+          &-3{
+            background-image: linear-gradient(to right bottom , $color-blue-light,$color-blue-dark);
             
           }
         }
