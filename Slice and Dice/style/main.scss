@@ -1,0 +1,65 @@
+@import './variables.css';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 10px;
+}
+.header{
+    font-family: 'Raleway', sans-serif;
+    height: 50vh;
+    background-image: url('./../images/header.jpg');
+    &__general{
+        width: 70%;
+        margin: 0 auto;
+        height: 50vh;
+
+    }
+    &__menu{
+        
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        height: 30%;
+        border-bottom: 1px solid $white-border;
+
+        &__logo{
+            font-weight: 700;
+            font-size: 1.5rem;
+            align-self: center;
+            color: $grey;
+            &--box{
+                font-weight: 300;
+                color: $white;
+
+            }
+        }
+        &__bar{
+            width: 60%;
+            font-weight: 500;
+            font-size: .8rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            &__list{
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                
+                li{
+                    
+                    a{
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
