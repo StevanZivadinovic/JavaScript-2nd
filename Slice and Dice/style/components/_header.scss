@@ -1,0 +1,113 @@
+.header{
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background-image: url('./../images/header.jpg');
+    &__general{
+        width: 70%;
+        margin: 0 auto;
+        height: 100vh;
+
+    }
+    &__menu{
+        
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        height: 10%;
+        border-bottom: 1px solid $white-border;
+
+        &__logo{
+            font-weight: 700;
+            font-size: 1.5rem;
+            align-self: center;
+            color: $grey;
+            &--box{
+                font-weight: 300;
+                color: $white;
+
+            }
+        }
+        &__bar{
+            width: 60%;
+            font-weight: 500;
+            font-size: .8rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            &__list{
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                
+                li{
+                    
+                    a{
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__main{
+        color: $white;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &--sub{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 80%;
+
+        }
+
+        &__h1{
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 3rem;
+        }
+        &__h2{
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+
+        &__button{
+           text-align: center;
+           margin-top: 2rem;
+            a{
+                color: $white;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 1rem 2.5rem;
+                background-color: $red;
+                font-weight: 500;
+                border:none;
+                outline: none;
+                border-radius: .1rem;
+                box-shadow: 0 .3rem .7rem rgba($color: $grey, $alpha: 1.0);
+                transition: all .2s ease;
+
+                &:hover{
+                    background-color: rgba($color: $red, $alpha: 1);
+                    
+                }
+                &:active{
+                    transform: translateY(.2rem);
+                    box-shadow: 0 .2rem .5rem rgba($color: $grey, $alpha: 1.0);
+
+                }
+
+            }
+        }
+    }
+}
+

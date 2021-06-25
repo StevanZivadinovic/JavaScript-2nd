@@ -1,0 +1,26 @@
+.about {
+  width: 70%;
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+  
+
+  &__box {
+    text-align: center;
+
+    h3 {
+      text-transform: uppercase;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+    img{
+      transform: scale(.8);
+    }
+  }
+}
