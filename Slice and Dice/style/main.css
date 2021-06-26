@@ -202,6 +202,10 @@
   padding: 0.5rem 0.6rem;
 }
 
+.carusel {
+  position: relative;
+}
+
 .slideshow-container {
   width: 100%;
   position: relative;
@@ -222,26 +226,47 @@
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  background-color: purple;
+  background-color: #523549;
   bottom: 8px;
   width: 100%;
-  text-align: center;
+}
+.text h2 {
+  color: rgba(255, 255, 255, 0.8);
+  width: 70%;
+  font-family: "Cardo", serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 6rem;
+}
+.text p {
+  width: 60%;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  padding-left: 2rem;
+  width: 500;
 }
 
 /* The dots/bullets/indicators */
-.dot {
+.dotMain {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+}
+.dotMain .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: rgba(117, 109, 109, 0.5);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Fading animation */
@@ -268,6 +293,59 @@
     opacity: 1;
   }
 }
+.sub_div__main {
+  width: 70%;
+  margin: 3rem auto;
+  text-align: center;
+}
+.sub_div__main h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+.sub_div__main p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+}
+.sub_div__main__button {
+  padding-bottom: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+.sub_div__main__button a {
+  padding: 0.8rem 3.5rem;
+}
+
+.mainFooter {
+  font-family: "Raleway", sans-serif;
+  background-color: #3a3e63;
+  padding: 3rem 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.mainFooter .mainFooterUp {
+  width: 70%;
+  margin: 0rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.mainFooter .mainFooterUp__share__social i {
+  border: 0.1rem solid rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 0.6rem;
+}
+.mainFooter .mainFooterUp__location, .mainFooter .mainFooterUp__share, .mainFooter .mainFooterUp__about {
+  width: 30%;
+  text-align: center;
+}
+.mainFooter .mainFooterUp__location h3, .mainFooter .mainFooterUp__share h3, .mainFooter .mainFooterUp__about h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.mainFooter .mainFooterUp__location p, .mainFooter .mainFooterUp__share p, .mainFooter .mainFooterUp__about p {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
