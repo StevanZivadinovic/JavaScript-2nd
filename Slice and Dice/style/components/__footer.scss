@@ -36,3 +36,18 @@
 
     }
 }
+
+.buttomFooter{
+    font-family: 'Raleway', sans-serif;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: $bottomFooter;
+    color: $white-border;
+    i{
+       color: $red;
+    }
+    .name{
+        color: $white;
+
+    }
+}

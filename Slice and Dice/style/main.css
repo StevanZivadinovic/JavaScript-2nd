@@ -346,6 +346,20 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
+.buttomFooter {
+  font-family: "Raleway", sans-serif;
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #313455;
+  color: rgba(255, 255, 255, 0.2);
+}
+.buttomFooter i {
+  color: rgba(219, 48, 48, 0.9);
+}
+.buttomFooter .name {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
