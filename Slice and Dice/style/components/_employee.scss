@@ -1,0 +1,43 @@
+.employee{
+    font-family: 'Raleway', sans-serif;
+    &__boxes{
+        width: 80%;
+        margin: 10% auto;
+        display: flex;
+        justify-content: space-between;
+        
+
+        &__box{
+            width: 23%;
+            img{
+                width: 100%;
+                margin-bottom: 8%;
+            }
+            .employee__box__main{
+                h3{
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-bottom: .4rem;
+                    
+                }
+                h4{
+                    color: $red;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin-bottom: 1rem;
+                    
+
+                }
+            &__social{
+                margin-top: 1rem;
+                i{
+                    border: .1rem solid $grey-social; 
+                    color: $grey-social;
+                    padding: .5rem .6rem;
+                }
+            }
+            }
+
+        }
+    }
+}
