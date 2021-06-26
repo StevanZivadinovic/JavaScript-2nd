@@ -1,14 +1,50 @@
 .projects{
     width: 100%;
+    
     &__row{
         display: flex;
         width: 100%;
+      
+        
 
+        &__box--box1, &__box--box2, &__box--box3, &__box--box4, &__box--box5, &__box--box6, &__box--box7, &__box--box8{
+
+            position: relative;
+
+            &:hover .text{
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+
+        
         &__box{
             width: 25%;
+            
 
             .text{
-                color: red;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: $red;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-family: "Raleway", sans-serif;
+                color: $white;
+                h4{
+                    text-transform: uppercase;
+                    padding-bottom: .6rem;
+                }
+                
+
             }
 
             img{
