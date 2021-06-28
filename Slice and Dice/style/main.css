@@ -231,8 +231,20 @@
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 600px) {
+  .employee__boxes {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
 .employee__boxes__box {
   width: 23%;
+}
+@media screen and (max-width: 600px) {
+  .employee__boxes__box {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }
 .employee__boxes__box img {
   width: 100%;
