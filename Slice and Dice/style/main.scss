@@ -7,6 +7,13 @@
 @import './components/_subDiv';
 @import './components/_footer';
 
+
+@mixin mobile {
+    @media screen and (max-width:600px) {
+        @content;
+    }
+  }
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,59 +21,20 @@
 }
 body{
     font-size: 10px;
+
+
+    
 }
 
 .row{
     display: flex;
    margin: 4rem  auto 4rem auto;
- 
-  
-    // @include mobile(){
-    // display: flex;
-    // flex-direction: column;
-    // }
-    // .col-1-of-2{
-    //   width: calc((100%-1rem)/2);
+
+   @include mobile(){
+       flex-direction: column;
+       margin: 0 auto;
       
-    // //   @include mobile(){
-       
-    // //     width: calc((100%));
-    // //   }
-  
-  
-    //   &:not(:last-child){
-    //     margin-right: 1rem;
-    
-    //   }
-    // }
-  
-    // .col-1-of-3{
-    //   width: calc((100%-1rem)/3);
-     
-    // //   @include mobile(){
-       
-    // //     width: calc((100%));
-    // //   }
-  
-    //   &:not(:last-child){
-    //     margin-right: 1rem;
-    
-    //   }
-    // }
-  
-    // .col-1-of-4{
-    //   width: calc((100%-1rem)/4);
-    // //   @include mobile(){
-       
-    // //     width: calc((100%));
-    // //   }
-  
-  
-    //   &:not(:last-child){
-    //     margin-right: 1rem;
-    
-    //   }
-    // }
+   }
     
 }
   

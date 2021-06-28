@@ -15,6 +15,13 @@
   height: 10%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+@media screen and (max-width: 600px) {
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+  }
+}
 .header__menu__logo {
   font-weight: 700;
   font-size: 1.5rem;
@@ -33,11 +40,30 @@
   justify-content: center;
   flex-direction: column;
 }
+@media screen and (max-width: 600px) {
+  .header__menu__bar {
+    width: 100%;
+  }
+}
 .header__menu__bar__list {
   list-style: none;
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .header__menu__bar__list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header__menu__bar__list li {
+    text-align: center;
+  }
+  .header__menu__bar__list li:hover {
+    background-color: rgba(219, 48, 48, 0.9);
+  }
 }
 .header__menu__bar__list li a {
   color: rgba(255, 255, 255, 0.8);
@@ -62,11 +88,21 @@
   text-align: center;
   font-size: 3rem;
 }
+@media screen and (max-width: 600px) {
+  .header__main__h1 {
+    font-size: 1.5rem;
+  }
+}
 .header__main__h2 {
   text-align: center;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
+}
+@media screen and (max-width: 600px) {
+  .header__main__h2 {
+    font-size: 0.8rem;
+  }
 }
 .header__main__button {
   text-align: center;
@@ -101,6 +137,11 @@
 .about__box {
   text-align: center;
 }
+@media screen and (max-width: 600px) {
+  .about__box {
+    margin: 1rem;
+  }
+}
 .about__box h3 {
   text-transform: uppercase;
   margin-top: 1rem;
@@ -123,6 +164,12 @@
   display: flex;
   width: 100%;
 }
+@media screen and (max-width: 600px) {
+  .projects__row {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
 .projects__row__box--box1, .projects__row__box--box2, .projects__row__box--box3, .projects__row__box--box4, .projects__row__box--box5, .projects__row__box--box6, .projects__row__box--box7, .projects__row__box--box8 {
   position: relative;
 }
@@ -132,6 +179,11 @@
 }
 .projects__row__box {
   width: 25%;
+}
+@media screen and (max-width: 600px) {
+  .projects__row__box {
+    width: 100%;
+  }
 }
 .projects__row__box .text {
   position: absolute;
@@ -154,6 +206,10 @@
 .projects__row__box .text h4 {
   text-transform: uppercase;
   padding-bottom: 0.6rem;
+}
+.projects__row__box .text p {
+  width: 100%;
+  padding: 0;
 }
 .projects__row__box img {
   width: 100%;
@@ -373,4 +429,10 @@ body {
 .row {
   display: flex;
   margin: 4rem auto 4rem auto;
+}
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=main.css.map */

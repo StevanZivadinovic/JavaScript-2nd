@@ -8,6 +8,10 @@
   &__box {
  
     text-align: center;
+    @include mobile(){
+      margin: 1rem;
+     
+  }
 
     h3 {
       text-transform: uppercase;

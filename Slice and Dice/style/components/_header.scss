@@ -1,11 +1,22 @@
+@mixin mobile {
+    @media screen and (max-width:600px) {
+        @content;
+    }
+  }
+
 .header{
     font-family: 'Raleway', sans-serif;
     height: 100vh;
     background-image: url('./../images/header.jpg');
+
+     
+   
     &__general{
         width: 70%;
         margin: 0 auto;
         height: 100vh;
+
+      
 
     }
     &__menu{
@@ -15,6 +26,13 @@
         text-transform: uppercase;
         height: 10%;
         border-bottom: 1px solid $white-border;
+
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            height: 20%;
+            
+        }   
 
         &__logo{
             font-weight: 700;
@@ -34,14 +52,32 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+
+            @include mobile{
+                width: 100%;
+                
+            }  
             
             &__list{
                 list-style: none;
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+
+                @include mobile{
+                    display: flex;
+                    flex-direction: column;
+ 
+                }  
                 
                 li{
+                    @include mobile{
+                        text-align: center;
+                        
+                        &:hover{
+                            background-color: $red;
+                        }
+                    }  
                     
                     a{
                         color: $white;
@@ -71,12 +107,21 @@
             text-transform: uppercase;
             text-align: center;
             font-size: 3rem;
+            @include mobile{
+                font-size: 1.5rem;
+
+            }  
         }
         &__h2{
             text-align: center;
             font-family: 'Raleway', sans-serif;
             font-weight: 500;
             font-size: 1.2rem;
+
+            @include mobile{
+                font-size:.8rem;
+
+            }  
         }
 
 
