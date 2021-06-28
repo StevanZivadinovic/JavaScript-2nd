@@ -1,92 +1,128 @@
-.carusel{
-    position: relative;
+.carusel {
+  position: relative;
 }
 .slideshow-container {
-   width: 100%;
-    position: relative;
-    margin: 0 auto;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-    // display: none;
-    display: flex;
-    flex-direction: row;
-     #carusel__img1,#carusel__img2,#carusel__img3,#carusel__img4,#carusel__img5 {
-            width:50% !important;
+  // display: none;
+  display: flex;
+  flex-direction: row;
+  #carusel__img1,
+  #carusel__img2,
+  #carusel__img3,
+  #carusel__img4,
+  #carusel__img5 {
+    width: 50% !important;
+  }
+
+  @include mobile() {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  img {
+    @include mobile() {
+      min-width: 100vw;
+      margin: 0 auto;
     }
   }
-  
- 
+
   /* Caption text */
   .text {
     color: #f2f2f2;
     font-size: 15px;
-    padding: 8px 12px;
+    padding: 0.8rem 1.2rem;
     background-color: $purple;
     bottom: 8px;
     width: 100%;
-  h2{
-    color: $white;
-    width: 70%;
-    font-family: 'Cardo', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-    margin-top: 6rem;
-  }
-  p{
+
+    @include mobile() {
+      width: 100%;
+      margin: 0 auto;
+    }
+    h2 {
+      color: $white;
+      width: 70%;
+      font-family: "Cardo", serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      margin-top: 6rem;
+      @include mobile() {
+        margin-top: 1rem;
+      }
+    }
+    p {
       width: 60%;
-    font-family: 'Raleway', sans-serif;
+      font-family: "Raleway", sans-serif;
       text-transform: uppercase;
-      font-size: .5rem;
+      font-size: 0.5rem;
       padding-left: 2rem;
       width: 500;
-  }
+
+      @include mobile() {
+        padding-bottom: 4rem;
+      }
+    }
     // text-align: center;
   }
-  
-  
-  /* The dots/bullets/indicators */
-  .dotMain{
-      position: absolute;
-      top: 70%;
-      left: 70%;
+}
 
-      .dot {
-        cursor: pointer;
-        height: .5rem;
-        width: .5rem;
-        // margin: 0 .2rem;
-        background-color: rgba($grey,0.5);
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-        
-        
-     
-      }
+/* The dots/bullets/indicators */
+.dotMain {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+
+  @include mobile() {
+    top: 90%;
+    left: 30%;
   }
-  
-  .active, .dot:hover {
-    background-color: $white !important;
+
+  .dot {
+    cursor: pointer;
+    height: 0.5rem;
+    width: 0.5rem;
+    // margin: 0 .2rem;
+    background-color: rgba($grey, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
   }
-  
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+}
+
+.active,
+.dot:hover {
+  background-color: $white !important;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
   }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+  to {
+    opacity: 1;
   }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
   }
+  to {
+    opacity: 1;
+  }
+}

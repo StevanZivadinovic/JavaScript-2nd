@@ -1,53 +1,64 @@
-.mainFooter{
-    font-family: 'Raleway', sans-serif;
-    background-color: $mainFooter;
-    padding: 3rem 0;
-    color: $white;
-    .mainFooterUp{
-        width: 70%;
-        margin: 0rem auto;
-        display: flex;
-        justify-content: space-between;
+.mainFooter {
+  font-family: "Raleway", sans-serif;
+  background-color: $mainFooter;
+  padding: 3rem 0;
+  color: $white;
 
-        &__share__social{
-            i{
-                border: .1rem solid $white; 
-                color: $white;
-                padding: .5rem .6rem;
-              
-            }
-        }
-
-        &__location, &__share, &__about{
-            width: 30%;
-            text-align: center;
-
-            h3{
-                text-transform: uppercase;
-                margin-bottom: 1rem;
-
-            }
-            p{
-                color: rgba($white, .3);
-            }
-           
-
-        }
-
+  @include mobile() {
+    padding: 1rem 0;
+  }
+  .mainFooterUp {
+    width: 70%;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: space-between;
+    @include mobile() {
+      flex-direction: column;
     }
+
+    &__share__social {
+      i {
+        border: 0.1rem solid $white;
+        color: $white;
+        padding: 0.5rem 0.6rem;
+      }
+    }
+
+    &__location,
+    &__share,
+    &__about {
+      width: 30%;
+      text-align: center;
+      @include mobile() {
+        align-self: center;
+        width: 70%;
+        margin-top: 2rem;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: rgba($white, 0.3);
+      }
+    }
+    &__about {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
-.buttomFooter{
-    font-family: 'Raleway', sans-serif;
-    padding: 2rem 0;
-    text-align: center;
-    background-color: $bottomFooter;
-    color: $white-border;
-    i{
-       color: $red;
-    }
-    .name{
-        color: $white;
-
-    }
+.buttomFooter {
+  font-family: "Raleway", sans-serif;
+  padding: 2rem 0;
+  text-align: center;
+  background-color: $bottomFooter;
+  color: $white-border;
+  i {
+    color: $red;
+  }
+  .name {
+    color: $white;
+  }
 }

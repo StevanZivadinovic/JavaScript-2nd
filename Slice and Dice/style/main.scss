@@ -1,40 +1,33 @@
-@import './variables.scss';
-@import './components/header';
-@import './components/about';
-@import './components/projects';
-@import './components/employee';
-@import './components/_carusel';
-@import './components/_subDiv';
-@import './components/_footer';
-
+@import "./variables.scss";
+@import "./components/header";
+@import "./components/about";
+@import "./components/projects";
+@import "./components/employee";
+@import "./components/_carusel";
+@import "./components/_subDiv";
+@import "./components/_footer";
 
 @mixin mobile {
-    @media screen and (max-width:600px) {
-        @content;
-    }
+  @media screen and (max-width: 600px) {
+    @content;
   }
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-size: 10px;
-
-
-    
 }
 
-.row{
-    display: flex;
-   margin: 4rem  auto 4rem auto;
-
-   @include mobile(){
-       flex-direction: column;
-       margin: 0 auto;
-      
-   }
-    
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-  
+body {
+  font-size: 10px;
+}
+
+.row {
+  display: flex;
+  margin: 4rem auto 4rem auto;
+
+  @include mobile() {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}

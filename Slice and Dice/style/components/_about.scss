@@ -1,17 +1,14 @@
 .about {
   width: 70%;
- 
+
   margin: auto;
   font-family: "Raleway", sans-serif;
-  
 
   &__box {
- 
     text-align: center;
-    @include mobile(){
+    @include mobile() {
       margin: 1rem;
-     
-  }
+    }
 
     h3 {
       text-transform: uppercase;
@@ -25,8 +22,8 @@
       margin: 0 auto;
       font-weight: 500;
     }
-    img{
-      transform: scale(.8);
+    img {
+      transform: scale(0.8);
     }
   }
 }
