@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aquamarine;
+
+    
+
+    .addDeveloper{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        .x{
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    }
+    .listShowDeveloper{
+        display: flex;
+        min-width: 100%;
+        justify-content: space-around;
+    }
+ 
+}

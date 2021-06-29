@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Prime Hiring</title>
+</head>
+<body>
+    <nav>
+        <div class="customerNav">
+            <input type="button" value="Add developer" id='addDeveloper'>
+            <input type="button" value="Show developer" id='btnShowDeveloper'>
+        </div>
+    </nav>
+
+    <form class="addDeveloper">
+        <div class="x">X</div>
+  
+        <input type="text" placeholder="Full name" id="fullName" required>
+        <input type="text" placeholder="Email address" id="emailAddress" required>
+        <input type="tel" placeholder="Phone number" id="phoneNumber" required>
+        <input type="text" placeholder="Location" id="location" required>
+        <input type="url" name="profilePicture" id="profilePicture" placeholder="Profile image url">
+        <input type="number" name="pricePerHour" id="pricePerHour" placeholder="Price per hour">
+        <select name="Technology" id="technology">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value=".NET">.NET</option>
+            <option value="Flutter">Flutter</option>
+            <option value="Python">Python</option>
+            <option value="PHP">PHP</option>
+        </select>
+        <input type="text" name="Description" id="description" placeholder="Description">
+        <input type="text" name="YearsOfExpirience" id="yearsOfExpirience" placeholder="Years of expirience" required>
+        <select name="NativeLanguage" id="nativeLanguage" required>
+            <option value="Serbian">Serbian</option>
+            <option value="Bulgarian">Bulgarian</option>
+            <option value="English">English</option>
+
+        </select>
+        <input type="url" name="Linkedin" id="linkedin" placeholder="Linkedin profile link">
+
+        <input type="submit" value="Add developer" id="submitAddDeveloper">
+        <input type="submit" value="Update developer" id="submitUpdateDeveloper" style="display: none;">
+    </form>
+    <div class="searchMain">
+        <input type="text" class="search" placeholder="Search by developer name">
+        <button class="search1" >Search</button>
+    </div>
+    <div>
+        <ul class="showList"></ul>
+      
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+    apiKey: "AIzaSyBZ3mSI1nAIrT4_7zF5GWNf1oTXrmi56bw",
+    authDomain: "application-manager-715eb.firebaseapp.com",
+    databaseURL: "https://application-manager-715eb.firebaseio.com",
+    projectId: "application-manager-715eb",
+    storageBucket: "application-manager-715eb.appspot.com",
+    messagingSenderId: "929073867254",
+    appId: "1:929073867254:web:61db9e2699d90151993fd7"
+  };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore()
+      </script>
+      <script src="./scripts/script.js" type="module"></script>
+</body>
+</html>
