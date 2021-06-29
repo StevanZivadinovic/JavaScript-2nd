@@ -82,7 +82,7 @@ hireNow.addEventListener("click", (e) => {
                 document.querySelector('.feedback').innerHTML+=`<p>'You cannot hire same user two times in same period of time!</p>`
 
              }else{
-                document.querySelector('.feedback').innerHTML+=`<p>You succesfully hire developer!</p>`
+                document.querySelector('.feedback').innerHTML+=`<p>You succesfully hire developer ${a} from ${start1} to ${end1}!</p>`
 
              }
           } else {
