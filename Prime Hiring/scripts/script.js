@@ -60,7 +60,8 @@ submitAddDeveloper.addEventListener("click", (e) => {
         description: description,
         yearsOfExpirience: yearsOfExpirience,
         nativeLanguage: nativeLanguage,
-        linkedin:linkedin
+        linkedin:linkedin,
+        zauzetost:[{start:new Date('03-01-1994'), end:new Date('04-01-1994')}]
       })
       .then((data) => {
         console.log("Developer is added");
@@ -111,11 +112,14 @@ let preuzmi = (data, id) => {
       <div>${data.yearsOfExpirience}</div>
       <div>${data.nativeLanguage}</div>
       <div>${data.linkedin}</div>
+      
 
-      <div>
+     
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
-      </div>
+      <button class="btnHire">Hire</button>
+
+      
       
 
       </li>`;
@@ -234,24 +238,26 @@ btnShowDeveloper.addEventListener("click", (e) => {
       .get()
       .then((data) => {
         data.docs.forEach((a) => {
-          let c = a.data().fullName;
-          console.log(c, c.includes(result), result);
+          let c = a.data().fullName.trim().toLowerCase().replace(' ','');
+          // console.log(c, c.includes(result), result);
 
           if (c.includes(result) && result.length > 0) {
             console.log("haj haj");
             console.log(c);
 
             db.collection("developers")
+            .where("fullName", "!=", `${a.data().fullName}`)
               .get()
               .then((data) => {
                 data.docs.forEach((a) => {
+                  console.log(a)
                   obrisati(a.id);
                 });
               });
             let ab = true;
             if (true) {
               db.collection("developers")
-                .where("fullName", "==", `${c}`)
+                .where("fullName", "==", `${a.data().fullName}`)
                 .get()
                 .then((data) => {
                   ab = false;

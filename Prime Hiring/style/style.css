@@ -24,4 +24,10 @@ body .listShowDeveloper {
   display: flex;
   min-width: 100%;
   justify-content: space-around;
+}
+body .HireDeveloper {
+  display: none;
+}
+body .hireDevelopers {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

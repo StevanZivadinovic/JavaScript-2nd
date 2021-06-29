@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <title>Prime Hiring</title>
+    <link rel="shortcut icon" type="image/jpg" href="./img/businessman.png"/>
 </head>
 <body>
     <nav>
@@ -54,6 +55,19 @@
       
     </div>
 
+    <div class="listOfDevelopersPriperedToHire">
+        <ul></ul>
+        <button class="HireDeveloper">Hire!</button>
+    </div>
+
+    <form action="" class="hireDevelopers">
+        <input type="date" name="startDate" id="startDate">
+        <input type="date" name="endDate" id="endDate">
+        <button class="hireNow">Hire Now!</button>
+    </form>
+        <div class="feedback">
+            
+        </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script>
@@ -72,5 +86,6 @@
         let db = firebase.firestore()
       </script>
       <script src="./scripts/script.js" type="module"></script>
+      <script src="./scripts/hire.js" type="module"></script>
 </body>
 </html>
