@@ -5,7 +5,44 @@
 }
 body{
     background-color: aquamarine;
+    font-size: 10px;
 
+    nav{
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        padding: 2rem 0;
+
+        #addDeveloper, #btnShowDeveloper{
+            padding: .5rem 2rem;
+        }
+    }
+    .searchMain{
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        margin: 2rem 0;
+        input{
+            background-color: transparent;
+        }
+        button{
+            padding: .5rem 2rem;
+            transition: .2s all ease;
+            outline: none;
+            border: none;
+            &:hover{
+                background-image: linear-gradient(
+                    to right,
+                    lightcoral,
+                   rgb(190, 46, 46)
+                  ) !important;   
+                cursor: pointer;
+                box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+                transform: translateY(-.1rem);
+                transform: skewY(1deg) skewX(5deg) scale(1.1);
+            }
+        }
+    }
     
 
     .addDeveloper{
@@ -13,20 +50,71 @@ body{
         flex-direction: column;
         position: relative;
         width: 80%;
-        margin: 0 auto;
+        margin: -3rem auto 0 auto;
+        outline: 1rem solid lightcoral;
+        border-radius: .3rem;
+
         .x{
             position: absolute;
-            right: 0;
-            top: 0;
+            right: -0.6rem;
+            top: -0.6rem;
             cursor: pointer;
+            
         }
     }
     .listShowDeveloper{
         display: flex;
         min-width: 100%;
         justify-content: space-around;
-    }
+        border-bottom: .2rem solid lightcoral;
 
+    
+        div{
+            align-self: center;
+        }
+
+        .dugmeDelete, .dugmeUpdate, .btnHire{
+            align-self: center;
+            padding: .5rem 2rem;
+            transition: .2s all ease;
+            outline: none;
+            border: none;
+            &:hover{
+                background-image: linear-gradient(
+                    to right,
+                    lightcoral,
+                   rgb(190, 46, 46)
+                  ) !important;                
+                cursor: pointer;
+                box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+                transform: translateY(-.1rem);
+                transform: skewY(1deg) skewX(5deg) scale(1.1);
+            }
+        }
+    }
+.listOfDevelopersPriperedToHire{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 20vh;
+    
+    margin: 2rem auto 0 auto;
+    ul{
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+
+        li{
+            font-size: 2rem;
+            list-style-type: none;
+        }
+    }
+    button{
+        width: 30%;
+        margin: 0 auto;
+
+    }
+}
     .HireDeveloper{
         display: none;
     }

@@ -287,3 +287,10 @@ x.addEventListener("click", (e) => {
   },2000)
 
 });
+
+
+document.querySelector('.search1').addEventListener('click',e=>{
+
+  document.querySelector('.search1').style.transform='translateY(.0rem)';
+  document.querySelector('.search1').style.transition='.2s all ease'
+})

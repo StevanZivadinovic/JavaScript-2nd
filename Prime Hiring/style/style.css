@@ -6,24 +6,96 @@
 
 body {
   background-color: aquamarine;
+  font-size: 10px;
+}
+body nav {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  padding: 2rem 0;
+}
+body nav #addDeveloper, body nav #btnShowDeveloper {
+  padding: 0.5rem 2rem;
+}
+body .searchMain {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin: 2rem 0;
+}
+body .searchMain input {
+  background-color: transparent;
+}
+body .searchMain button {
+  padding: 0.5rem 2rem;
+  transition: 0.2s all ease;
+  outline: none;
+  border: none;
+}
+body .searchMain button:hover {
+  background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  transform: skewY(1deg) skewX(5deg) scale(1.1);
 }
 body .addDeveloper {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 80%;
-  margin: 0 auto;
+  margin: -3rem auto 0 auto;
+  outline: 1rem solid lightcoral;
+  border-radius: 0.3rem;
 }
 body .addDeveloper .x {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -0.6rem;
+  top: -0.6rem;
   cursor: pointer;
 }
 body .listShowDeveloper {
   display: flex;
   min-width: 100%;
   justify-content: space-around;
+  border-bottom: 0.2rem solid lightcoral;
+}
+body .listShowDeveloper div {
+  align-self: center;
+}
+body .listShowDeveloper .dugmeDelete, body .listShowDeveloper .dugmeUpdate, body .listShowDeveloper .btnHire {
+  align-self: center;
+  padding: 0.5rem 2rem;
+  transition: 0.2s all ease;
+  outline: none;
+  border: none;
+}
+body .listShowDeveloper .dugmeDelete:hover, body .listShowDeveloper .dugmeUpdate:hover, body .listShowDeveloper .btnHire:hover {
+  background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  transform: skewY(1deg) skewX(5deg) scale(1.1);
+}
+body .listOfDevelopersPriperedToHire {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 20vh;
+  margin: 2rem auto 0 auto;
+}
+body .listOfDevelopersPriperedToHire ul {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+body .listOfDevelopersPriperedToHire ul li {
+  font-size: 2rem;
+  list-style-type: none;
+}
+body .listOfDevelopersPriperedToHire button {
+  width: 30%;
+  margin: 0 auto;
 }
 body .HireDeveloper {
   display: none;
