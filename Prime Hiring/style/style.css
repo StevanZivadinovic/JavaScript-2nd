@@ -11,16 +11,17 @@ body {
 body nav {
   display: flex;
   justify-content: center;
-  height: 10vh;
+  height: 8vh;
   padding: 2rem 0;
 }
-body nav #addDeveloper, body nav #btnShowDeveloper {
+body nav #addDeveloper,
+body nav #btnShowDeveloper {
   padding: 0.5rem 2rem;
 }
 body .searchMain {
   display: flex;
   justify-content: center;
-  height: 10vh;
+  height: 8vh;
   margin: 2rem 0;
 }
 body .searchMain input {
@@ -63,14 +64,18 @@ body .listShowDeveloper {
 body .listShowDeveloper div {
   align-self: center;
 }
-body .listShowDeveloper .dugmeDelete, body .listShowDeveloper .dugmeUpdate, body .listShowDeveloper .btnHire {
+body .listShowDeveloper .dugmeDelete,
+body .listShowDeveloper .dugmeUpdate,
+body .listShowDeveloper .btnHire {
   align-self: center;
   padding: 0.5rem 2rem;
   transition: 0.2s all ease;
   outline: none;
   border: none;
 }
-body .listShowDeveloper .dugmeDelete:hover, body .listShowDeveloper .dugmeUpdate:hover, body .listShowDeveloper .btnHire:hover {
+body .listShowDeveloper .dugmeDelete:hover,
+body .listShowDeveloper .dugmeUpdate:hover,
+body .listShowDeveloper .btnHire:hover {
   background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
   cursor: pointer;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
@@ -81,13 +86,12 @@ body .listOfDevelopersPriperedToHire {
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 20vh;
-  margin: 2rem auto 0 auto;
+  height: 12vh;
+  margin: 2rem auto 0 0;
 }
 body .listOfDevelopersPriperedToHire ul {
   width: 60%;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 2rem 0 0;
 }
 body .listOfDevelopersPriperedToHire ul li {
   font-size: 2rem;
@@ -95,11 +99,19 @@ body .listOfDevelopersPriperedToHire ul li {
 }
 body .listOfDevelopersPriperedToHire button {
   width: 30%;
-  margin: 0 auto;
 }
 body .HireDeveloper {
   display: none;
 }
 body .hireDevelopers {
   display: none;
+  margin: 0 auto;
+  width: 80%;
+  justify-content: center;
+}
+body .feedback {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -61,7 +61,7 @@ submitAddDeveloper.addEventListener("click", (e) => {
         yearsOfExpirience: yearsOfExpirience,
         nativeLanguage: nativeLanguage,
         linkedin:linkedin,
-        zauzetost:[{start:new Date('03-01-1994'), end:new Date('04-01-1994')}]
+        zauzetost:[{start:new Date('03-01-1994').getTime(), end:new Date('04-01-1994').getTime()}]
       })
       .then((data) => {
         console.log("Developer is added");

@@ -26,7 +26,7 @@ showList.addEventListener("click", (e) => {
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
-  hireDevelopersForm.style.display = "block";
+  hireDevelopersForm.style.display = "flex";
 });
 let startDateWanted = document.querySelector("#startDate");
 let endDateWanted = document.querySelector("#endDate");
