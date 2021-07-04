@@ -173,7 +173,7 @@ btnShowDeveloper.addEventListener("click", (e) => {
     });
   });
 });
-//update car
+//update developer
 let submitUpdateDeveloper = document.querySelector("#submitUpdateDeveloper");
 
 showList.addEventListener("click", (e) => {
