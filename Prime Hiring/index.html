@@ -16,15 +16,15 @@
         </div>
     </nav>
 
-    <form class="addDeveloper">
+    <form class="addDeveloper"  >
         <div class="x">X</div>
   
         <input type="text" placeholder="Full name" id="fullName" required>
-        <input type="text" placeholder="Email address" id="emailAddress" required>
-        <input type="tel" placeholder="Phone number" id="phoneNumber" required>
+        <input type="text" placeholder="Email address"  id="emailAddress" required> 
+        <input type="tel" maxlength="12" min="9" placeholder="Phone number (min 9 numbers)" id="phoneNumber" oninvalid='alert("neisparvno")'  required > <!--pattern="([0-9])\w+"  nece da radi kad postavim listener na formu na nacin na koji sam postavio-->
         <input type="text" placeholder="Location" id="location" required>
         <input type="url" name="profilePicture" id="profilePicture" placeholder="Profile image url">
-        <input type="number" name="pricePerHour" id="pricePerHour" placeholder="Price per hour">
+        <input type="number" name="pricePerHour" id="pricePerHour" placeholder="Price per hour ($)">
         <select name="Technology" id="technology">
             <option value="JavaScript">JavaScript</option>
             <option value="Java">Java</option>
@@ -34,7 +34,7 @@
             <option value="PHP">PHP</option>
         </select>
         <input type="text" name="Description" id="description" placeholder="Description">
-        <input type="text" name="YearsOfExpirience" id="yearsOfExpirience" placeholder="Years of expirience" required>
+        <input type="number" name="YearsOfExpirience" id="yearsOfExpirience" placeholder="Years of expirience" required>
         <select name="NativeLanguage" id="nativeLanguage" required>
             <option value="Serbian">Serbian</option>
             <option value="Bulgarian">Bulgarian</option>
@@ -43,7 +43,7 @@
         </select>
         <input type="url" name="Linkedin" id="linkedin" placeholder="Linkedin profile link">
 
-        <input type="submit" value="Add developer" id="submitAddDeveloper">
+        <input type="submit" value="Add developer1" id="submitAddDeveloper">
         <input type="submit" value="Update developer" id="submitUpdateDeveloper" style="display: none;">
     </form>
     <div class="searchMain">

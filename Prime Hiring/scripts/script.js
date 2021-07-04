@@ -15,9 +15,13 @@ addDeveloper.addEventListener("click", (e) => {
 });
 
 //add Developer to firebase
-submitAddDeveloper.addEventListener("click", (e) => {
-  //DOM - add developer for firebase
+submitAddDeveloper.addEventListener('click',(e)=>{ 
+  e.preventDefault();
+  
+  // e.preventDefault();
 
+
+  //DOM - add developer for firebase
   let fullName = document.querySelector("#fullName").value;
   let emailAddress = document.querySelector("#emailAddress").value;
   let phoneNumber = document.querySelector("#phoneNumber").value;
@@ -30,15 +34,17 @@ submitAddDeveloper.addEventListener("click", (e) => {
   let nativeLanguage = document.querySelector("#nativeLanguage").value;
   let linkedin = document.querySelector("#linkedin").value;
 
+  let patternForMobile = /([0-9])\w+/;
+
+  let patternForEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 
-
-  e.preventDefault();
 
   if (
+    ( 
     fullName.length > 0 &&
     emailAddress.length > 0 &&
-    phoneNumber.length > 0 &&
+    phoneNumber.length > 9 &&
     location.length > 0 &&
     profilePicture.length > 0 &&
     pricePerHour.length > 0 &&
@@ -46,7 +52,9 @@ submitAddDeveloper.addEventListener("click", (e) => {
     description.length > 0 &&
     yearsOfExpirience.length > 0 &&
     nativeLanguage.length>0 &&
-    linkedin.length>0
+    linkedin.length>0)
+    &&
+  (phoneNumber.match(patternForMobile) && emailAddress.match(patternForEmail))
   ) {
     db.collection("developers")
       .add({
@@ -70,11 +78,12 @@ submitAddDeveloper.addEventListener("click", (e) => {
         // priceShow.style.display = 'none';
       });
   } else {
-    alert("Fill all fields");
+    alert("Some field is empty or invalid!");
   }
-});
+  return false;})
 
-//show cars
+
+//show developers
 
 let showList = document.querySelector(".showList");
 let btnShowDeveloper = document.querySelector("#btnShowDeveloper");
@@ -86,13 +95,16 @@ showList.addEventListener("click", (e) => {
 
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
+    if (confirm("Delete developer?")) {
 
-    db.collection("developers")
-      .doc(id)
-      .delete()
-      .then(() => {
-        console.log("Developer is deleted");
-      });
+      db.collection("developers")
+        .doc(id)
+        .delete()
+        .then(() => {
+          console.log("Developer is deleted");
+        });
+
+    }
   }
 });
 
@@ -153,9 +165,10 @@ btnShowDeveloper.addEventListener("click", (e) => {
         preuzmi(doc, change.doc.id);
       } 
       else if (change.type === "removed") {
-        if (confirm("Delete developer?")) {
+        
+          
           obrisati(change.doc.id);
-        }
+      
       }
     });
   });
