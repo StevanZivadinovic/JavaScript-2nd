@@ -20,8 +20,8 @@
         <div class="x">X</div>
   
         <input type="text" placeholder="Full name" id="fullName" required>
-        <input type="text" placeholder="Email address"  id="emailAddress" required> 
-        <input type="tel" maxlength="12" min="9" placeholder="Phone number (min 9 numbers)" id="phoneNumber" oninvalid='alert("neisparvno")'  required > <!--pattern="([0-9])\w+"  nece da radi kad postavim listener na formu na nacin na koji sam postavio-->
+        <input type="email" placeholder="Email address"  id="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+        <input type="tel" maxlength="12" min="9" pattern="([0-9])\w+" placeholder="Phone number (min 9 numbers)" id="phoneNumber" oninvalid='alert("neisparvno")'  required > <!--pattern="([0-9])\w+"  nece da radi kad postavim listener na formu na nacin na koji sam postavio-->
         <input type="text" placeholder="Location" id="location" required>
         <input type="url" name="profilePicture" id="profilePicture" placeholder="Profile image url">
         <input type="number" name="pricePerHour" id="pricePerHour" placeholder="Price per hour ($)">

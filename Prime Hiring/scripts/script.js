@@ -15,7 +15,7 @@ addDeveloper.addEventListener("click", (e) => {
 });
 
 //add Developer to firebase
-submitAddDeveloper.addEventListener('click',(e)=>{ 
+formAddDeveloper.addEventListener('submit',(e)=>{ 
   e.preventDefault();
   
   // e.preventDefault();
@@ -36,7 +36,7 @@ submitAddDeveloper.addEventListener('click',(e)=>{
 
   let patternForMobile = /([0-9])\w+/;
 
-  let patternForEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  let patternForEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
 
 
@@ -53,8 +53,8 @@ submitAddDeveloper.addEventListener('click',(e)=>{
     yearsOfExpirience.length > 0 &&
     nativeLanguage.length>0 &&
     linkedin.length>0)
-    &&
-  (phoneNumber.match(patternForMobile) && emailAddress.match(patternForEmail))
+  //   &&
+  // (phoneNumber.match(patternForMobile) && emailAddress.match(patternForEmail))
   ) {
     db.collection("developers")
       .add({
@@ -239,7 +239,7 @@ let search = document.querySelector(".search");
 let btnSearch1 = document.querySelector(".search1");
 search.style.display = "none";
 btnSearch1.style.display = "none";
-//Browse cars
+//Browse developers
 btnShowDeveloper.addEventListener("click", (e) => {
   search.style.display = "inline-block";
   btnSearch1.style.display = "inline-block";
