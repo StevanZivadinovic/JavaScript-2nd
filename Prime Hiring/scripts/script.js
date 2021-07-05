@@ -14,15 +14,14 @@ addDeveloper.addEventListener("click", (e) => {
   formAddDeveloper.style.display = "flex";
   addDeveloper.style.display = "none";
   submitUpdateDeveloper.style.display = "none";
-  submitAddDeveloper.style.display='block';
+  submitAddDeveloper.style.display = "block";
 });
 
 //add Developer to firebase
-formAddDeveloper.addEventListener('submit',(e)=>{ 
+formAddDeveloper.addEventListener("submit", (e) => {
   e.preventDefault();
-  
-  // e.preventDefault();
 
+  // e.preventDefault();
 
   //DOM - add developer for firebase
   let fullName = document.querySelector("#fullName").value;
@@ -41,10 +40,7 @@ formAddDeveloper.addEventListener('submit',(e)=>{
 
   let patternForEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
-
-
   if (
-    ( 
     fullName.length > 0 &&
     emailAddress.length > 0 &&
     phoneNumber.length > 9 &&
@@ -54,10 +50,10 @@ formAddDeveloper.addEventListener('submit',(e)=>{
     technology.length > 0 &&
     description.length > 0 &&
     yearsOfExpirience.length > 0 &&
-    nativeLanguage.length>0 &&
-    linkedin.length>0)
-  //   &&
-  // (phoneNumber.match(patternForMobile) && emailAddress.match(patternForEmail))
+    nativeLanguage.length > 0 &&
+    linkedin.length > 0
+    //   &&
+    // (phoneNumber.match(patternForMobile) && emailAddress.match(patternForEmail))
   ) {
     db.collection("developers")
       .add({
@@ -71,8 +67,13 @@ formAddDeveloper.addEventListener('submit',(e)=>{
         description: description,
         yearsOfExpirience: yearsOfExpirience,
         nativeLanguage: nativeLanguage,
-        linkedin:linkedin,
-        zauzetost:[{start:new Date('03-01-1994').getTime(), end:new Date('04-01-1994').getTime()}]
+        linkedin: linkedin,
+        zauzetost: [
+          {
+            start: new Date("03-01-1994").getTime(),
+            end: new Date("04-01-1994").getTime(),
+          },
+        ],
       })
       .then((data) => {
         console.log("Developer is added");
@@ -83,8 +84,8 @@ formAddDeveloper.addEventListener('submit',(e)=>{
   } else {
     alert("Some field is empty or invalid!");
   }
-  return false;})
-
+  return false;
+});
 
 //show developers
 
@@ -99,14 +100,12 @@ showList.addEventListener("click", (e) => {
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
     if (confirm("Delete developer?")) {
-
       db.collection("developers")
         .doc(id)
         .delete()
         .then(() => {
           console.log("Developer is deleted");
         });
-
     }
   }
 });
@@ -160,35 +159,30 @@ btnShowDeveloper.addEventListener("click", (e) => {
       let doc = change.doc.data();
 
       if (change.type === "added") {
-        // obrisati(change.doc.id);
+        obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "modified") {
         console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
-      } 
-      else if (change.type === "removed") {
-        
-          
-          obrisati(change.doc.id);
-      
+      } else if (change.type === "removed") {
+        obrisati(change.doc.id);
       }
     });
   });
 });
 //update developer
 
- let id1;
+let id1;
 showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
     formAddDeveloper.reset();
     console.log("haj");
     formAddDeveloper.style.display = "flex";
 
-    document.querySelector('.x').addEventListener('click',e=>{
+    document.querySelector(".x").addEventListener("click", (e) => {
       formAddDeveloper.reset();
-      
-    })
+    });
 
     id1 = e.target.parentElement.getAttribute("data-id");
     console.log(id1);
@@ -198,37 +192,32 @@ showList.addEventListener("click", (e) => {
       .doc(id1)
       .onSnapshot((snapshot) => {
         console.log(snapshot.data());
-        document.querySelector("#profilePicture").value = snapshot.data().profilePicture;
+        document.querySelector("#profilePicture").value =
+          snapshot.data().profilePicture;
         document.querySelector("#fullName").value = snapshot.data().fullName;
-        document.querySelector(
-          "#emailAddress"
-        ).value = snapshot.data().emailAddress;
-        document.querySelector("#phoneNumber").value = snapshot.data().phoneNumber;
-        document.querySelector(
-          "#location"
-        ).value = snapshot.data().location;
-        document.querySelector(
-          "#pricePerHour"
-        ).value = snapshot.data().pricePerHour;
-        document.querySelector(
-          "#technology"
-        ).value = snapshot.data().technology;
-        document.querySelector(
-          "#description"
-        ).value = snapshot.data().description;
-        document.querySelector("#yearsOfExpirience").value = snapshot.data().yearsOfExpirience;
-        document.querySelector("#nativeLanguage").value = snapshot.data().nativeLanguage;
+        document.querySelector("#emailAddress").value =
+          snapshot.data().emailAddress;
+        document.querySelector("#phoneNumber").value =
+          snapshot.data().phoneNumber;
+        document.querySelector("#location").value = snapshot.data().location;
+        document.querySelector("#pricePerHour").value =
+          snapshot.data().pricePerHour;
+        document.querySelector("#technology").value =
+          snapshot.data().technology;
+        document.querySelector("#description").value =
+          snapshot.data().description;
+        document.querySelector("#yearsOfExpirience").value =
+          snapshot.data().yearsOfExpirience;
+        document.querySelector("#nativeLanguage").value =
+          snapshot.data().nativeLanguage;
         document.querySelector("#linkedin").value = snapshot.data().linkedin;
       });
-
-      
   }
-  
 });
 
 submitUpdateDeveloper.addEventListener("click", (e) => {
   e.preventDefault();
-    console.log(id1);
+  console.log(id1);
   db.collection("developers")
     .doc(id1)
     .update({
@@ -242,20 +231,16 @@ submitUpdateDeveloper.addEventListener("click", (e) => {
       description: document.querySelector("#description").value,
       yearsOfExpirience: document.querySelector("#yearsOfExpirience").value,
       nativeLanguage: document.querySelector("#nativeLanguage").value,
-      linkedin: document.querySelector("#linkedin").value
-    }).then(data=>{
+      linkedin: document.querySelector("#linkedin").value,
+    })
+    .then((data) => {
       formAddDeveloper.style.display = "none";
       formAddDeveloper.reset();
-      console.log('update is finished');
+      console.log("update is finished");
       submitUpdateDeveloper.style.display = "none";
-    // submitAddDeveloper.style.display = "none";
-      
-      
-    })
+      // submitAddDeveloper.style.display = "none";
+    });
 });
-
-
-
 
 //Browse developers
 
@@ -274,7 +259,7 @@ btnShowDeveloper.addEventListener("click", (e) => {
       .get()
       .then((data) => {
         data.docs.forEach((a) => {
-          let c = a.data().fullName.trim().toLowerCase().replace(' ','');
+          let c = a.data().fullName.trim().toLowerCase().replace(" ", "");
           // console.log(c, c.includes(result), result);
 
           if (c.includes(result) && result.length > 0) {
@@ -282,11 +267,11 @@ btnShowDeveloper.addEventListener("click", (e) => {
             console.log(c);
 
             db.collection("developers")
-            .where("fullName", "!=", `${a.data().fullName}`)
+              .where("fullName", "!=", `${a.data().fullName}`)
               .get()
               .then((data) => {
                 data.docs.forEach((a) => {
-                  console.log(a)
+                  console.log(a);
                   obrisati(a.id);
                 });
               });
@@ -315,18 +300,14 @@ btnShowDeveloper.addEventListener("click", (e) => {
 
 let x = document.querySelector(".x");
 x.addEventListener("click", (e) => {
-
-  formAddDeveloper.classList.add('removingForm');
-  setTimeout(()=>{
-    formAddDeveloper.style.display = 'none';
-    addDeveloper.style.display = 'inline-block';
-  },2000)
-
+  formAddDeveloper.classList.add("removingForm");
+  setTimeout(() => {
+    formAddDeveloper.style.display = "none";
+    addDeveloper.style.display = "inline-block";
+  }, 2000);
 });
 
-
-document.querySelector('.search1').addEventListener('click',e=>{
-
-  document.querySelector('.search1').style.transform='translateY(.0rem)';
-  document.querySelector('.search1').style.transition='.2s all ease'
-})
+document.querySelector(".search1").addEventListener("click", (e) => {
+  document.querySelector(".search1").style.transform = "translateY(.0rem)";
+  document.querySelector(".search1").style.transition = ".2s all ease";
+});
