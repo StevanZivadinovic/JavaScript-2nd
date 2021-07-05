@@ -92,39 +92,47 @@ body {
       }
     }
   }
-  .listOfDevelopersPriperedToHire {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 12vh;
-    margin: 2rem auto 0 0;
-    ul {
-      width: 60%;
-      margin: 0 2rem 0 0;
 
-      li {
-        font-size: 2rem;
-        list-style-type: none;
+  .hiring {
+    background-color: brown;
+    display: none;
+    .xHiring{
+      float: right;
+    }
+    .listOfDevelopersPriperedToHire {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      height: 80%;
+      margin: 2rem auto 0 0;
+      ul {
+        width: 60%;
+        margin: 0 2rem 0 0;
+
+        li {
+          font-size: 2rem;
+          list-style-type: none;
+        }
+      }
+      button {
+        width: 30%;
       }
     }
-    button {
-      width: 30%;
+    .HireDeveloper {
+      display: none;
     }
-  }
-  .HireDeveloper {
-    display: none;
-  }
 
-  .hireDevelopers {
-    display: none;
-    margin: 0 auto;
-    width: 80%;
-    justify-content: center;
-  }
-  .feedback{
+    .hireDevelopers {
+      display: none;
+      margin: 0 auto;
+      width: 80%;
+      justify-content: center;
+    }
+    .feedback {
       width: 80%;
       margin: 0 auto;
       text-align: center;
       font-size: 1rem;
+    }
   }
 }

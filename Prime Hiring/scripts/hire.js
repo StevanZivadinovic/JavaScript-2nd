@@ -7,10 +7,13 @@ let b = [];
 let btnHireDevloper = document.querySelector(".HireDeveloper");
 let hireDevelopersForm = document.querySelector(".hireDevelopers");
 let hireNow = document.querySelector(".hireNow");
+let hiring = document.querySelector('.hiring');
 showList.addEventListener("click", (e) => {
-  e.preventDefault();
+ 
   if (e.target.classList.contains("btnHire")) {
-    console.log(e.target);
+    // console.log(e.target);
+    e.target.disabled=true;
+    hiring.style.display = "block";
     btnHireDevloper.style.display = "block";
     arrayOfHiredDevelopers.push(
       Array.from(e.target.parentElement.children)[1].textContent
@@ -23,6 +26,7 @@ showList.addEventListener("click", (e) => {
       JSON.stringify(arrayOfHiredDevelopers)
     );
   }
+  
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
@@ -79,7 +83,7 @@ hireNow.addEventListener("click", (e) => {
            
 
             if(d.includes(false)){
-                document.querySelector('.feedback').innerHTML+=`<p>'You cannot hire same user two times in same period of time!</p>`
+                document.querySelector('.feedback').innerHTML=`<p>'You cannot hire same user two times in same period of time!</p>`
 
              }else{
                 document.querySelector('.feedback').innerHTML+=`<p>You succesfully hire developer ${a} from ${start1} to ${end1}!</p>`
@@ -87,6 +91,7 @@ hireNow.addEventListener("click", (e) => {
              }
           } else {
             console.log("Mistake! You must pick future date!");
+            document.querySelector('.feedback').innerHTML="<p>Mistake! You must pick future date!</p>"
           }
         });
       });
