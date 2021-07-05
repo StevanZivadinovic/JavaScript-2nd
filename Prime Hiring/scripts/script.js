@@ -2,6 +2,7 @@
 let addDeveloper = document.querySelector("input#addDeveloper");
 let formAddDeveloper = document.querySelector("form.addDeveloper");
 let submitAddDeveloper = document.querySelector("#submitAddDeveloper");
+let submitUpdateDeveloper = document.querySelector("#submitUpdateDeveloper");
 // let priceShow = document.querySelector(".priceShow");
 
 formAddDeveloper.style.display = "none";
@@ -12,6 +13,8 @@ addDeveloper.addEventListener("click", (e) => {
 
   formAddDeveloper.style.display = "flex";
   addDeveloper.style.display = "none";
+  submitUpdateDeveloper.style.display = "none";
+  submitAddDeveloper.style.display='block';
 });
 
 //add Developer to firebase
@@ -174,19 +177,25 @@ btnShowDeveloper.addEventListener("click", (e) => {
   });
 });
 //update developer
-let submitUpdateDeveloper = document.querySelector("#submitUpdateDeveloper");
 
+ let id1;
 showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
+    formAddDeveloper.reset();
     console.log("haj");
     formAddDeveloper.style.display = "flex";
 
-    let id = e.target.parentElement.getAttribute("data-id");
-    console.log(id);
+    document.querySelector('.x').addEventListener('click',e=>{
+      formAddDeveloper.reset();
+      
+    })
+
+    id1 = e.target.parentElement.getAttribute("data-id");
+    console.log(id1);
     submitUpdateDeveloper.style.display = "block";
     submitAddDeveloper.style.display = "none";
     db.collection("developers")
-      .doc(id)
+      .doc(id1)
       .onSnapshot((snapshot) => {
         console.log(snapshot.data());
         document.querySelector("#profilePicture").value = snapshot.data().profilePicture;
@@ -212,34 +221,48 @@ showList.addEventListener("click", (e) => {
         document.querySelector("#linkedin").value = snapshot.data().linkedin;
       });
 
-    submitUpdateDeveloper.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      db.collection("developers")
-        .doc(id)
-        .update({
-          profilePicture: document.querySelector("#profilePicture").value,
-          fullName: document.querySelector("#fullName").value,
-          emailAddress: document.querySelector("#emailAddress").value,
-          phoneNumber: document.querySelector("#phoneNumber").value,
-          location: document.querySelector("#location").value,
-          pricePerHour: document.querySelector("#pricePerHour").value,
-          technology: document.querySelector("#technology").value,
-          description: document.querySelector("#description").value,
-          yearsOfExpirience: document.querySelector("#yearsOfExpirience").value,
-          nativeLanguage: document.querySelector("#nativeLanguage").value,
-          linkedin: document.querySelector("#linkedin").value
-        });
-      formAddDeveloper.style.display = "none";
-    });
+      
   }
+  
 });
+
+submitUpdateDeveloper.addEventListener("click", (e) => {
+  e.preventDefault();
+    console.log(id1);
+  db.collection("developers")
+    .doc(id1)
+    .update({
+      profilePicture: document.querySelector("#profilePicture").value,
+      fullName: document.querySelector("#fullName").value,
+      emailAddress: document.querySelector("#emailAddress").value,
+      phoneNumber: document.querySelector("#phoneNumber").value,
+      location: document.querySelector("#location").value,
+      pricePerHour: document.querySelector("#pricePerHour").value,
+      technology: document.querySelector("#technology").value,
+      description: document.querySelector("#description").value,
+      yearsOfExpirience: document.querySelector("#yearsOfExpirience").value,
+      nativeLanguage: document.querySelector("#nativeLanguage").value,
+      linkedin: document.querySelector("#linkedin").value
+    }).then(data=>{
+      formAddDeveloper.style.display = "none";
+      formAddDeveloper.reset();
+      console.log('update is finished');
+      submitUpdateDeveloper.style.display = "none";
+    // submitAddDeveloper.style.display = "none";
+      
+      
+    })
+});
+
+
+
+
+//Browse developers
 
 let search = document.querySelector(".search");
 let btnSearch1 = document.querySelector(".search1");
 search.style.display = "none";
 btnSearch1.style.display = "none";
-//Browse developers
 btnShowDeveloper.addEventListener("click", (e) => {
   search.style.display = "inline-block";
   btnSearch1.style.display = "inline-block";
