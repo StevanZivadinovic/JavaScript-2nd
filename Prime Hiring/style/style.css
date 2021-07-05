@@ -57,7 +57,7 @@ body .addDeveloper .x {
 }
 body .listShowDeveloper {
   display: flex;
-  min-width: 100%;
+  width: 100%;
   justify-content: space-around;
   border-bottom: 0.2rem solid lightcoral;
 }
@@ -85,8 +85,12 @@ body .listShowDeveloper .btnHire:hover {
 body .hiring {
   background-color: brown;
   display: none;
-  justify-content: space-between;
   position: relative;
+  flex-direction: column;
+}
+body .hiring .hiringProcess {
+  display: flex;
+  justify-content: space-between;
 }
 body .hiring .xHiring {
   position: absolute;

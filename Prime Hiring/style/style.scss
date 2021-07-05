@@ -63,7 +63,7 @@ body {
   }
   .listShowDeveloper {
     display: flex;
-    min-width: 100%;
+    width: 100%;
     justify-content: space-around;
     border-bottom: 0.2rem solid lightcoral;
 
@@ -96,8 +96,14 @@ body {
   .hiring {
     background-color: brown;
     display: none;
-    justify-content: space-between;
     position: relative;
+    flex-direction: column;
+    
+    .hiringProcess{
+      display: flex;
+      justify-content: space-between;
+
+    }
     .xHiring{
     position: absolute;
     top: 0;
