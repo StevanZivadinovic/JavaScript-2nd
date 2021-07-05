@@ -13,7 +13,7 @@ showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("btnHire")) {
     // console.log(e.target);
     e.target.disabled=true;
-    hiring.style.display = "block";
+    hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
     arrayOfHiredDevelopers.push(
       Array.from(e.target.parentElement.children)[1].textContent

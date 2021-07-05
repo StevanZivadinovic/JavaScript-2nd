@@ -85,9 +85,13 @@ body .listShowDeveloper .btnHire:hover {
 body .hiring {
   background-color: brown;
   display: none;
+  justify-content: space-between;
+  position: relative;
 }
 body .hiring .xHiring {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 body .hiring .listOfDevelopersPriperedToHire {
   display: flex;
@@ -97,15 +101,20 @@ body .hiring .listOfDevelopersPriperedToHire {
   margin: 2rem auto 0 0;
 }
 body .hiring .listOfDevelopersPriperedToHire ul {
+  align-self: center;
+  justify-content: center;
   width: 60%;
-  margin: 0 2rem 0 0;
+  margin: 0 0 0 0;
 }
 body .hiring .listOfDevelopersPriperedToHire ul li {
   font-size: 2rem;
   list-style-type: none;
+  text-align: center;
 }
 body .hiring .listOfDevelopersPriperedToHire button {
   width: 30%;
+  align-self: center;
+  justify-content: center;
 }
 body .hiring .HireDeveloper {
   display: none;
@@ -115,10 +124,12 @@ body .hiring .hireDevelopers {
   margin: 0 auto;
   width: 80%;
   justify-content: center;
+  align-self: center;
 }
 body .hiring .feedback {
   width: 80%;
   margin: 0 auto;
   text-align: center;
   font-size: 1rem;
+  align-self: center;
 }/*# sourceMappingURL=style.css.map */
