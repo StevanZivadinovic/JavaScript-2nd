@@ -70,8 +70,8 @@ formAddDeveloper.addEventListener("submit", (e) => {
         linkedin: linkedin,
         zauzetost: [
           {
-            start: new Date("03-01-1994"),
-            end: new Date("04-01-1994"),
+            start: new Date(),
+            end: new Date(),
           },
         ],
       })

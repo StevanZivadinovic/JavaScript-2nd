@@ -51,18 +51,22 @@ hireNow.addEventListener("click", (e) => {
           // console.log(doc.data());
           if (today.getTime() < start1) {
             doc.data().zauzetost.forEach((b) => {
-              // console.log(
-              //   new Date(b.end).getTime(),
-              //   new Date(b.start).getTime(),
-              //   new Date(start1).getTime(),
-              //   new Date(end1).getTime()
-              // );
+              console.log(
+                b,
+                (b.start.seconds < start1.getTime() &&
+                  b.end.seconds < start1.getTime()),
+                (end1.getTime() < b.start.seconds &&
+                  end1.getTime() < b.end.seconds)
+                
+
+
+                );
 
               if (
-                (new Date(b.start).getTime() < new Date(start1).getTime() &&
-                  new Date(b.end).getTime() < new Date(start1).getTime()) ||
-                (new Date(end1).getTime() < new Date(b.start).getTime() &&
-                  new Date(end1).getTime() < new Date(b.end).getTime())
+                (b.start.seconds < start1.getTime() &&
+                  b.end.seconds < start1.getTime()) ||
+                (end1.getTime() < b.start.seconds &&
+                  end1.getTime() < b.end.seconds)
               ) {
                 d.push(true);
               } else {
