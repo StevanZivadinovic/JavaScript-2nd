@@ -29,6 +29,7 @@ showList.addEventListener("click", (e) => {
 
 btnHireDevloper.addEventListener("click", (e) => {
   hireDevelopersForm.style.display = "flex";
+  // localStorage.setItem("d", JSON.stringify([]));
 });
 let startDateWanted = document.querySelector("#startDate");
 let endDateWanted = document.querySelector("#endDate");
@@ -103,8 +104,11 @@ hireNow.addEventListener("click", (e) => {
         console.log(d);
         g = [...d];
         localStorage.setItem("d", JSON.stringify(d));
-      });
-  });
+        console.log('haj')
+      })
+     
+  })
+  //window.addEventListener('storage', function(e) {})
   console.log(d, localStorage.getItem('d'));
   //
   function myFunction(value) {
@@ -136,8 +140,13 @@ hireNow.addEventListener("click", (e) => {
               });
           });
         });
-    });
+    })
+    .then(()=>{
+  
+
+    })
   } else {
+    
     document.querySelector(
       ".feedback"
     ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
