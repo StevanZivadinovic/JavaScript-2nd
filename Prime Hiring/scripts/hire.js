@@ -38,8 +38,8 @@ let g = [];
 
 hireNow.addEventListener("click", (e) => {
   let d = new Array();
-  localStorage.setItem("d", JSON.stringify([]));
-  console.log(JSON.parse(localStorage.getItem("d")));
+  // localStorage.setItem("d", JSON.stringify([]));
+  // console.log(JSON.parse(localStorage.getItem("d")));
   e.preventDefault();
   hireNow.disabled = true;
   let today = new Date();
@@ -57,21 +57,32 @@ hireNow.addEventListener("click", (e) => {
           if (today.getTime() < start1) {
             doc.data().zauzetost.forEach((b) => {
               console.log(
-               typeof b.start.seconds,
-                b.end.seconds,
+                // typeof b.start.seconds,
+                // b.end.seconds,
                 // `(start:${b.start}, start1:${typeof start1.getTime()}),
                 // (end:${b.end}, end1${end1.getTime()})`
 
                 // b,
-                (b.start.seconds < start1.getTime() &&
-                  b.end.seconds < start1.getTime()),
-                (end1.getTime() < b.start.seconds &&
-                  end1.getTime() < b.end.seconds)
+                b.start.seconds, start1.getTime()/1000, b.start.seconds < start1.getTime()/1000,
+                b.end.seconds, start1.getTime()/1000, b.end.seconds < start1.getTime()/1000,
+                b.start.seconds , start1.getTime()/1000, b.start.seconds !== start1.getTime()/1000,
+                b.end.seconds, end1.getTime()/1000, b.end.seconds !== end1.getTime()/1000,  
+                end1.getTime()/1000, b.start.seconds, end1.getTime() < b.start.seconds,
+                end1.getTime()/1000, b.end.seconds, end1.getTime() < b.end.seconds,
+                b.start.seconds, start1.getTime()/1000, b.start.seconds !== start1.getTime()/1000,
+                b.end.seconds , end1.getTime()/1000,  b.end.seconds !== end1.getTime()/1000
               );
 
               if (
-                (b.start.seconds < start1.getTime() && b.end.seconds < start1.getTime() && b.start.seconds !== start1.getTime() &&  b.end.seconds !== end1.getTime()) ||
-                (end1.getTime() < b.start.seconds && end1.getTime() < b.end.seconds && b.start.seconds !== start1.getTime() &&  b.end.seconds !== end1.getTime())
+                (b.start.seconds < start1.getTime()/1000 &&
+                  b.end.seconds < start1.getTime()/1000 &&
+                  b.start.seconds !== start1.getTime()/1000 &&
+                  b.end.seconds !== end1.getTime())/1000 
+                  ||
+                (end1.getTime()/1000 < b.start.seconds &&
+                  end1.getTime()/1000 < b.end.seconds &&
+                  b.start.seconds !== start1.getTime()/1000 &&
+                  b.end.seconds !== end1.getTime())/1000
               ) {
                 d.push(true);
               } else {
@@ -94,13 +105,13 @@ hireNow.addEventListener("click", (e) => {
         localStorage.setItem("d", JSON.stringify(d));
       });
   });
-  console.log(d);
+  console.log(d, localStorage.getItem('d'));
   //
   function myFunction(value) {
     return value === true;
   }
-  console.log(g, g.every(myFunction));
-  if (g.every(myFunction)) {
+  console.log(g, JSON.parse(localStorage.getItem('d')).every(myFunction));
+  if (JSON.parse(localStorage.getItem('d')).every(myFunction)) {
     document.querySelector(
       ".feedback"
     ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
@@ -133,3 +144,5 @@ hireNow.addEventListener("click", (e) => {
   }
   //
 });
+
+
