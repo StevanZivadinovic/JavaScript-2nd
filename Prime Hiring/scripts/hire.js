@@ -108,12 +108,17 @@ hireNow.addEventListener("click", (e) => {
       })
      
   })
-  //window.addEventListener('storage', function(e) {})
+  
   console.log(d, localStorage.getItem('d'));
   //
   function myFunction(value) {
     return value === true;
   }
+  // window.addEventListener('storage', function(e) {
+
+  setTimeout(()=>{
+
+  
   console.log(g, JSON.parse(localStorage.getItem('d')).every(myFunction));
   if (JSON.parse(localStorage.getItem('d')).every(myFunction)) {
     document.querySelector(
@@ -141,10 +146,7 @@ hireNow.addEventListener("click", (e) => {
           });
         });
     })
-    .then(()=>{
-  
-
-    })
+   
   } else {
     
     document.querySelector(
@@ -152,6 +154,9 @@ hireNow.addEventListener("click", (e) => {
     ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
   }
   //
+},1000)
+
+// })
 });
 
 
