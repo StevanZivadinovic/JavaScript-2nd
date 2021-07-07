@@ -36,8 +36,8 @@ btnHireDevloper.addEventListener("click", (e) => {
     document.querySelector(
       ".mainHireDevelopers"
     ).innerHTML += `<div class='section'>
-                      <input type="date" name="startDate" id="startDate" />
-                      <input type="date" name="endDate" id="endDate" />
+                      <input type="date" name="startDate" class="startDate" />
+                      <input type="date" name="endDate" class="endDate" />
                       <button class="removePeriod">X</button>
                     </div>`;
   });
@@ -48,8 +48,8 @@ btnHireDevloper.addEventListener("click", (e) => {
   });
 });
 
-let startDateWanted = document.querySelector("#startDate");
-let endDateWanted = document.querySelector("#endDate");
+let startDateWanted = document.querySelector(".startDate");
+let endDateWanted = document.querySelector(".endDate");
 let start1;
 let end1;
 // let g = [];
@@ -62,8 +62,7 @@ hireNow.addEventListener("click", (e) => {
   let today = new Date();
   start1 = new Date(startDateWanted.value);
   end1 = new Date(endDateWanted.value);
-  // console.log(today.getTime(), start1.getTime());
-  // console.log(JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")));
+ 
   JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach((a) => {
     db.collection("developers")
       .where("fullName", "==", `${a}`)
@@ -80,30 +79,30 @@ hireNow.addEventListener("click", (e) => {
                 // (end:${b.end}, end1${end1.getTime()})`
 
                 // b,
-                b.start.seconds,
-                start1.getTime() / 1000,
-                b.start.seconds < start1.getTime() / 1000,
-                b.end.seconds,
-                start1.getTime() / 1000,
-                b.end.seconds < start1.getTime() / 1000,
-                b.start.seconds,
-                start1.getTime() / 1000,
-                b.start.seconds !== start1.getTime() / 1000,
-                b.end.seconds,
-                end1.getTime() / 1000,
-                b.end.seconds !== end1.getTime() / 1000,
-                end1.getTime() / 1000,
-                b.start.seconds,
-                end1.getTime() < b.start.seconds,
-                end1.getTime() / 1000,
-                b.end.seconds,
-                end1.getTime() < b.end.seconds,
-                b.start.seconds,
-                start1.getTime() / 1000,
-                b.start.seconds !== start1.getTime() / 1000,
-                b.end.seconds,
-                end1.getTime() / 1000,
-                b.end.seconds !== end1.getTime() / 1000
+              //   b.start.seconds,
+              //   start1.getTime() / 1000,
+              //   b.start.seconds < start1.getTime() / 1000,
+              //   b.end.seconds,
+              //   start1.getTime() / 1000,
+              //   b.end.seconds < start1.getTime() / 1000,
+              //   b.start.seconds,
+              //   start1.getTime() / 1000,
+              //   b.start.seconds !== start1.getTime() / 1000,
+              //   b.end.seconds,
+              //   end1.getTime() / 1000,
+              //   b.end.seconds !== end1.getTime() / 1000,
+              //   end1.getTime() / 1000,
+              //   b.start.seconds,
+              //   end1.getTime() < b.start.seconds,
+              //   end1.getTime() / 1000,
+              //   b.end.seconds,
+              //   end1.getTime() < b.end.seconds,
+              //   b.start.seconds,
+              //   start1.getTime() / 1000,
+              //   b.start.seconds !== start1.getTime() / 1000,
+              //   b.end.seconds,
+              //   end1.getTime() / 1000,
+              //   b.end.seconds !== end1.getTime() / 1000
               );
 
               if (
