@@ -98,6 +98,7 @@ body {
     display: none;
     position: relative;
     flex-direction: column;
+    padding: 3rem 0;
     
     .hiringProcess{
       display: flex;
@@ -141,9 +142,27 @@ body {
     .hireDevelopers {
       display: none;
       margin: 0 auto;
-      width: 80%;
+      width: 90%;
       justify-content: center;
       align-self: center;
+      flex-direction: column;
+
+      button {
+        width: 50%;
+        align-self: center;
+        justify-content: center;
+      }
+      .mainHireDevelopers{
+        
+        .section{
+
+          align-self: center;
+
+          .removePeriod{
+            width: 10%;
+          }
+        }
+      }
     }
     .feedback {
       width: 80%;

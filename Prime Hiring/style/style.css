@@ -87,6 +87,7 @@ body .hiring {
   display: none;
   position: relative;
   flex-direction: column;
+  padding: 3rem 0;
 }
 body .hiring .hiringProcess {
   display: flex;
@@ -126,9 +127,21 @@ body .hiring .HireDeveloper {
 body .hiring .hireDevelopers {
   display: none;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   align-self: center;
+  flex-direction: column;
+}
+body .hiring .hireDevelopers button {
+  width: 50%;
+  align-self: center;
+  justify-content: center;
+}
+body .hiring .hireDevelopers .mainHireDevelopers .section {
+  align-self: center;
+}
+body .hiring .hireDevelopers .mainHireDevelopers .section .removePeriod {
+  width: 10%;
 }
 body .hiring .feedback {
   width: 80%;

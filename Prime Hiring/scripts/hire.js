@@ -29,18 +29,34 @@ showList.addEventListener("click", (e) => {
 
 btnHireDevloper.addEventListener("click", (e) => {
   hireDevelopersForm.style.display = "flex";
-  // localStorage.setItem("d", JSON.stringify([]));
+
+  document.querySelector(".addPeriod").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    document.querySelector(
+      ".mainHireDevelopers"
+    ).innerHTML += `<div class='section'>
+                      <input type="date" name="startDate" id="startDate" />
+                      <input type="date" name="endDate" id="endDate" />
+                      <button class="removePeriod">X</button>
+                    </div>`;
+  });
+  hireDevelopersForm.addEventListener("click", (e) => {
+    if (e.target.classList.contains("removePeriod")) {
+      e.target.parentElement.remove();
+    }
+  });
 });
+
 let startDateWanted = document.querySelector("#startDate");
 let endDateWanted = document.querySelector("#endDate");
 let start1;
 let end1;
-let g = [];
+// let g = [];
 
 hireNow.addEventListener("click", (e) => {
   let d = new Array();
-  // localStorage.setItem("d", JSON.stringify([]));
-  // console.log(JSON.parse(localStorage.getItem("d")));
+
   e.preventDefault();
   hireNow.disabled = true;
   let today = new Date();
@@ -64,26 +80,41 @@ hireNow.addEventListener("click", (e) => {
                 // (end:${b.end}, end1${end1.getTime()})`
 
                 // b,
-                b.start.seconds, start1.getTime()/1000, b.start.seconds < start1.getTime()/1000,
-                b.end.seconds, start1.getTime()/1000, b.end.seconds < start1.getTime()/1000,
-                b.start.seconds , start1.getTime()/1000, b.start.seconds !== start1.getTime()/1000,
-                b.end.seconds, end1.getTime()/1000, b.end.seconds !== end1.getTime()/1000,  
-                end1.getTime()/1000, b.start.seconds, end1.getTime() < b.start.seconds,
-                end1.getTime()/1000, b.end.seconds, end1.getTime() < b.end.seconds,
-                b.start.seconds, start1.getTime()/1000, b.start.seconds !== start1.getTime()/1000,
-                b.end.seconds , end1.getTime()/1000,  b.end.seconds !== end1.getTime()/1000
+                b.start.seconds,
+                start1.getTime() / 1000,
+                b.start.seconds < start1.getTime() / 1000,
+                b.end.seconds,
+                start1.getTime() / 1000,
+                b.end.seconds < start1.getTime() / 1000,
+                b.start.seconds,
+                start1.getTime() / 1000,
+                b.start.seconds !== start1.getTime() / 1000,
+                b.end.seconds,
+                end1.getTime() / 1000,
+                b.end.seconds !== end1.getTime() / 1000,
+                end1.getTime() / 1000,
+                b.start.seconds,
+                end1.getTime() < b.start.seconds,
+                end1.getTime() / 1000,
+                b.end.seconds,
+                end1.getTime() < b.end.seconds,
+                b.start.seconds,
+                start1.getTime() / 1000,
+                b.start.seconds !== start1.getTime() / 1000,
+                b.end.seconds,
+                end1.getTime() / 1000,
+                b.end.seconds !== end1.getTime() / 1000
               );
 
               if (
-                (b.start.seconds < start1.getTime()/1000 &&
-                  b.end.seconds < start1.getTime()/1000 &&
-                  b.start.seconds !== start1.getTime()/1000 &&
-                  b.end.seconds !== end1.getTime())/1000 
-                  ||
-                (end1.getTime()/1000 < b.start.seconds &&
-                  end1.getTime()/1000 < b.end.seconds &&
-                  b.start.seconds !== start1.getTime()/1000 &&
-                  b.end.seconds !== end1.getTime())/1000
+                (b.start.seconds < start1.getTime() / 1000 &&
+                  b.end.seconds < start1.getTime() / 1000 &&
+                  b.start.seconds !== start1.getTime() / 1000 &&
+                  b.end.seconds !== end1.getTime()) / 1000 ||
+                (end1.getTime() / 1000 < b.start.seconds &&
+                  end1.getTime() / 1000 < b.end.seconds &&
+                  b.start.seconds !== start1.getTime() / 1000 &&
+                  b.end.seconds !== end1.getTime()) / 1000
               ) {
                 d.push(true);
               } else {
@@ -102,61 +133,56 @@ hireNow.addEventListener("click", (e) => {
       })
       .then(() => {
         console.log(d);
-        g = [...d];
+        // g = [...d];
         localStorage.setItem("d", JSON.stringify(d));
-        console.log('haj')
-      })
-     
-  })
-  
-  console.log(d, localStorage.getItem('d'));
+        console.log("haj");
+      });
+  });
+
+  console.log(d, localStorage.getItem("d"));
   //
   function myFunction(value) {
     return value === true;
   }
   // window.addEventListener('storage', function(e) {
 
-  setTimeout(()=>{
+  setTimeout(() => {
+    console.log(JSON.parse(localStorage.getItem("d")).every(myFunction));
+    if (JSON.parse(localStorage.getItem("d")).every(myFunction)) {
+      document.querySelector(
+        ".feedback"
+      ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
+        "arrayOfHiredDevelopers"
+      )} from ${start1} to ${end1}!</p>`;
 
-  
-  console.log(g, JSON.parse(localStorage.getItem('d')).every(myFunction));
-  if (JSON.parse(localStorage.getItem('d')).every(myFunction)) {
-    document.querySelector(
-      ".feedback"
-    ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
-      "arrayOfHiredDevelopers"
-    )} from ${start1} to ${end1}!</p>`;
+      JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach(
+        (c) => {
+          db.collection("developers")
+            .where("fullName", "==", `${c}`)
+            .get()
+            .then((data) => {
+              data.docs.forEach((doc) => {
+                console.log(doc.data());
 
-    JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach((c) => {
-      db.collection("developers")
-        .where("fullName", "==", `${c}`)
-        .get()
-        .then((data) => {
-          data.docs.forEach((doc) => {
-            console.log(doc.data());
-
-            db.collection("developers")
-              .doc(doc.id)
-              .update({
-                zauzetost: firebase.firestore.FieldValue.arrayUnion({
-                  start: firebase.firestore.Timestamp.fromDate(start1),
-                  end: firebase.firestore.Timestamp.fromDate(end1),
-                }),
+                db.collection("developers")
+                  .doc(doc.id)
+                  .update({
+                    zauzetost: firebase.firestore.FieldValue.arrayUnion({
+                      start: firebase.firestore.Timestamp.fromDate(start1),
+                      end: firebase.firestore.Timestamp.fromDate(end1),
+                    }),
+                  });
               });
-          });
-        });
-    })
-   
-  } else {
-    
-    document.querySelector(
-      ".feedback"
-    ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
-  }
-  //
-},1000)
+            });
+        }
+      );
+    } else {
+      document.querySelector(
+        ".feedback"
+      ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
+    }
+    //
+  }, 1000);
 
-// })
+  // })
 });
-
-
