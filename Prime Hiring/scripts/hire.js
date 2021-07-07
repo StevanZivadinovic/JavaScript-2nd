@@ -227,5 +227,25 @@ hireNow.addEventListener("click", (e) => {
     //
   }, 1000);
 
+
+  setTimeout(()=>{
+    hireDevelopersForm.reset();
+    hireNow.disabled = false;
+    document.querySelector(".addPeriod").disabled = false;
+    startDateWanted.forEach(e=> {
+      e.disabled = false;
+    });
+    endDateWanted.forEach(e=> {
+      e.disabled = false;
+    });
+  
+    document.querySelectorAll('.removePeriod').forEach(a=>{
+      a.disabled=false;
+    })
+
+    document.querySelector(
+      ".feedback"
+    ).innerHTML = `<p></p>`;
+  },5000)
   // })
 });
