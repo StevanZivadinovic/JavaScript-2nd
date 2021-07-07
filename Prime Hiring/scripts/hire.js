@@ -48,21 +48,82 @@ btnHireDevloper.addEventListener("click", (e) => {
   });
 });
 
-let startDateWanted = document.querySelector(".startDate");
-let endDateWanted = document.querySelector(".endDate");
+// let startDateWanted = document.querySelectorAll(".startDate");
+// let endDateWanted = document.querySelectorAll(".endDate");
 let start1;
 let end1;
-// let g = [];
+
+// hireNow.addEventListener("click", (e) => {
+//   e.preventDefault()
+//   let startDateWanted = document.querySelectorAll(".startDate");
+//   let endDateWanted = document.querySelectorAll(".endDate");
+//   let startDateWanted1 = [];
+//   let endDateWanted1 = []
+//   let f = []
+
+//   startDateWanted.forEach((a,i)=>{
+
+//     startDateWanted1.push(a.value);
+//   })
+
+//   endDateWanted.forEach(a=>{
+//     endDateWanted1.push(a.value)
+//   })
+//   console.log(startDateWanted1, endDateWanted1);
+
+//   startDateWanted1.forEach((a,i)=>{
+//     f.push( {start1:a, end1:endDateWanted1[i]})
+//   })
+//   console.log(f)
+
+// })
 
 hireNow.addEventListener("click", (e) => {
-  let d = new Array();
-
   e.preventDefault();
+  let startDateWanted = document.querySelectorAll(".startDate");
+  let endDateWanted = document.querySelectorAll(".endDate");
+  let startDateWanted1 = [];
+  let endDateWanted1 = [];
+  let f = [];
   hireNow.disabled = true;
+  let d = new Array();
   let today = new Date();
-  start1 = new Date(startDateWanted.value);
-  end1 = new Date(endDateWanted.value);
- 
+
+  console.log(startDateWanted, endDateWanted);
+
+  startDateWanted.forEach((a, i) => {
+    startDateWanted1.push(a.value);
+  });
+
+  endDateWanted.forEach((a) => {
+    endDateWanted1.push(a.value);
+  });
+
+  startDateWanted1.forEach((a, i) => {
+    f.push({ start1: a, end1: endDateWanted1[i] });
+  });
+  console.log(f);
+  let s = [];
+  f.forEach((x) => {
+    // console.log(new Date(x.start1).getTime() / 1000);
+    if (today.getTime() < new Date(x.start1)) {
+      s.push(true);
+    } else {
+      s.push(false);
+    }
+  });
+  function Function(value) {
+    return value === true;
+  }
+  let c = () => {
+    if (s.every(Function)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  let z = [];
   JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach((a) => {
     db.collection("developers")
       .where("fullName", "==", `${a}`)
@@ -70,50 +131,46 @@ hireNow.addEventListener("click", (e) => {
       .then((data) => {
         data.docs.forEach((doc) => {
           // console.log(doc.data());
-          if (today.getTime() < start1) {
+          if (c()) {
             doc.data().zauzetost.forEach((b) => {
-              console.log(
-                // typeof b.start.seconds,
-                // b.end.seconds,
-                // `(start:${b.start}, start1:${typeof start1.getTime()}),
-                // (end:${b.end}, end1${end1.getTime()})`
+              f.forEach((x) => {
+                if (
+                  (b.start.seconds < new Date(x.start1).getTime() / 1000 &&
+                    b.end.seconds < new Date(x.start1).getTime() / 1000 &&
+                    b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
+                    b.end.seconds !== new Date(x.end1).getTime()) / 1000 ||
+                  (new Date(x.end1).getTime() / 1000 < b.start.seconds &&
+                    new Date(x.end1).getTime() / 1000 < b.end.seconds &&
+                    b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
+                    b.end.seconds !== new Date(x.end1).getTime() / 1000)
+                ) {
+                  console.log("true");
+                  z.push(true);
+            
+                } else {
+                  console.log("false");
+                  z.push(false);
+               
+                }
+              });
 
-                // b,
-              //   b.start.seconds,
-              //   start1.getTime() / 1000,
-              //   b.start.seconds < start1.getTime() / 1000,
-              //   b.end.seconds,
-              //   start1.getTime() / 1000,
-              //   b.end.seconds < start1.getTime() / 1000,
-              //   b.start.seconds,
-              //   start1.getTime() / 1000,
-              //   b.start.seconds !== start1.getTime() / 1000,
-              //   b.end.seconds,
-              //   end1.getTime() / 1000,
-              //   b.end.seconds !== end1.getTime() / 1000,
-              //   end1.getTime() / 1000,
-              //   b.start.seconds,
-              //   end1.getTime() < b.start.seconds,
-              //   end1.getTime() / 1000,
-              //   b.end.seconds,
-              //   end1.getTime() < b.end.seconds,
-              //   b.start.seconds,
-              //   start1.getTime() / 1000,
-              //   b.start.seconds !== start1.getTime() / 1000,
-              //   b.end.seconds,
-              //   end1.getTime() / 1000,
-              //   b.end.seconds !== end1.getTime() / 1000
-              );
-
+              console.log(z);
+              function fun(value) {
+                return value === true;
+              }
+              console.log(z.every(fun));
               if (
-                (b.start.seconds < start1.getTime() / 1000 &&
-                  b.end.seconds < start1.getTime() / 1000 &&
-                  b.start.seconds !== start1.getTime() / 1000 &&
-                  b.end.seconds !== end1.getTime()) / 1000 ||
-                (end1.getTime() / 1000 < b.start.seconds &&
-                  end1.getTime() / 1000 < b.end.seconds &&
-                  b.start.seconds !== start1.getTime() / 1000 &&
-                  b.end.seconds !== end1.getTime()) / 1000
+                z.every(fun)
+                // f.forEach((x) => {
+                //   (b.start.seconds < new Date(x.start1).getTime() / 1000 &&
+                //     b.end.seconds < new Date(x.start1).getTime() / 1000 &&
+                //     b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
+                //     b.end.seconds !== new Date(x.end1).getTime()) / 1000 ||
+                //     (new Date(x.end1).getTime() / 1000 < b.start.seconds &&
+                //     new Date(x.end1).getTime() / 1000 < b.end.seconds &&
+                //       b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
+                //       b.end.seconds !== new Date(x.end1).getTime() / 1000);
+                // })
               ) {
                 d.push(true);
               } else {
@@ -124,6 +181,7 @@ hireNow.addEventListener("click", (e) => {
               }
             });
           } else {
+            d.push(false);
             console.log("Mistake! You must pick future date!");
             document.querySelector(".feedback").innerHTML =
               "<p>Mistake! You must pick future date!</p>";
@@ -148,12 +206,13 @@ hireNow.addEventListener("click", (e) => {
   setTimeout(() => {
     console.log(JSON.parse(localStorage.getItem("d")).every(myFunction));
     if (JSON.parse(localStorage.getItem("d")).every(myFunction)) {
-      document.querySelector(
-        ".feedback"
-      ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
-        "arrayOfHiredDevelopers"
-      )} from ${start1} to ${end1}!</p>`;
-
+      f.forEach((x) => {
+        document.querySelector(
+          ".feedback"
+        ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
+          "arrayOfHiredDevelopers"
+        )} from ${x.start1} to ${x.end1}!</p>`;
+      });
       JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach(
         (c) => {
           db.collection("developers")
@@ -163,23 +222,38 @@ hireNow.addEventListener("click", (e) => {
               data.docs.forEach((doc) => {
                 console.log(doc.data());
 
+
+                f.forEach((x) => {
+                  let start1 = new Date(x.start1).getTime()
+                  let end1 = new Date(x.end1).getTime()
+                  console.log(new Date(x.start1),  new Date(x.end1));
+
                 db.collection("developers")
                   .doc(doc.id)
                   .update({
                     zauzetost: firebase.firestore.FieldValue.arrayUnion({
-                      start: firebase.firestore.Timestamp.fromDate(start1),
-                      end: firebase.firestore.Timestamp.fromDate(end1),
+                      start: firebase.firestore.Timestamp.fromDate(new Date(x.start1)),
+                      end: firebase.firestore.Timestamp.fromDate(new Date(x.end1)),
                     }),
-                  });
+                  })
+                })
+
               });
             });
         }
       );
     } else {
-      document.querySelector(
-        ".feedback"
-      ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
-    }
+
+      if(!c()){
+        document.querySelector(".feedback").innerHTML =
+              "<p>Mistake! You must pick future date!</p>";
+      }else{
+
+        document.querySelector(
+          ".feedback"
+        ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
+      }
+      }
     //
   }, 1000);
 
