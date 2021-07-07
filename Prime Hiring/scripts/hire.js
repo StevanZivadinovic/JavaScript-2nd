@@ -48,35 +48,10 @@ btnHireDevloper.addEventListener("click", (e) => {
   });
 });
 
-// let startDateWanted = document.querySelectorAll(".startDate");
-// let endDateWanted = document.querySelectorAll(".endDate");
 let start1;
 let end1;
 
-// hireNow.addEventListener("click", (e) => {
-//   e.preventDefault()
-//   let startDateWanted = document.querySelectorAll(".startDate");
-//   let endDateWanted = document.querySelectorAll(".endDate");
-//   let startDateWanted1 = [];
-//   let endDateWanted1 = []
-//   let f = []
 
-//   startDateWanted.forEach((a,i)=>{
-
-//     startDateWanted1.push(a.value);
-//   })
-
-//   endDateWanted.forEach(a=>{
-//     endDateWanted1.push(a.value)
-//   })
-//   console.log(startDateWanted1, endDateWanted1);
-
-//   startDateWanted1.forEach((a,i)=>{
-//     f.push( {start1:a, end1:endDateWanted1[i]})
-//   })
-//   console.log(f)
-
-// })
 
 hireNow.addEventListener("click", (e) => {
   e.preventDefault();
@@ -86,6 +61,17 @@ hireNow.addEventListener("click", (e) => {
   let endDateWanted1 = [];
   let f = [];
   hireNow.disabled = true;
+  document.querySelector(".addPeriod").disabled = true;
+  startDateWanted.forEach(e=> {
+    e.disabled = true;
+  });
+  endDateWanted.forEach(e=> {
+    e.disabled = true;
+  });
+
+  document.querySelectorAll('.removePeriod').forEach(a=>{
+    a.disabled=true;
+  })
   let d = new Array();
   let today = new Date();
 
@@ -146,11 +132,9 @@ hireNow.addEventListener("click", (e) => {
                 ) {
                   console.log("true");
                   z.push(true);
-            
                 } else {
                   console.log("false");
                   z.push(false);
-               
                 }
               });
 
@@ -159,19 +143,7 @@ hireNow.addEventListener("click", (e) => {
                 return value === true;
               }
               console.log(z.every(fun));
-              if (
-                z.every(fun)
-                // f.forEach((x) => {
-                //   (b.start.seconds < new Date(x.start1).getTime() / 1000 &&
-                //     b.end.seconds < new Date(x.start1).getTime() / 1000 &&
-                //     b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
-                //     b.end.seconds !== new Date(x.end1).getTime()) / 1000 ||
-                //     (new Date(x.end1).getTime() / 1000 < b.start.seconds &&
-                //     new Date(x.end1).getTime() / 1000 < b.end.seconds &&
-                //       b.start.seconds !== new Date(x.start1).getTime() / 1000 &&
-                //       b.end.seconds !== new Date(x.end1).getTime() / 1000);
-                // })
-              ) {
+              if (z.every(fun)) {
                 d.push(true);
               } else {
                 d.push(false);
@@ -222,38 +194,36 @@ hireNow.addEventListener("click", (e) => {
               data.docs.forEach((doc) => {
                 console.log(doc.data());
 
-
                 f.forEach((x) => {
-                  let start1 = new Date(x.start1).getTime()
-                  let end1 = new Date(x.end1).getTime()
-                  console.log(new Date(x.start1),  new Date(x.end1));
+                 
 
-                db.collection("developers")
-                  .doc(doc.id)
-                  .update({
-                    zauzetost: firebase.firestore.FieldValue.arrayUnion({
-                      start: firebase.firestore.Timestamp.fromDate(new Date(x.start1)),
-                      end: firebase.firestore.Timestamp.fromDate(new Date(x.end1)),
-                    }),
-                  })
-                })
-
+                  db.collection("developers")
+                    .doc(doc.id)
+                    .update({
+                      zauzetost: firebase.firestore.FieldValue.arrayUnion({
+                        start: firebase.firestore.Timestamp.fromDate(
+                          new Date(x.start1)
+                        ),
+                        end: firebase.firestore.Timestamp.fromDate(
+                          new Date(x.end1)
+                        ),
+                      }),
+                    });
+                });
               });
             });
         }
       );
     } else {
-
-      if(!c()){
+      if (!c()) {
         document.querySelector(".feedback").innerHTML =
-              "<p>Mistake! You must pick future date!</p>";
-      }else{
-
+          "<p>Mistake! You must pick future date!</p>";
+      } else {
         document.querySelector(
           ".feedback"
         ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
       }
-      }
+    }
     //
   }, 1000);
 
