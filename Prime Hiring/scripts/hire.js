@@ -12,6 +12,7 @@ showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("btnHire")) {
     // console.log(e.target);
     e.target.disabled = true;
+    document.querySelector('#btnShowDeveloper').disabled = true;
     hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
     arrayOfHiredDevelopers.push(
@@ -28,7 +29,7 @@ showList.addEventListener("click", (e) => {
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
-  document.querySelector('#btnShowDeveloper').disabled = true;
+  
 
   hireDevelopersForm.style.display = "flex";
 
