@@ -109,6 +109,9 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+    padding: .5rem;
+    background-color:rgba( burlywood, .7);
+    cursor: pointer;
     }
     .listOfDevelopersPriperedToHire {
       display: flex;

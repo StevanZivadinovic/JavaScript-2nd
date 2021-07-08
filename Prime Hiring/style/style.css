@@ -97,6 +97,9 @@ body .hiring .xHiring {
   position: absolute;
   top: 0;
   right: 0;
+  padding: 0.5rem;
+  background-color: rgba(222, 184, 135, 0.7);
+  cursor: pointer;
 }
 body .hiring .listOfDevelopersPriperedToHire {
   display: flex;
