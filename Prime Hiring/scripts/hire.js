@@ -30,6 +30,9 @@ showList.addEventListener("click", (e) => {
 btnHireDevloper.addEventListener("click", (e) => {
   hireDevelopersForm.style.display = "flex";
 
+  
+  
+
   document.querySelector(".addPeriod").addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -48,10 +51,24 @@ btnHireDevloper.addEventListener("click", (e) => {
   });
 });
 
-let start1;
-let end1;
+let hiringAll=document.querySelector('.hiring');
+// let hiringAll1 = document.querySelector('.hiring');
+document.querySelector('.xHiring').addEventListener('click',e=>{
 
+  hiringAll.remove();
+  hireDevelopersForm.reset();
+  document.querySelectorAll('.btnHire').forEach(a=>{
+    a.disabled = false;
 
+    a.addEventListener('click',e=>{
+      
+      document.body.append(hiringAll)
+    })
+  })
+})
+
+// let start1;
+// let end1;
 
 hireNow.addEventListener("click", (e) => {
   e.preventDefault();
@@ -62,16 +79,16 @@ hireNow.addEventListener("click", (e) => {
   let f = [];
   hireNow.disabled = true;
   document.querySelector(".addPeriod").disabled = true;
-  startDateWanted.forEach(e=> {
+  startDateWanted.forEach((e) => {
     e.disabled = true;
   });
-  endDateWanted.forEach(e=> {
+  endDateWanted.forEach((e) => {
     e.disabled = true;
   });
 
-  document.querySelectorAll('.removePeriod').forEach(a=>{
-    a.disabled=true;
-  })
+  document.querySelectorAll(".removePeriod").forEach((a) => {
+    a.disabled = true;
+  });
   let d = new Array();
   let today = new Date();
 
@@ -195,8 +212,6 @@ hireNow.addEventListener("click", (e) => {
                 console.log(doc.data());
 
                 f.forEach((x) => {
-                 
-
                   db.collection("developers")
                     .doc(doc.id)
                     .update({
@@ -227,25 +242,23 @@ hireNow.addEventListener("click", (e) => {
     //
   }, 1000);
 
-
-  setTimeout(()=>{
+  setTimeout(() => {
     hireDevelopersForm.reset();
     hireNow.disabled = false;
     document.querySelector(".addPeriod").disabled = false;
-    startDateWanted.forEach(e=> {
+    startDateWanted.forEach((e) => {
       e.disabled = false;
     });
-    endDateWanted.forEach(e=> {
+    endDateWanted.forEach((e) => {
       e.disabled = false;
     });
-  
-    document.querySelectorAll('.removePeriod').forEach(a=>{
-      a.disabled=false;
-    })
 
-    document.querySelector(
-      ".feedback"
-    ).innerHTML = `<p></p>`;
-  },5000)
+    document.querySelectorAll(".removePeriod").forEach((a) => {
+      a.disabled = false;
+    });
+
+    document.querySelector(".feedback").innerHTML = `<p></p>`;
+  }, 5000);
   // })
 });
+
