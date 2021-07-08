@@ -57,6 +57,12 @@ document.querySelector('.xHiring').addEventListener('click',e=>{
 
   hiringAll.remove();
   hireDevelopersForm.reset();
+
+  listOfDevelopersPriperedToHire.innerHTML = ``;
+    localStorage.setItem(
+      "arrayOfHiredDevelopers",
+      []
+    );
   document.querySelectorAll('.btnHire').forEach(a=>{
     a.disabled = false;
 
