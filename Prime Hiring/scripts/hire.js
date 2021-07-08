@@ -28,6 +28,8 @@ showList.addEventListener("click", (e) => {
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
+  document.querySelector('#btnShowDeveloper').disabled = true;
+
   hireDevelopersForm.style.display = "flex";
 
   
@@ -54,7 +56,7 @@ btnHireDevloper.addEventListener("click", (e) => {
 let hiringAll=document.querySelector('.hiring');
 // let hiringAll1 = document.querySelector('.hiring');
 document.querySelector('.xHiring').addEventListener('click',e=>{
-
+document.querySelector('#btnShowDeveloper').disabled = false;
   hiringAll.remove();
   hireDevelopersForm.reset();
 

@@ -152,6 +152,8 @@ let obrisati = (id) => {
 };
 
 btnShowDeveloper.addEventListener("click", (e) => {
+  // document.querySelector('#btnShowDeveloper').disabled = true;
+
   showList.innerHTML = "";
 
   db.collection("developers").onSnapshot((snapshot) => {
