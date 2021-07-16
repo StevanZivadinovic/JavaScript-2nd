@@ -117,6 +117,26 @@ showList.addEventListener("click", (e) => {
   }
 });
 
+let preuzmi1 = (data, id) => {
+  console.log("la la las");
+  
+  let zz=document.createElement('ul');
+  
+    data.zauzetost.forEach(a=>{
+    console.log(a.start.seconds);
+   zz.innerHTML+= `<li>${ (new Date(a.start.seconds*1000)).toLocaleDateString()} - ${ (new Date(a.end.seconds*1000)).toLocaleDateString()}</li>`;
+    })
+  console.log(data.fullName);
+
+  let html1 = `<tr data-id='${id}'>
+    <td>${data.fullName}</td>
+    <td>${zz.innerHTML}</td>
+  </tr>`;
+ 
+
+  document.querySelector(".table").innerHTML += html1;
+};
+
 let preuzmi = (data, id) => {
   console.log(id);
 
@@ -151,9 +171,11 @@ let preuzmi = (data, id) => {
     a.disabled = false;
 
     a.addEventListener("click", (e) => {
-      hiringAll.style.display='block'
+      document.querySelector(".hiringTable").style.display = "block";
+
+      hiringAll.style.display = "block";
       document.body.append(hiringAll);
-      console.log(hiringAll)
+      console.log(hiringAll);
     });
   });
 };
@@ -170,27 +192,29 @@ let obrisati = (id) => {
 
 btnShowDeveloper.addEventListener("click", (e) => {
   // document.querySelector('#btnShowDeveloper').disabled = true;
+  document.querySelector(".hiringTable").style.display = "block";
 
   showList.innerHTML = "";
 
   db.collection("developers").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
-
+      
       if (change.type === "added") {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
+        preuzmi1(doc, change.doc.id);
       } else if (change.type === "modified") {
         console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
+        preuzmi1(doc, change.doc.id);
+        
       } else if (change.type === "removed") {
         obrisati(change.doc.id);
       }
     });
   });
-
- 
 });
 //update developer
 
@@ -341,3 +365,38 @@ document.querySelector(".search1").addEventListener("click", (e) => {
   document.querySelector(".search1").style.transform = "translateY(.0rem)";
   document.querySelector(".search1").style.transition = ".2s all ease";
 });
+
+
+
+
+
+// //Table taken periods
+// document.querySelectorAll(".btnHire").forEach((a) => {
+//   // a.disabled = false;
+
+//   a.addEventListener("click", (e) => {
+//     document.querySelector(".hiringTable").style.display = "block";
+
+//     db.collection("developers").onSnapshot((snapshot) => {
+//       snapshot.docChanges().forEach((change) => {
+//         let doc = change.doc.data();
+
+//         if (change.type === "added") {
+//           console.log(change.doc.id,'added period')
+//           // obrisati1(change.doc.id);
+//           preuzmi1(doc, change.doc.id);
+//         } else if (change.type === "modified") {
+//           console.log(change.doc.id, `update`);
+//           // obrisati1(change.doc.id);
+//           preuzmi1(doc, change.doc.id);
+//         } else if (change.type === "removed") {
+//           // obrisati1(change.doc.id);
+//         }
+//       });
+//     });
+
+//     // hiringAll.style.display = "block";
+//     // document.body.append(hiringAll);
+//     // console.log(hiringAll);
+//   });
+// });

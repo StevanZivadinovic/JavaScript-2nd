@@ -152,4 +152,27 @@ body .hiring .feedback {
   text-align: center;
   font-size: 1rem;
   align-self: center;
+}
+
+.hiringTable {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+.hiringTable .table {
+  margin: 0 auto;
+  width: 80%;
+}
+.hiringTable .table td, .hiringTable .table th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+.hiringTable .table td li, .hiringTable .table th li {
+  list-style-type: none;
+}
+.hiringTable .table th {
+  text-align: center;
+}
+.hiringTable .table tr:nth-child(even) {
+  background-color: #dddddd;
 }/*# sourceMappingURL=style.css.map */

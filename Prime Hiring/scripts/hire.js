@@ -29,6 +29,8 @@ showList.addEventListener("click", (e) => {
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
+
+
   hireDevelopersForm.style.display = "flex";
 
   document.querySelector(".addPeriod").addEventListener("click", (e) => {
@@ -52,6 +54,8 @@ btnHireDevloper.addEventListener("click", (e) => {
 let hiringAll = document.querySelector(".hiring");
 // let hiringAll1 = document.querySelector('.hiring');
 document.querySelector(".xHiring").addEventListener("click", (e) => {
+  document.querySelector('.hiringTable').style.display= 'none';
+
   document.querySelector("#btnShowDeveloper").disabled = false;
   hiringAll.style.display='none';
   hireDevelopersForm.reset();
@@ -59,9 +63,11 @@ document.querySelector(".xHiring").addEventListener("click", (e) => {
   listOfDevelopersPriperedToHire.innerHTML = ``;
   localStorage.setItem("arrayOfHiredDevelopers", []);
   document.querySelectorAll(".btnHire").forEach((a) => {
+    
     a.disabled = false;
-
+    
     a.addEventListener("click", (e) => {
+      document.querySelector('.hiringTable').style.display= 'block';
       document.body.append(hiringAll);
     });
   });
