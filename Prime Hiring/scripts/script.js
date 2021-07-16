@@ -119,20 +119,25 @@ showList.addEventListener("click", (e) => {
 
 let preuzmi1 = (data, id) => {
   console.log("la la las");
-  
-  let zz=document.createElement('ul');
-  
-    data.zauzetost.forEach(a=>{
+
+  let zz = document.createElement("ul");
+
+  data.zauzetost.forEach((a, i) => {
     console.log(a.start.seconds);
-   zz.innerHTML+= `<li>${ (new Date(a.start.seconds*1000)).toLocaleDateString()} - ${ (new Date(a.end.seconds*1000)).toLocaleDateString()}</li>`;
-    })
+    if (i !== 0) {
+      zz.innerHTML += `<li>${new Date(
+        a.start.seconds * 1000
+      ).toLocaleDateString()} - ${new Date(
+        a.end.seconds * 1000
+      ).toLocaleDateString()}</li>`;
+    }
+  });
   console.log(data.fullName);
 
   let html1 = `<tr data-id='${id}'>
     <td>${data.fullName}</td>
     <td>${zz.innerHTML}</td>
   </tr>`;
- 
 
   document.querySelector(".table").innerHTML += html1;
 };
@@ -199,7 +204,7 @@ btnShowDeveloper.addEventListener("click", (e) => {
   db.collection("developers").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
-      
+
       if (change.type === "added") {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
@@ -209,7 +214,6 @@ btnShowDeveloper.addEventListener("click", (e) => {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
         preuzmi1(doc, change.doc.id);
-        
       } else if (change.type === "removed") {
         obrisati(change.doc.id);
       }
@@ -365,10 +369,6 @@ document.querySelector(".search1").addEventListener("click", (e) => {
   document.querySelector(".search1").style.transform = "translateY(.0rem)";
   document.querySelector(".search1").style.transition = ".2s all ease";
 });
-
-
-
-
 
 // //Table taken periods
 // document.querySelectorAll(".btnHire").forEach((a) => {
