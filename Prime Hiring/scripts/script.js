@@ -233,6 +233,8 @@ btnShowDeveloper.addEventListener("click", (e) => {
       }
     });
   });
+
+  
 });
 //update developer
 
@@ -384,31 +386,4 @@ document.querySelector(".search1").addEventListener("click", (e) => {
   document.querySelector(".search1").style.transition = ".2s all ease";
 });
 
-// //Table taken periods
-// document.querySelectorAll(".btnHire").forEach((a) => {
-//   // a.disabled = false;
 
-//   a.addEventListener("click", (e) => {
-//     document.querySelector(".hiringTable").style.display = "block";
-
-//     db.collection("developers").onSnapshot((snapshot) => {
-//       snapshot.docChanges().forEach((change) => {
-//         let doc = change.doc.data();
-
-//         if (change.type === "added") {
-//           console.log(change.doc.id,'added period')
-//           // obrisati1(change.doc.id);
-//           preuzmi1(doc, change.doc.id);
-//         } else if (change.type === "modified") {
-//           console.log(change.doc.id, `update`);
-//           // obrisati1(change.doc.id);
-//           preuzmi1(doc, change.doc.id);
-//         } else if (change.type === "removed") {
-//           // obrisati1(change.doc.id);
-//         }
-//       });
-//     });
-
-
-//   });
-// });

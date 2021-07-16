@@ -171,10 +171,14 @@ body .hiring .feedback {
 .hiringTable .table td li,
 .hiringTable .table th li {
   list-style-type: none;
+  font-size: 0.8rem;
 }
 .hiringTable .table th {
   text-align: center;
 }
-.hiringTable .table tr:nth-child(odd) {
-  background-color: #af4545;
+.hiringTable .table td:nth-child(1) {
+  font-size: 1rem;
+}
+.hiringTable .table tr {
+  background-color: rgba(175, 69, 69, 0.5);
 }/*# sourceMappingURL=style.css.map */
