@@ -53,7 +53,7 @@ let hiringAll = document.querySelector(".hiring");
 // let hiringAll1 = document.querySelector('.hiring');
 document.querySelector(".xHiring").addEventListener("click", (e) => {
   document.querySelector("#btnShowDeveloper").disabled = false;
-  hiringAll.remove();
+  hiringAll.style.display='none';
   hireDevelopersForm.reset();
 
   listOfDevelopersPriperedToHire.innerHTML = ``;

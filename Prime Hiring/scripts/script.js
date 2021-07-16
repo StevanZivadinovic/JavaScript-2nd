@@ -3,6 +3,8 @@ let addDeveloper = document.querySelector("input#addDeveloper");
 let formAddDeveloper = document.querySelector("form.addDeveloper");
 let submitAddDeveloper = document.querySelector("#submitAddDeveloper");
 let submitUpdateDeveloper = document.querySelector("#submitUpdateDeveloper");
+let showList = document.querySelector(".showList");
+let btnShowDeveloper = document.querySelector("#btnShowDeveloper");
 // let priceShow = document.querySelector(".priceShow");
 
 formAddDeveloper.style.display = "none";
@@ -87,13 +89,18 @@ formAddDeveloper.addEventListener("submit", (e) => {
   return false;
 });
 
-//show developers
+addDeveloper.addEventListener("click", (e) => {
+  document.querySelector("ul.showList").style.display = "none";
+});
 
-let showList = document.querySelector(".showList");
-let btnShowDeveloper = document.querySelector("#btnShowDeveloper");
+btnShowDeveloper.addEventListener("click", (e) => {
+  document.querySelector("ul.showList").style.display = "block";
+});
+//show developers
 
 showList.addEventListener("click", (e) => {
   e.preventDefault();
+
   if (e.target.classList.contains("dugmeDelete")) {
     console.log("haj");
 
@@ -139,6 +146,16 @@ let preuzmi = (data, id) => {
       </li>`;
 
   showList.innerHTML += html;
+  let hiringAll = document.querySelector(".hiring");
+  document.querySelectorAll(".btnHire").forEach((a) => {
+    a.disabled = false;
+
+    a.addEventListener("click", (e) => {
+      hiringAll.style.display='block'
+      document.body.append(hiringAll);
+      console.log(hiringAll)
+    });
+  });
 };
 
 let obrisati = (id) => {
@@ -153,7 +170,7 @@ let obrisati = (id) => {
 
 btnShowDeveloper.addEventListener("click", (e) => {
   // document.querySelector('#btnShowDeveloper').disabled = true;
- 
+
   showList.innerHTML = "";
 
   db.collection("developers").onSnapshot((snapshot) => {
@@ -172,6 +189,8 @@ btnShowDeveloper.addEventListener("click", (e) => {
       }
     });
   });
+
+ 
 });
 //update developer
 
@@ -292,6 +311,15 @@ btnShowDeveloper.addEventListener("click", (e) => {
                     obrisati(a.id);
                     preuzmi(a.data(), a.id);
                   });
+
+                  // document.querySelectorAll(".btnHire").forEach((a) => {
+                  //   let hiringAll = document.querySelector(".hiring");
+                  //   a.disabled = false;
+
+                  //   a.addEventListener("click", (e) => {
+                  //     document.body.append(hiringAll);
+                  //   });
+                  // });
                 });
             }
           }
