@@ -118,8 +118,6 @@ showList.addEventListener("click", (e) => {
 });
 
 let preuzmi1 = (data, id) => {
- 
-
   let zz = document.createElement("ul");
 
   data.zauzetost.forEach((a, i) => {
@@ -195,11 +193,22 @@ let obrisati = (id) => {
   });
 };
 
+let obrisati1 = (id) => {
+  let tr = document.querySelectorAll("tr");
+  tr.forEach((a) => {
+    let dataId = a.getAttribute("data-id");
+    if (dataId === id) {
+      a.remove();
+    }
+  });
+};
+
 btnShowDeveloper.addEventListener("click", (e) => {
   // document.querySelector('#btnShowDeveloper').disabled = true;
   document.querySelector(".hiringTable").style.display = "block";
 
   showList.innerHTML = "";
+  document.querySelector(".table").innerHTML = "";
 
   db.collection("developers").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
@@ -207,11 +216,16 @@ btnShowDeveloper.addEventListener("click", (e) => {
 
       if (change.type === "added") {
         obrisati(change.doc.id);
+        obrisati1(change.doc.id);
+
         preuzmi(doc, change.doc.id);
         preuzmi1(doc, change.doc.id);
+        console.log(change.doc.id, `added`);
       } else if (change.type === "modified") {
         console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
+        obrisati1(change.doc.id);
+
         preuzmi(doc, change.doc.id);
         preuzmi1(doc, change.doc.id);
       } else if (change.type === "removed") {
@@ -395,8 +409,6 @@ document.querySelector(".search1").addEventListener("click", (e) => {
 //       });
 //     });
 
-//     // hiringAll.style.display = "block";
-//     // document.body.append(hiringAll);
-//     // console.log(hiringAll);
+
 //   });
 // });
