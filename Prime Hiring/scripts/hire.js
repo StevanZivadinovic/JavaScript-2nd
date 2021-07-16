@@ -12,7 +12,7 @@ showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("btnHire")) {
     // console.log(e.target);
     e.target.disabled = true;
-    document.querySelector('#btnShowDeveloper').disabled = true;
+    document.querySelector("#btnShowDeveloper").disabled = true;
     hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
     arrayOfHiredDevelopers.push(
@@ -29,12 +29,7 @@ showList.addEventListener("click", (e) => {
 });
 
 btnHireDevloper.addEventListener("click", (e) => {
-  
-
   hireDevelopersForm.style.display = "flex";
-
-  
-  
 
   document.querySelector(".addPeriod").addEventListener("click", (e) => {
     e.preventDefault();
@@ -54,30 +49,39 @@ btnHireDevloper.addEventListener("click", (e) => {
   });
 });
 
-let hiringAll=document.querySelector('.hiring');
+let hiringAll = document.querySelector(".hiring");
 // let hiringAll1 = document.querySelector('.hiring');
-document.querySelector('.xHiring').addEventListener('click',e=>{
-document.querySelector('#btnShowDeveloper').disabled = false;
+document.querySelector(".xHiring").addEventListener("click", (e) => {
+  document.querySelector("#btnShowDeveloper").disabled = false;
   hiringAll.remove();
   hireDevelopersForm.reset();
 
   listOfDevelopersPriperedToHire.innerHTML = ``;
-    localStorage.setItem(
-      "arrayOfHiredDevelopers",
-      []
-    );
-  document.querySelectorAll('.btnHire').forEach(a=>{
+  localStorage.setItem("arrayOfHiredDevelopers", []);
+  document.querySelectorAll(".btnHire").forEach((a) => {
     a.disabled = false;
 
-    a.addEventListener('click',e=>{
-      
-      document.body.append(hiringAll)
-    })
-  })
-})
+    a.addEventListener("click", (e) => {
+      document.body.append(hiringAll);
+    });
+  });
+  arrayOfHiredDevelopers= [];
+});
 
 // let start1;
 // let end1;
+
+function h(){
+  localStorage.setItem("arrayOfHiredDevelopers", []);
+  document.querySelectorAll(".btnHire").forEach((a) => {
+    a.disabled = false;
+
+    a.addEventListener("click", (e) => {
+      document.body.append(hiringAll);
+    });
+  });
+  listOfDevelopersPriperedToHire.innerHTML = ``;
+}
 
 hireNow.addEventListener("click", (e) => {
   e.preventDefault();
@@ -175,8 +179,8 @@ hireNow.addEventListener("click", (e) => {
                 d.push(false);
                 console.log(
                   "You cannot hire same user two times in same period of time!"
-                );
-              }
+                  );
+                 }
             });
           } else {
             d.push(false);
@@ -210,7 +214,9 @@ hireNow.addEventListener("click", (e) => {
         ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
           "arrayOfHiredDevelopers"
         )} from ${x.start1} to ${x.end1}!</p>`;
+       
       });
+      console.log(localStorage.getItem("arrayOfHiredDevelopers"));
       JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach(
         (c) => {
           db.collection("developers")
@@ -242,10 +248,12 @@ hireNow.addEventListener("click", (e) => {
       if (!c()) {
         document.querySelector(".feedback").innerHTML =
           "<p>Mistake! You must pick future date!</p>";
+        
       } else {
         document.querySelector(
           ".feedback"
         ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
+      
       }
     }
     //
@@ -267,7 +275,9 @@ hireNow.addEventListener("click", (e) => {
     });
 
     document.querySelector(".feedback").innerHTML = `<p></p>`;
+
+    arrayOfHiredDevelopers= [];
+    h()
   }, 5000);
   // })
 });
-
