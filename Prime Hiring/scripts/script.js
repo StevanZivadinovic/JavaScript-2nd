@@ -118,12 +118,12 @@ showList.addEventListener("click", (e) => {
 });
 
 let preuzmi1 = (data, id) => {
-  console.log("la la las");
+ 
 
   let zz = document.createElement("ul");
 
   data.zauzetost.forEach((a, i) => {
-    console.log(a.start.seconds);
+    // console.log(a.start.seconds);
     if (i !== 0) {
       zz.innerHTML += `<li>${new Date(
         a.start.seconds * 1000
@@ -147,7 +147,7 @@ let preuzmi = (data, id) => {
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
-      <img src=${data.profilePicture} style="width:100px;">
+      <img src=${data.profilePicture} style="min-width:10%; height:10vh;">
       <div>${data.fullName}</div>
       <div>${data.emailAddress}</div>
       <div>${data.phoneNumber}</div>
