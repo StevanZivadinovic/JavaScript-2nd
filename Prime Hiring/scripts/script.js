@@ -183,6 +183,12 @@ let preuzmi = (data, id) => {
 
       hiringAll.style.display = "block";
       document.body.append(hiringAll);
+      var y = document.querySelector("body").scrollHeight;
+      window.scroll({
+        top: y,
+        left: 0,
+        behavior: "smooth",
+      });
       console.log(hiringAll);
     });
   });
@@ -208,6 +214,7 @@ let obrisati1 = (id) => {
   });
 };
 
+let y = document.querySelector('body').scrollHeight
 btnShowDeveloper.addEventListener("click", (e) => {
   // document.querySelector('#btnShowDeveloper').disabled = true;
   document.querySelector(".hiringTable").style.display = "block";
@@ -225,21 +232,21 @@ btnShowDeveloper.addEventListener("click", (e) => {
 
         preuzmi(doc, change.doc.id);
         preuzmi1(doc, change.doc.id);
+      
         console.log(change.doc.id, `added`);
       } else if (change.type === "modified") {
         console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
         obrisati1(change.doc.id);
-
         preuzmi(doc, change.doc.id);
         preuzmi1(doc, change.doc.id);
+
+      
       } else if (change.type === "removed") {
         obrisati(change.doc.id);
       }
     });
   });
-
-  
 });
 //update developer
 
@@ -287,6 +294,9 @@ showList.addEventListener("click", (e) => {
 
 submitUpdateDeveloper.addEventListener("click", (e) => {
   e.preventDefault();
+
+  
+  
   console.log(id1);
   db.collection("developers")
     .doc(id1)
@@ -309,6 +319,10 @@ submitUpdateDeveloper.addEventListener("click", (e) => {
       console.log("update is finished");
       submitUpdateDeveloper.style.display = "none";
       // submitAddDeveloper.style.display = "none";
+
+     
+
+     
     });
 });
 
@@ -390,5 +404,3 @@ document.querySelector(".search1").addEventListener("click", (e) => {
   document.querySelector(".search1").style.transform = "translateY(.0rem)";
   document.querySelector(".search1").style.transition = ".2s all ease";
 });
-
-

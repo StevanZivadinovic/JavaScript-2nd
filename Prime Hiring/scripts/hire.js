@@ -15,12 +15,13 @@ showList.addEventListener("click", (e) => {
     document.querySelector("#btnShowDeveloper").disabled = true;
     hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
+    // console.log((e.target.parentElement.children)[1].children[0].children[0].textContent)
     arrayOfHiredDevelopers.push(
-      Array.from(e.target.parentElement.children)[1].textContent
+      Array.from(e.target.parentElement.children)[1].children[0].children[0].textContent
     );
     console.log(arrayOfHiredDevelopers);
 
-    listOfDevelopersPriperedToHire.innerHTML += `<li>${e.target.parentElement.children[1].textContent}</li>`;
+    listOfDevelopersPriperedToHire.innerHTML += `<li>${e.target.parentElement.children[1].children[0].children[0].textContent}</li>`;
     localStorage.setItem(
       "arrayOfHiredDevelopers",
       JSON.stringify(arrayOfHiredDevelopers)
@@ -55,6 +56,12 @@ let hiringAll = document.querySelector(".hiring");
 // let hiringAll1 = document.querySelector('.hiring');
 document.querySelector(".xHiring").addEventListener("click", (e) => {
   document.querySelector('.hiringTable').style.display= 'none';
+
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
 
   document.querySelector("#btnShowDeveloper").disabled = false;
   hiringAll.style.display='none';
