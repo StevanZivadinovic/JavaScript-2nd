@@ -145,18 +145,23 @@ let preuzmi = (data, id) => {
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
-      <img src=${data.profilePicture} style="min-width:10%; height:10vh;">
+      <img src=${data.profilePicture} style="min-width:25%; height:25vh; padding-top:2vh">
+      <div class="mainData">
+      <div class = 'firstMain'>
       <div>${data.fullName}</div>
       <div>${data.emailAddress}</div>
       <div>${data.phoneNumber}</div>
       <div>${data.location}</div>
+      </div>
+      <div class = 'secondMain'>
       <div>${data.pricePerHour}</div>
       <div>${data.technology}</div>
       <div>${data.description}</div>
       <div>${data.yearsOfExpirience}</div>
       <div>${data.nativeLanguage}</div>
       <div>${data.linkedin}</div>
-      
+      </div>
+      </div>
 
      
       <button class="dugmeDelete">Delete</button>

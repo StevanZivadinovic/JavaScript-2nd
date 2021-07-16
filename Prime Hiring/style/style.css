@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: aquamarine;
+  background-color: #3d4945;
   font-size: 10px;
 }
 body nav {
@@ -60,6 +60,12 @@ body .listShowDeveloper {
   width: 100%;
   justify-content: space-around;
   border-bottom: 0.2rem solid lightcoral;
+  color: white;
+  font-size: 0.9rem;
+}
+body .listShowDeveloper li .mainData {
+  display: flex;
+  flex-direction: column;
 }
 body .listShowDeveloper div {
   align-self: center;
@@ -83,7 +89,7 @@ body .listShowDeveloper .btnHire:hover {
   transform: skewY(1deg) skewX(5deg) scale(1.1);
 }
 body .hiring {
-  background-color: brown;
+  background-color: #b33a3a;
   display: none;
   position: relative;
   flex-direction: column;
@@ -158,6 +164,12 @@ body .hiring .feedback {
   display: none;
   width: 100%;
   text-align: center;
+  margin: 5vh auto;
+}
+.hiringTable h2 {
+  color: #c75a5a;
+  text-transform: uppercase;
+  margin-bottom: 2vh;
 }
 .hiringTable .table {
   margin: 0 auto;
@@ -180,5 +192,5 @@ body .hiring .feedback {
   font-size: 1rem;
 }
 .hiringTable .table tr {
-  background-color: rgba(175, 69, 69, 0.5);
+  background-color: rgba(199, 90, 90, 0.6);
 }/*# sourceMappingURL=style.css.map */
