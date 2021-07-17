@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@mixin smallerScreen {
+  @media screen and (max-width:1024px) {
+      @content;
+  }
+}
 body {
   background-color: rgb(88, 100, 96);
   font-size: 10px;
@@ -63,32 +69,64 @@ body {
   }
   .listShowDeveloper {
     display: flex;
-
     width: 100%;
     justify-content: space-around;
-    border-bottom: 0.2rem solid lightcoral;
+    // border-bottom: 0.2rem solid lightcoral;
     color: white;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
+    background-color: rgba(lightcoral, .2);
+    margin-bottom: .3rem;
+    border-radius: 1rem;
+    
+    @include smallerScreen(){
+      font-size: .9rem;
+
+    }
+    
 
     li {
+      
       .mainData {
+        
         display: flex;
         flex-direction: column;
+        
+        .firstMain, .secondMain{
+     
+          // text-align: center;
+          background-color: rgba(88, 100, 96, .1);
+          height: 100%;
+          // width: 30%;
+          text-align: center;
+            align-self: center;
+          div{
+            text-align: center;
+            align-self: center;
+          }
+         
+        }
+
       }
     }
 
     div {
       align-self: center;
     }
+    .btns{
+      display: flex;
+      flex-direction: column;
+      width: 20%;
 
-    .dugmeDelete,
+       .dugmeDelete,
     .dugmeUpdate,
     .btnHire {
+      width: 80%;
       align-self: center;
       padding: 0.5rem 2rem;
       transition: 0.2s all ease;
       outline: none;
       border: none;
+      margin-bottom: .2rem;
       &:hover {
         background-image: linear-gradient(
           to right,
@@ -98,11 +136,14 @@ body {
         cursor: pointer;
         box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
         transform: translateY(-0.1rem);
-        transform: skewY(1deg) skewX(5deg) scale(1.1);
+        // transform: skewY(1deg) skewX(5deg) scale(1.1);
+        transform: scale(1.2);
       }
     }
   }
 
+    }
+   
   .hiring {
     background-color: rgb(179, 58, 58);
     display: none;

@@ -15,13 +15,13 @@ showList.addEventListener("click", (e) => {
     document.querySelector("#btnShowDeveloper").disabled = true;
     hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
-    // console.log((e.target.parentElement.children)[1].children[0].children[0].textContent)
+    console.log(e.target.parentElement.parentElement.children[1].children[0].children[0].textContent)
     arrayOfHiredDevelopers.push(
-      Array.from(e.target.parentElement.children)[1].children[0].children[0].textContent
-    );
+     e.target.parentElement.parentElement.children[1].children[0].children[0].textContent)
+    
     console.log(arrayOfHiredDevelopers);
 
-    listOfDevelopersPriperedToHire.innerHTML += `<li>${e.target.parentElement.children[1].children[0].children[0].textContent}</li>`;
+    listOfDevelopersPriperedToHire.innerHTML += `<li>${e.target.parentElement.parentElement.children[1].children[0].children[0].textContent}</li>`;
     localStorage.setItem(
       "arrayOfHiredDevelopers",
       JSON.stringify(arrayOfHiredDevelopers)

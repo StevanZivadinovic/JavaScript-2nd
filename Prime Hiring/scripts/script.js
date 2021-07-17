@@ -104,7 +104,7 @@ showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeDelete")) {
     console.log("haj");
 
-    let id = e.target.parentElement.getAttribute("data-id");
+    let id = e.target.parentElement.parentElement.getAttribute("data-id");
     console.log(id);
     if (confirm("Delete developer?")) {
       db.collection("developers")
@@ -145,29 +145,29 @@ let preuzmi = (data, id) => {
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
-      <img src=${data.profilePicture} style="min-width:25%; height:25vh; padding-top:2vh">
+      <img src=${data.profilePicture} style="min-width:25%; height:25vh; padding: 2vh 0 2vh 2%">
       <div class="mainData">
       <div class = 'firstMain'>
       <div>${data.fullName}</div>
-      <div>${data.emailAddress}</div>
-      <div>${data.phoneNumber}</div>
-      <div>${data.location}</div>
+      <div>Email address:${data.emailAddress}</div>
+      <div>Phone number: ${data.phoneNumber}</div>
+      <div>Work address: ${data.location}</div>
       </div>
       <div class = 'secondMain'>
-      <div>${data.pricePerHour}</div>
-      <div>${data.technology}</div>
-      <div>${data.description}</div>
-      <div>${data.yearsOfExpirience}</div>
-      <div>${data.nativeLanguage}</div>
-      <div>${data.linkedin}</div>
+      <div>Price per hour:${data.pricePerHour}$</div>
+      <div>Tech:${data.technology}</div>
+      <div>Description: ${data.description}</div>
+      <div>Expirience: ${data.yearsOfExpirience} years</div>
+      <div>Language: ${data.nativeLanguage}</div>
+      <div>Linkedin: ${data.linkedin}</div>
       </div>
       </div>
 
-     
+      <div class='btns'>
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       <button class="btnHire">Hire</button>
-
+      <div>
       
       
 
@@ -261,7 +261,7 @@ showList.addEventListener("click", (e) => {
       formAddDeveloper.reset();
     });
 
-    id1 = e.target.parentElement.getAttribute("data-id");
+    id1 = e.target.parentElement.parentElement.getAttribute("data-id");
     console.log(id1);
     submitUpdateDeveloper.style.display = "block";
     submitAddDeveloper.style.display = "none";
@@ -404,3 +404,6 @@ document.querySelector(".search1").addEventListener("click", (e) => {
   document.querySelector(".search1").style.transform = "translateY(.0rem)";
   document.querySelector(".search1").style.transition = ".2s all ease";
 });
+
+// console.log(window.innerWidth, window.innerHeight)
+// document.querySelector('body').innerHTML += `<div style='margin-left:100px'>${window.innerWidth}- ${window.innerHeight} </div>`

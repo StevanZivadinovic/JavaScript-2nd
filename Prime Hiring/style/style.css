@@ -59,34 +59,58 @@ body .listShowDeveloper {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  border-bottom: 0.2rem solid lightcoral;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
+  background-color: rgba(240, 128, 128, 0.2);
+  margin-bottom: 0.3rem;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 1024px) {
+  body .listShowDeveloper {
+    font-size: 0.9rem;
+  }
 }
 body .listShowDeveloper li .mainData {
   display: flex;
   flex-direction: column;
 }
+body .listShowDeveloper li .mainData .firstMain, body .listShowDeveloper li .mainData .secondMain {
+  background-color: rgba(88, 100, 96, 0.1);
+  height: 100%;
+  text-align: center;
+  align-self: center;
+}
+body .listShowDeveloper li .mainData .firstMain div, body .listShowDeveloper li .mainData .secondMain div {
+  text-align: center;
+  align-self: center;
+}
 body .listShowDeveloper div {
   align-self: center;
 }
-body .listShowDeveloper .dugmeDelete,
-body .listShowDeveloper .dugmeUpdate,
-body .listShowDeveloper .btnHire {
+body .listShowDeveloper .btns {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+body .listShowDeveloper .btns .dugmeDelete,
+body .listShowDeveloper .btns .dugmeUpdate,
+body .listShowDeveloper .btns .btnHire {
+  width: 80%;
   align-self: center;
   padding: 0.5rem 2rem;
   transition: 0.2s all ease;
   outline: none;
   border: none;
+  margin-bottom: 0.2rem;
 }
-body .listShowDeveloper .dugmeDelete:hover,
-body .listShowDeveloper .dugmeUpdate:hover,
-body .listShowDeveloper .btnHire:hover {
+body .listShowDeveloper .btns .dugmeDelete:hover,
+body .listShowDeveloper .btns .dugmeUpdate:hover,
+body .listShowDeveloper .btns .btnHire:hover {
   background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
   cursor: pointer;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.1rem);
-  transform: skewY(1deg) skewX(5deg) scale(1.1);
+  transform: scale(1.2);
 }
 body .hiring {
   background-color: #b33a3a;
