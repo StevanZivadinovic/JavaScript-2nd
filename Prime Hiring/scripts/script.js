@@ -142,21 +142,27 @@ let preuzmi1 = (data, id) => {
   document.querySelector(".table").innerHTML += html1;
 };
 
+let changeWidth = ()=>{
+  console.log('hjjjjjjjjjjjjj')
+ return window.innerWidth<= 320 ? 'style=text-align:center;':'';
+
+}
+console.log(window.innerWidth)
 let preuzmi = (data, id) => {
   console.log(id);
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
       <img src=${data.profilePicture} style="width:25%; height:25vh; padding: 2vh 2% 2vh 2%">
-      <div class="mainData">
-      <div class = 'firstMain'>
+      <div class="mainData" ${onchange=changeWidth()}>
+      <div class = 'firstMain' >
       <div>${data.fullName}</div>
       <div>Email address:${data.emailAddress}</div>
       <div>Phone number: ${data.phoneNumber}</div>
       <div>Work address: ${data.location}</div>
       </div>
       <div class = 'secondMain'>
-      <div>Price per hour:${data.pricePerHour}$</div>
+      <div >Price per hour:${data.pricePerHour}$</div>
       <div>Tech:${data.technology}</div>
       <div>Description: ${data.description}</div>
       <div>Expirience: ${data.yearsOfExpirience} years</div>

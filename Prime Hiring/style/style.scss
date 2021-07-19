@@ -13,6 +13,16 @@
   text-align: center;
 }
 
+@mixin smallerScreen {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
 
 * {
   margin: 0;
@@ -20,11 +30,6 @@
   box-sizing: border-box;
 }
 
-@mixin smallerScreen {
-  @media screen and (max-width: 1024px) {
-    @content;
-  }
-}
 body {
   background-color: rgb(88, 100, 96);
   font-size: 10px;
@@ -43,11 +48,14 @@ body {
     //
     animation-name: mainTitle;
     animation-duration: 3.5s;
-    animation-iteration-count:infinite;
+    animation-iteration-count: infinite;
     // animation-delay: 0.2s;
     // animation-timing-function: ease-out;
 
-   
+    @include mobile() {
+      font-size: 1rem;
+      letter-spacing: 1rem;
+    }
   }
 
   nav {
@@ -56,13 +64,31 @@ body {
     height: 8vh;
     padding: 2rem 0;
 
-    #addDeveloper,
-    #btnShowDeveloper {
-      padding: 0.5rem 2rem;
-      border-radius: 0.1rem;
-      cursor: pointer;
-      outline: none;
-      border: none;
+    .customerNav {
+      @include mobile() {
+        display: flex;
+        flex-direction: column;
+      }
+      #addDeveloper,
+      #btnShowDeveloper {
+        padding: 0.5rem 2rem;
+        border-radius: 0.1rem;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            lightcoral,
+            rgb(190, 46, 46)
+          );
+        }
+
+        @include mobile() {
+          margin-bottom: 0.1rem;
+        }
+      }
     }
   }
   .searchMain {
@@ -80,6 +106,8 @@ body {
       border: none;
       border-radius: 0.1rem;
       box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+      font-family: "Poppins", sans-serif;
+
       // transform: translateY(-0.0rem);
       &:hover {
         background-image: linear-gradient(
@@ -102,12 +130,21 @@ body {
     margin: -3rem auto 0 auto;
     outline: 1rem solid lightcoral;
     border-radius: 0.3rem;
+    input {
+      font-family: "Poppins", sans-serif;
+    }
+    #submitAddDeveloper,
+    #submitUpdateDeveloper,
+    .x {
+      font-family: "Poppins", sans-serif;
+    }
 
     .x {
       position: absolute;
       right: -0.6rem;
       top: -0.6rem;
       cursor: pointer;
+      font-weight: 600;
     }
   }
   .listShowDeveloper {
@@ -125,22 +162,53 @@ body {
       font-size: 0.9rem;
     }
 
+    @include mobile() {
+      font-size: 0.5rem;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto 0.3rem auto;
+    }
+
+    img {
+      @include mobile() {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 0.2rem !important;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+    }
+
     li {
       .mainData {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
 
         .firstMain,
         .secondMain {
-          // text-align: center;
           background-color: rgba(88, 100, 96, 0.1);
           height: 100%;
-          // width: 30%;
           text-align: center;
-          align-self: center;
+          align-self: center ;
+
+          // @include mobile() {
+          //   text-align: center;
+           
+
+          // }
+         
           div {
             text-align: center;
             align-self: center;
+            // @include mobile() {
+            //   text-align: center;
+            //   font-size: 5rem;
+            
+
+            // }
           }
         }
       }
@@ -164,6 +232,8 @@ body {
         outline: none;
         border: none;
         margin-bottom: 0.2rem;
+        font-family: "Poppins", sans-serif;
+
         &:hover {
           background-image: linear-gradient(
             to right,
@@ -198,6 +268,7 @@ body {
       padding: 0.5rem;
       background-color: rgba(burlywood, 0.7);
       cursor: pointer;
+      font-family: "Poppins", sans-serif;
     }
     .listOfDevelopersPriperedToHire {
       display: flex;
@@ -220,6 +291,8 @@ body {
       }
       button {
         width: 35%;
+        font-family: "Poppins", sans-serif;
+
         @extend %button-style;
       }
     }
@@ -237,6 +310,8 @@ body {
 
       button {
         width: 60%;
+        font-family: "Poppins", sans-serif;
+
         @extend %button-style;
 
         margin-bottom: 0.5rem;
@@ -316,5 +391,3 @@ body {
     color: red;
   }
 }
-
-

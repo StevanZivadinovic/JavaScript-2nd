@@ -38,19 +38,42 @@ body .mainTitle {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+@media screen and (max-width: 320px) {
+  body .mainTitle {
+    font-size: 1rem;
+    letter-spacing: 1rem;
+  }
+}
 body nav {
   display: flex;
   justify-content: center;
   height: 8vh;
   padding: 2rem 0;
 }
-body nav #addDeveloper,
-body nav #btnShowDeveloper {
+@media screen and (max-width: 320px) {
+  body nav .customerNav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+body nav .customerNav #addDeveloper,
+body nav .customerNav #btnShowDeveloper {
   padding: 0.5rem 2rem;
   border-radius: 0.1rem;
   cursor: pointer;
   outline: none;
   border: none;
+  font-family: "Poppins", sans-serif;
+}
+body nav .customerNav #addDeveloper:hover,
+body nav .customerNav #btnShowDeveloper:hover {
+  background-image: linear-gradient(to right, lightcoral, #be2e2e);
+}
+@media screen and (max-width: 320px) {
+  body nav .customerNav #addDeveloper,
+body nav .customerNav #btnShowDeveloper {
+    margin-bottom: 0.1rem;
+  }
 }
 body .searchMain {
   display: flex;
@@ -68,6 +91,7 @@ body .searchMain button {
   border: none;
   border-radius: 0.1rem;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
 }
 body .searchMain button:hover {
   background-image: linear-gradient(to right, lightcoral, #be2e2e);
@@ -82,11 +106,20 @@ body .addDeveloper {
   outline: 1rem solid lightcoral;
   border-radius: 0.3rem;
 }
+body .addDeveloper input {
+  font-family: "Poppins", sans-serif;
+}
+body .addDeveloper #submitAddDeveloper,
+body .addDeveloper #submitUpdateDeveloper,
+body .addDeveloper .x {
+  font-family: "Poppins", sans-serif;
+}
 body .addDeveloper .x {
   position: absolute;
   right: -0.6rem;
   top: -0.6rem;
   cursor: pointer;
+  font-weight: 600;
 }
 body .listShowDeveloper {
   display: flex;
@@ -103,9 +136,29 @@ body .listShowDeveloper {
     font-size: 0.9rem;
   }
 }
+@media screen and (max-width: 320px) {
+  body .listShowDeveloper {
+    font-size: 0.5rem;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto 0.3rem auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  body .listShowDeveloper img {
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 0.2rem !important;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+}
 body .listShowDeveloper li .mainData {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
 }
 body .listShowDeveloper li .mainData .firstMain,
 body .listShowDeveloper li .mainData .secondMain {
@@ -137,6 +190,7 @@ body .listShowDeveloper .btns .btnHire {
   outline: none;
   border: none;
   margin-bottom: 0.2rem;
+  font-family: "Poppins", sans-serif;
 }
 body .listShowDeveloper .btns .dugmeDelete:hover,
 body .listShowDeveloper .btns .dugmeUpdate:hover,
@@ -165,6 +219,7 @@ body .hiring .xHiring {
   padding: 0.5rem;
   background-color: rgba(222, 184, 135, 0.7);
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 body .hiring .listOfDevelopersPriperedToHire {
   display: flex;
@@ -186,6 +241,7 @@ body .hiring .listOfDevelopersPriperedToHire ul li {
 }
 body .hiring .listOfDevelopersPriperedToHire button {
   width: 35%;
+  font-family: "Poppins", sans-serif;
 }
 body .hiring .HireDeveloper {
   display: none;
@@ -200,6 +256,7 @@ body .hiring .hireDevelopers {
 }
 body .hiring .hireDevelopers button {
   width: 60%;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 0.5rem;
 }
 body .hiring .hireDevelopers .mainHireDevelopers .section {
