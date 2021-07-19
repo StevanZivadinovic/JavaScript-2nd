@@ -97,6 +97,7 @@ addDeveloper.addEventListener("click", (e) => {
 btnShowDeveloper.addEventListener("click", (e) => {
   document.querySelector("ul.showList").style.display = "block";
   document.querySelector('.mainTitle').style.display = 'none';
+  document.querySelector('.searchInputSpan').style.display = 'flex'
 });
 //show developers
 

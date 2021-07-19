@@ -97,25 +97,48 @@ body {
     height: 8vh;
     margin: 2rem auto;
 
+    @include mobile() {
+      font-size: 0.5rem;
+      flex-direction: column;
+      width: 90%;
+      margin: 5rem auto 2rem auto;
+    }
+
     span {
       //da bi radio pokretni border morao sam da input obuhvatim span-om, posto ::after ne moze da
       //se primeni nad input-om;
       width: 25%;
       position: relative;
       transition: 0.5s ease;
+      display: none;
+      @include mobile() {
+        font-size: 0.5rem;
+        flex-direction: column;
+        width: 100%;
+        margin: 0rem auto 0.5rem auto;
+
+
+      }
       &::after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0%;
         height: 0.1rem;
-        width: 0%;
+        width: 10%;
         visibility: visible;
         background-color: rgba(#c75a5a, .8);
-        transition: 0.2s ease all;
+        transition: 0.5s ease all;
+
+        // @include mobile() {
+        //  visibility: hidden;
+          
+  
+        // }
       }
       &:hover::after {
         width: 100%;
+        visibility: visible;
       }
 
       input {
@@ -130,6 +153,11 @@ body {
 
         &::placeholder {
           color: rgba(white, 0.8);
+
+          @include mobile() {
+            text-align: center;
+    
+          }
         }
       }
     }
@@ -163,7 +191,7 @@ body {
     position: relative;
     width: 80%;
     margin: -3rem auto 0 auto;
-    outline: 1rem solid lightcoral;
+    outline: 1rem solid rgba(#c75a5a, .8);
     border-radius: 0.3rem;
     input {
       font-family: "Poppins", sans-serif;

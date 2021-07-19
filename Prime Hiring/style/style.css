@@ -81,10 +81,27 @@ body .searchMain {
   height: 8vh;
   margin: 2rem auto;
 }
+@media screen and (max-width: 320px) {
+  body .searchMain {
+    font-size: 0.5rem;
+    flex-direction: column;
+    width: 90%;
+    margin: 5rem auto 2rem auto;
+  }
+}
 body .searchMain span {
   width: 25%;
   position: relative;
   transition: 0.5s ease;
+  display: none;
+}
+@media screen and (max-width: 320px) {
+  body .searchMain span {
+    font-size: 0.5rem;
+    flex-direction: column;
+    width: 100%;
+    margin: 0rem auto 0.5rem auto;
+  }
 }
 body .searchMain span::after {
   content: "";
@@ -92,13 +109,14 @@ body .searchMain span::after {
   bottom: 0;
   left: 0%;
   height: 0.1rem;
-  width: 0%;
+  width: 10%;
   visibility: visible;
   background-color: rgba(199, 90, 90, 0.8);
-  transition: 0.2s ease all;
+  transition: 0.5s ease all;
 }
 body .searchMain span:hover::after {
   width: 100%;
+  visibility: visible;
 }
 body .searchMain span input {
   height: 100%;
@@ -117,6 +135,17 @@ body .searchMain span input:-ms-input-placeholder {
 }
 body .searchMain span input::placeholder {
   color: rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width: 320px) {
+  body .searchMain span input::-moz-placeholder {
+    text-align: center;
+  }
+  body .searchMain span input:-ms-input-placeholder {
+    text-align: center;
+  }
+  body .searchMain span input::placeholder {
+    text-align: center;
+  }
 }
 body .searchMain button {
   padding: 0.5rem 2rem;
@@ -137,7 +166,7 @@ body .addDeveloper {
   position: relative;
   width: 80%;
   margin: -3rem auto 0 auto;
-  outline: 1rem solid lightcoral;
+  outline: 1rem solid rgba(199, 90, 90, 0.8);
   border-radius: 0.3rem;
 }
 body .addDeveloper input {
