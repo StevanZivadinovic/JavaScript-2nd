@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-%button-style{
+%button-style {
   align-self: center;
   justify-content: center;
   padding: 0.5rem 2rem;
   transition: 0.2s all ease;
   outline: none;
   border: none;
-  border-radius: .1rem;
+  border-radius: 0.1rem;
   cursor: pointer;
-  font-size: 1.3rem;  
+  font-size: 1.3rem;
   text-align: center;
 }
 
@@ -21,14 +21,34 @@
 }
 
 @mixin smallerScreen {
-  @media screen and (max-width:1024px) {
-      @content;
+  @media screen and (max-width: 1024px) {
+    @content;
   }
 }
 body {
   background-color: rgb(88, 100, 96);
   font-size: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+
+  .mainTitle {
+    color: red;
+    margin: 3rem auto;
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.55rem;
+    //shothand:
+    //animation: mainTitle 3.5s infinite;
+    //
+    animation-name: mainTitle;
+    animation-duration: 3.5s;
+    animation-iteration-count:infinite;
+    // animation-delay: 0.2s;
+    // animation-timing-function: ease-out;
+
+   
+  }
 
   nav {
     display: flex;
@@ -39,7 +59,7 @@ body {
     #addDeveloper,
     #btnShowDeveloper {
       padding: 0.5rem 2rem;
-      border-radius: .1rem;
+      border-radius: 0.1rem;
       cursor: pointer;
       outline: none;
       border: none;
@@ -58,7 +78,7 @@ body {
       transition: 0.2s all ease;
       outline: none;
       border: none;
-      border-radius: .1rem;
+      border-radius: 0.1rem;
       box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
       // transform: translateY(-0.0rem);
       &:hover {
@@ -67,7 +87,7 @@ body {
           lightcoral,
           rgb(190, 46, 46)
         );
-        
+
         cursor: pointer;
         // transform: skewY(1deg) skewX(5deg) scale(1.1) translateY(-0.5rem);
       }
@@ -97,76 +117,69 @@ body {
     // border-bottom: 0.2rem solid lightcoral;
     color: white;
     font-size: 1.4rem;
-    background-color: rgba(lightcoral, .2);
-    margin-bottom: .3rem;
+    background-color: rgba(lightcoral, 0.2);
+    margin-bottom: 0.3rem;
     border-radius: 1rem;
-    
-    @include smallerScreen(){
-      font-size: .9rem;
 
+    @include smallerScreen() {
+      font-size: 0.9rem;
     }
-    
 
     li {
-      
       .mainData {
-        
         display: flex;
         flex-direction: column;
-        
-        .firstMain, .secondMain{
-     
+
+        .firstMain,
+        .secondMain {
           // text-align: center;
-          background-color: rgba(88, 100, 96, .1);
+          background-color: rgba(88, 100, 96, 0.1);
           height: 100%;
           // width: 30%;
           text-align: center;
-            align-self: center;
-          div{
+          align-self: center;
+          div {
             text-align: center;
             align-self: center;
           }
-         
         }
-
       }
     }
 
     div {
       align-self: center;
     }
-    .btns{
+    .btns {
       display: flex;
       flex-direction: column;
       width: 20%;
 
-       .dugmeDelete,
-    .dugmeUpdate,
-    .btnHire {
-      width: 80%;
-      align-self: center;
-      padding: 0.5rem 2rem;
-      transition: 0.2s all ease;
-      outline: none;
-      border: none;
-      margin-bottom: .2rem;
-      &:hover {
-        background-image: linear-gradient(
-          to right,
-          lightcoral,
-          rgb(190, 46, 46)
-        ) !important;
-        cursor: pointer;
-        box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-        transform: translateY(-0.1rem);
-        // transform: skewY(1deg) skewX(5deg) scale(1.1);
-        transform: scale(1.2);
+      .dugmeDelete,
+      .dugmeUpdate,
+      .btnHire {
+        width: 80%;
+        align-self: center;
+        padding: 0.5rem 2rem;
+        transition: 0.2s all ease;
+        outline: none;
+        border: none;
+        margin-bottom: 0.2rem;
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            lightcoral,
+            rgb(190, 46, 46)
+          ) !important;
+          cursor: pointer;
+          box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+          transform: translateY(-0.1rem);
+          // transform: skewY(1deg) skewX(5deg) scale(1.1);
+          transform: scale(1.2);
+        }
       }
     }
   }
 
-    }
-   
   .hiring {
     background-color: rgb(179, 58, 58);
     display: none;
@@ -208,8 +221,6 @@ body {
       button {
         width: 35%;
         @extend %button-style;
-        
-
       }
     }
     .HireDeveloper {
@@ -226,9 +237,9 @@ body {
 
       button {
         width: 60%;
-      @extend %button-style;
-       
-        margin-bottom: .5rem;
+        @extend %button-style;
+
+        margin-bottom: 0.5rem;
       }
       .mainHireDevelopers {
         .section {
@@ -237,9 +248,9 @@ body {
           .removePeriod {
             // background-color: aquamarine;
             width: 1.5rem;
-            padding: .2rem 0;
+            padding: 0.2rem 0;
             color: red;
-            font-size: .8rem;
+            font-size: 0.8rem;
           }
         }
       }
@@ -290,3 +301,20 @@ body {
     }
   }
 }
+
+@keyframes mainTitle {
+  0% {
+    // scale: 1;
+    color: red;
+  }
+  50% {
+    // scale: 1.7;
+    color: rgb(88, 100, 96);
+  }
+  100% {
+    // scale: 1;
+    color: red;
+  }
+}
+
+

@@ -17,6 +17,7 @@ addDeveloper.addEventListener("click", (e) => {
   addDeveloper.style.display = "none";
   submitUpdateDeveloper.style.display = "none";
   submitAddDeveloper.style.display = "block";
+  document.querySelector('.mainTitle').style.display= 'none';
 });
 
 //add Developer to firebase
@@ -95,6 +96,7 @@ addDeveloper.addEventListener("click", (e) => {
 
 btnShowDeveloper.addEventListener("click", (e) => {
   document.querySelector("ul.showList").style.display = "block";
+  document.querySelector('.mainTitle').style.display = 'none';
 });
 //show developers
 
