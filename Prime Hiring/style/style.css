@@ -17,6 +17,10 @@ body nav {
 body nav #addDeveloper,
 body nav #btnShowDeveloper {
   padding: 0.5rem 2rem;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 body .searchMain {
   display: flex;
@@ -32,13 +36,12 @@ body .searchMain button {
   transition: 0.2s all ease;
   outline: none;
   border: none;
+  border-radius: 0.1rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 body .searchMain button:hover {
-  background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
+  background-image: linear-gradient(to right, lightcoral, #be2e2e);
   cursor: pointer;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.1rem);
-  transform: skewY(1deg) skewX(5deg) scale(1.1);
 }
 body .addDeveloper {
   display: flex;

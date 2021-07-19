@@ -346,6 +346,11 @@ btnShowDeveloper.addEventListener("click", (e) => {
           let c = a.data().fullName.trim().toLowerCase().replace(" ", "");
           // console.log(c, c.includes(result), result);
 
+          if(result.length === 0 ){
+            obrisati(a.id);
+                    preuzmi(a.data(), a.id);
+          }
+
           if (c.includes(result) && result.length > 0) {
             console.log("haj haj");
             console.log(c);
@@ -375,14 +380,7 @@ btnShowDeveloper.addEventListener("click", (e) => {
                     preuzmi(a.data(), a.id);
                   });
 
-                  // document.querySelectorAll(".btnHire").forEach((a) => {
-                  //   let hiringAll = document.querySelector(".hiring");
-                  //   a.disabled = false;
-
-                  //   a.addEventListener("click", (e) => {
-                  //     document.body.append(hiringAll);
-                  //   });
-                  // });
+                 
                 });
             }
           }

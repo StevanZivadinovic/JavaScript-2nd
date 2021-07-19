@@ -99,7 +99,7 @@
         class="search"
         placeholder="Search by developer name"
       />
-      <button class="search1">Search</button>
+      <button class="search1" onmousedown="a()" onmouseup="b()">Search</button>
     </div>
     <div>
       <ul class="showList"></ul>
@@ -149,6 +149,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script>
+      let a = ()=>{document.querySelector('.search1').style.transform = 'translateY(0.5rem)';
+      document.querySelector('.search1').style.boxShadow = '0 .25rem 1rem rgba(0, 0, 0, 0.4)';
+    };
+      let b = ()=>{document.querySelector('.search1').style.transform = 'translateX(-.5rem)';
+      document.querySelector('.search1').style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.4)';
+    };
+
+
+
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyBZ3mSI1nAIrT4_7zF5GWNf1oTXrmi56bw",
