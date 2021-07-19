@@ -224,12 +224,14 @@ body {
     @include smallerScreen() {
       font-size: 0.9rem;
     }
-
+    
     @include mobile() {
-      font-size: 0.5rem;
+      
+      padding-bottom: .5rem;
       flex-direction: column;
       width: 90%;
       margin: 0 auto 0.3rem auto;
+      font-size: .7rem;
     }
 
     img {
@@ -254,6 +256,8 @@ body {
         align-self: center;
         text-align: center;
 
+       
+
         .firstMain,
         .secondMain {
           background-color: rgba(88, 100, 96, 0.1);
@@ -262,7 +266,9 @@ body {
           text-align: center;
           align-self: center;
 
+          
           div {
+         
             text-align: center;
             align-self: center;
           }
@@ -277,6 +283,10 @@ body {
       display: flex;
       flex-direction: column;
       width: 20%;
+
+      @include mobile() {
+        width: 100%;
+      }
 
       .dugmeDelete,
       .dugmeUpdate,
@@ -298,7 +308,7 @@ body {
           ) !important;
           cursor: pointer;
           box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-          transform: translateY(-0.1rem);
+          // transform: translateY(-0.1rem);
           // transform: skewY(1deg) skewX(5deg) scale(1.1);
           transform: scale(1.2);
         }
@@ -429,6 +439,11 @@ body {
 
     tr {
       background-color: rgba(#c75a5a, 0.6);
+
+      @include mobile(){
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

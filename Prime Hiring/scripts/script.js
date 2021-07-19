@@ -143,11 +143,11 @@ let preuzmi1 = (data, id) => {
   document.querySelector(".table").innerHTML += html1;
 };
 
-let changeWidth = ()=>{
-  console.log('hjjjjjjjjjjjjj')
- return window.innerWidth<= 320 ? 'style=text-align:center;':'';
+// let changeWidth = ()=>{
+//   console.log('hjjjjjjjjjjjjj')
+//  return window.innerWidth<= 320 ? 'style=text-align:center;':'';
 
-}
+// }
 console.log(window.innerWidth)
 let preuzmi = (data, id) => {
   console.log(id);

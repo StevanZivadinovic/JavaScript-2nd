@@ -201,10 +201,11 @@ body .listShowDeveloper {
 }
 @media screen and (max-width: 320px) {
   body .listShowDeveloper {
-    font-size: 0.5rem;
+    padding-bottom: 0.5rem;
     flex-direction: column;
     width: 90%;
     margin: 0 auto 0.3rem auto;
+    font-size: 0.7rem;
   }
 }
 body .listShowDeveloper img {
@@ -249,6 +250,11 @@ body .listShowDeveloper .btns {
   flex-direction: column;
   width: 20%;
 }
+@media screen and (max-width: 320px) {
+  body .listShowDeveloper .btns {
+    width: 100%;
+  }
+}
 body .listShowDeveloper .btns .dugmeDelete,
 body .listShowDeveloper .btns .dugmeUpdate,
 body .listShowDeveloper .btns .btnHire {
@@ -267,7 +273,6 @@ body .listShowDeveloper .btns .btnHire:hover {
   background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
   cursor: pointer;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.1rem);
   transform: scale(1.2);
 }
 body .hiring {
@@ -379,6 +384,12 @@ body .hiring .feedback {
 }
 .hiringTable .table tr {
   background-color: rgba(199, 90, 90, 0.6);
+}
+@media screen and (max-width: 320px) {
+  .hiringTable .table tr {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @-webkit-keyframes mainTitle {
