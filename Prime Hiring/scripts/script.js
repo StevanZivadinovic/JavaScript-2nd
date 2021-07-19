@@ -145,7 +145,7 @@ let preuzmi = (data, id) => {
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
-      <img src=${data.profilePicture} style="min-width:25%; height:25vh; padding: 2vh 0 2vh 2%">
+      <img src=${data.profilePicture} style="width:25%; height:25vh; padding: 2vh 2% 2vh 2%">
       <div class="mainData">
       <div class = 'firstMain'>
       <div>${data.fullName}</div>

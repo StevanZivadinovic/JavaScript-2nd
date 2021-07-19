@@ -222,14 +222,32 @@ hireNow.addEventListener("click", (e) => {
     console.log(JSON.parse(localStorage.getItem("d")).every(myFunction));
     if (JSON.parse(localStorage.getItem("d")).every(myFunction)) {
       f.forEach((x) => {
+
+        let q =[];
+        let miniHtml =document.createElement('span')
+        JSON.parse(localStorage.getItem(
+          "arrayOfHiredDevelopers"
+        )).forEach(a=>{q.push(a)});
+
+        q.forEach((c,i)=>{
+          console.log(c)
+          if(i!==q.length-1){
+
+            miniHtml.innerHTML+=` ${c}`
+          }else{
+            miniHtml.innerHTML+=`and ${c}`
+
+          }
+        });
+
         document.querySelector(
           ".feedback"
-        ).innerHTML += `<p>You succesfully hire developer ${localStorage.getItem(
-          "arrayOfHiredDevelopers"
-        )} from ${x.start1} to ${x.end1}!</p>`;
+        ).innerHTML += `<p>You succesfully hire developer <b>${miniHtml.innerHTML}</b> from ${x.start1} to ${x.end1}!</p>`;
        
       });
-      console.log(localStorage.getItem("arrayOfHiredDevelopers"));
+      console.log(JSON.parse(localStorage.getItem(
+        "arrayOfHiredDevelopers"
+      )));
       JSON.parse(localStorage.getItem("arrayOfHiredDevelopers")).forEach(
         (c) => {
           db.collection("developers")

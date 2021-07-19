@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+body .hiring .hireDevelopers button, body .hiring .listOfDevelopersPriperedToHire button {
+  align-self: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  transition: 0.2s all ease;
+  outline: none;
+  border: none;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +21,7 @@
 body {
   background-color: #586460;
   font-size: 10px;
+  font-family: "Poppins", sans-serif;
 }
 body nav {
   display: flex;
@@ -153,9 +168,7 @@ body .hiring .listOfDevelopersPriperedToHire ul li {
   text-align: center;
 }
 body .hiring .listOfDevelopersPriperedToHire button {
-  width: 30%;
-  align-self: center;
-  justify-content: center;
+  width: 35%;
 }
 body .hiring .HireDeveloper {
   display: none;
@@ -163,21 +176,24 @@ body .hiring .HireDeveloper {
 body .hiring .hireDevelopers {
   display: none;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   justify-content: center;
   align-self: center;
   flex-direction: column;
 }
 body .hiring .hireDevelopers button {
-  width: 50%;
-  align-self: center;
-  justify-content: center;
+  width: 60%;
+  margin-bottom: 0.5rem;
 }
 body .hiring .hireDevelopers .mainHireDevelopers .section {
   align-self: center;
+  text-align: center;
 }
 body .hiring .hireDevelopers .mainHireDevelopers .section .removePeriod {
-  width: 10%;
+  width: 1.5rem;
+  padding: 0.2rem 0;
+  color: red;
+  font-size: 0.8rem;
 }
 body .hiring .feedback {
   width: 80%;
