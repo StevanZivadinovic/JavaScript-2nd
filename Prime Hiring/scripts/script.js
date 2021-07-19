@@ -153,15 +153,15 @@ let preuzmi = (data, id) => {
 
   let html = `<li class='listShowDeveloper' data-id='${id}'>
 
-      <img src=${data.profilePicture} style="width:25%; height:25vh; padding: 2vh 2% 2vh 2%">
-      <div class="mainData" ${onchange=changeWidth()}>
-      <div class = 'firstMain' >
+      <img src=${data.profilePicture} style="width:25%; margin:0 1rem 2rem 0;">
+      <div class="mainData" style="text-align:center;">
+      <div class ='firstMain'>
       <div>${data.fullName}</div>
       <div>Email address:${data.emailAddress}</div>
       <div>Phone number: ${data.phoneNumber}</div>
       <div>Work address: ${data.location}</div>
       </div>
-      <div class = 'secondMain'>
+      <div class ='secondMain'>
       <div >Price per hour:${data.pricePerHour}$</div>
       <div>Tech:${data.technology}</div>
       <div>Description: ${data.description}</div>

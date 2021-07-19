@@ -79,10 +79,44 @@ body .searchMain {
   display: flex;
   justify-content: center;
   height: 8vh;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
-body .searchMain input {
+body .searchMain span {
+  width: 25%;
+  position: relative;
+  transition: 0.5s ease;
+}
+body .searchMain span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  height: 0.1rem;
+  width: 0%;
+  visibility: visible;
+  background-color: rgba(199, 90, 90, 0.8);
+  transition: 0.2s ease all;
+}
+body .searchMain span:hover::after {
+  width: 100%;
+}
+body .searchMain span input {
+  height: 100%;
   background-color: transparent;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+body .searchMain span input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+body .searchMain span input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+body .searchMain span input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 body .searchMain button {
   padding: 0.5rem 2rem;
@@ -124,10 +158,10 @@ body .addDeveloper .x {
 body .listShowDeveloper {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
   font-size: 1.4rem;
-  background-color: rgba(240, 128, 128, 0.2);
+  background-color: rgba(240, 128, 128, 0.15);
   margin-bottom: 0.3rem;
   border-radius: 1rem;
 }
@@ -143,6 +177,11 @@ body .listShowDeveloper {
     width: 90%;
     margin: 0 auto 0.3rem auto;
   }
+}
+body .listShowDeveloper img {
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 320px) {
   body .listShowDeveloper img {
@@ -164,6 +203,7 @@ body .listShowDeveloper li .mainData .firstMain,
 body .listShowDeveloper li .mainData .secondMain {
   background-color: rgba(88, 100, 96, 0.1);
   height: 100%;
+  width: 50%;
   text-align: center;
   align-self: center;
 }
