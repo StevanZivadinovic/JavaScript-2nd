@@ -285,6 +285,7 @@ body .hiring {
 body .hiring .hiringProcess {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 body .hiring .xHiring {
   position: absolute;

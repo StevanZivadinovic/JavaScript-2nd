@@ -326,6 +326,7 @@ body {
     .hiringProcess {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
     }
     .xHiring {
       position: absolute;
