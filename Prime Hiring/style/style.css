@@ -285,7 +285,11 @@ body .hiring {
 body .hiring .hiringProcess {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+}
+@media screen and (max-width: 320px) {
+  body .hiring .hiringProcess {
+    flex-direction: column;
+  }
 }
 body .hiring .xHiring {
   position: absolute;
@@ -303,11 +307,22 @@ body .hiring .listOfDevelopersPriperedToHire {
   height: 80%;
   margin: 2rem auto 0 0;
 }
+@media screen and (max-width: 320px) {
+  body .hiring .listOfDevelopersPriperedToHire {
+    margin: 0 auto;
+  }
+}
 body .hiring .listOfDevelopersPriperedToHire ul {
   align-self: center;
   justify-content: center;
   width: 60%;
   margin: 0 0 0 0;
+}
+@media screen and (max-width: 320px) {
+  body .hiring .listOfDevelopersPriperedToHire ul {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
 }
 body .hiring .listOfDevelopersPriperedToHire ul li {
   font-size: 2rem;
@@ -315,8 +330,13 @@ body .hiring .listOfDevelopersPriperedToHire ul li {
   text-align: center;
 }
 body .hiring .listOfDevelopersPriperedToHire button {
-  width: 35%;
   font-family: "Poppins", sans-serif;
+}
+@media screen and (max-width: 320px) {
+  body .hiring .listOfDevelopersPriperedToHire button {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
 }
 body .hiring .HireDeveloper {
   display: none;

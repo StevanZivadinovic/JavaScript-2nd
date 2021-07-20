@@ -32,8 +32,8 @@ showList.addEventListener("click", (e) => {
 btnHireDevloper.addEventListener("click", (e) => {
 
 
+  btnHireDevloper.disabled = true;
   hireDevelopersForm.style.display = "flex";
-
   document.querySelector(".addPeriod").addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -64,6 +64,9 @@ document.querySelector(".xHiring").addEventListener("click", (e) => {
   });
 
   document.querySelector("#btnShowDeveloper").disabled = false;
+  btnHireDevloper.disabled = false;
+  hireDevelopersForm.style.display = "none";
+
   hiringAll.style.display='none';
   hireDevelopersForm.reset();
 
@@ -200,6 +203,8 @@ hireNow.addEventListener("click", (e) => {
             console.log("Mistake! You must pick future date!");
             document.querySelector(".feedback").innerHTML =
               "<p>Mistake! You must pick future date!</p>";
+              btnHireDevloper.disabled = false;
+              hireDevelopersForm.style.display = "none";
           }
         });
       })
@@ -230,20 +235,21 @@ hireNow.addEventListener("click", (e) => {
         )).forEach(a=>{q.push(a)});
 
         q.forEach((c,i)=>{
-          console.log(c)
-          if(i!==q.length-1){
+          console.log(c,q.length)
+          if(i!==q.length-1 || (q.length===1 && i===q.length-1)){
 
             miniHtml.innerHTML+=` ${c}`
           }else{
-            miniHtml.innerHTML+=`and ${c}`
+            miniHtml.innerHTML+=` and ${c}`
 
           }
         });
 
         document.querySelector(
           ".feedback"
-        ).innerHTML += `<p>You succesfully hire developer <b>${miniHtml.innerHTML}</b> from ${x.start1} to ${x.end1}!</p>`;
-       
+        ).innerHTML += `<p>You succesfully hire ${q.length===1?'developer':'developers'} <b>${miniHtml.innerHTML}</b> from ${x.start1} to ${x.end1}!</p>`;
+        btnHireDevloper.disabled = false;
+        hireDevelopersForm.style.display = "none";
       });
       console.log(JSON.parse(localStorage.getItem(
         "arrayOfHiredDevelopers"

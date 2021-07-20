@@ -326,7 +326,10 @@ body {
     .hiringProcess {
       display: flex;
       justify-content: space-between;
-      flex-direction: column;
+      @include mobile(){
+        
+        flex-direction: column;
+      }
     }
     .xHiring {
       position: absolute;
@@ -343,12 +346,20 @@ body {
       width: 80%;
       height: 80%;
       margin: 2rem auto 0 0;
+      @include mobile(){
+        margin: 0 auto;
+      }
 
       ul {
         align-self: center;
         justify-content: center;
         width: 60%;
         margin: 0 0 0 0;
+        @include mobile(){
+          width: 80%;
+          margin-bottom: 1rem;
+
+        }
 
         li {
           font-size: 2rem;
@@ -357,14 +368,18 @@ body {
         }
       }
       button {
-        width: 35%;
         font-family: "Poppins", sans-serif;
+        @include mobile(){
+          width: 80%;
+          margin-bottom: 1rem;
 
+        }
         @extend %button-style;
       }
     }
     .HireDeveloper {
       display: none;
+
     }
 
     .hireDevelopers {
