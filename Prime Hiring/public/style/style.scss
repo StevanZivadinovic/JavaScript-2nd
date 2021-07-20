@@ -19,7 +19,7 @@
   }
 }
 @mixin mobile {
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }
@@ -480,5 +480,3 @@ body {
     color: red;
   }
 }
-
-

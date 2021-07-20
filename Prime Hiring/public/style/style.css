@@ -38,7 +38,7 @@ body .mainTitle {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .mainTitle {
     font-size: 1rem;
     letter-spacing: 0.5rem;
@@ -50,7 +50,7 @@ body nav {
   height: 8vh;
   padding: 2rem 0;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body nav .customerNav {
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ body nav .customerNav #addDeveloper:hover,
 body nav .customerNav #btnShowDeveloper:hover {
   background-image: linear-gradient(to right, lightcoral, #be2e2e);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body nav .customerNav #addDeveloper,
 body nav .customerNav #btnShowDeveloper {
     margin-bottom: 0.1rem;
@@ -81,7 +81,7 @@ body .searchMain {
   height: 8vh;
   margin: 2rem auto;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .searchMain {
     font-size: 0.5rem;
     flex-direction: column;
@@ -95,7 +95,7 @@ body .searchMain span {
   transition: 0.5s ease;
   display: none;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .searchMain span {
     font-size: 0.5rem;
     flex-direction: column;
@@ -136,7 +136,7 @@ body .searchMain span input:-ms-input-placeholder {
 body .searchMain span input::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .searchMain span input::-moz-placeholder {
     text-align: center;
   }
@@ -199,7 +199,7 @@ body .listShowDeveloper {
     font-size: 0.9rem;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .listShowDeveloper {
     padding-bottom: 0.5rem;
     flex-direction: column;
@@ -213,7 +213,7 @@ body .listShowDeveloper img {
   border-bottom-right-radius: 1.5rem;
   box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .listShowDeveloper img {
     width: 100% !important;
     padding: 0 !important;
@@ -250,7 +250,7 @@ body .listShowDeveloper .btns {
   flex-direction: column;
   width: 20%;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .listShowDeveloper .btns {
     width: 100%;
   }
@@ -286,7 +286,7 @@ body .hiring .hiringProcess {
   display: flex;
   justify-content: space-between;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .hiring .hiringProcess {
     flex-direction: column;
   }
@@ -307,7 +307,7 @@ body .hiring .listOfDevelopersPriperedToHire {
   height: 80%;
   margin: 2rem auto 0 0;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire {
     margin: 0 auto;
   }
@@ -318,7 +318,7 @@ body .hiring .listOfDevelopersPriperedToHire ul {
   width: 60%;
   margin: 0 0 0 0;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire ul {
     width: 80%;
     margin-bottom: 1rem;
@@ -332,7 +332,7 @@ body .hiring .listOfDevelopersPriperedToHire ul li {
 body .hiring .listOfDevelopersPriperedToHire button {
   font-family: "Poppins", sans-serif;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire button {
     width: 80%;
     margin-bottom: 1rem;
@@ -406,7 +406,7 @@ body .hiring .feedback {
 .hiringTable .table tr {
   background-color: rgba(199, 90, 90, 0.6);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .hiringTable .table tr {
     display: flex;
     flex-direction: column;
