@@ -54,7 +54,7 @@ body {
 
     @include mobile() {
       font-size: 1rem;
-      letter-spacing: 1rem;
+      letter-spacing: .5rem;
     }
   }
 
