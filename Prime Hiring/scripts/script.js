@@ -20,6 +20,7 @@ addDeveloper.addEventListener("click", (e) => {
   document.querySelector('.mainTitle').style.display= 'none';
 });
 
+
 //add Developer to firebase
 formAddDeveloper.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -42,7 +43,15 @@ formAddDeveloper.addEventListener("submit", (e) => {
   let patternForMobile = /([0-9])\w+/;
 
   let patternForEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-
+  let array=[];
+  db.collection('developers').onSnapshot(snapshot=>{
+    snapshot.docChanges().forEach(change=>{
+      console.log(change.doc.data().fullName)
+array.push(change.doc.data().fullName)
+      
+    })
+  })
+    console.log(array)
   if (
     fullName.length > 0 &&
     emailAddress.length > 0 &&
@@ -267,7 +276,12 @@ showList.addEventListener("click", (e) => {
     formAddDeveloper.reset();
     console.log("haj");
     formAddDeveloper.style.display = "flex";
-
+    // var y = document.querySelector("body").scrollHeight;
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     document.querySelector(".x").addEventListener("click", (e) => {
       formAddDeveloper.reset();
     });
