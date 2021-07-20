@@ -81,7 +81,8 @@ formAddDeveloper.addEventListener("submit", (e) => {
       .then((data) => {
         console.log("Developer is added");
         formAddDeveloper.style.display = "none";
-        addDeveloper.style.display = "flex";
+        addDeveloper.style.display = "inline-block";
+        formAddDeveloper.reset();
         // priceShow.style.display = 'none';
       });
   } else {
@@ -253,6 +254,7 @@ btnShowDeveloper.addEventListener("click", (e) => {
       
       } else if (change.type === "removed") {
         obrisati(change.doc.id);
+        obrisati1(change.doc.id);
       }
     });
   });

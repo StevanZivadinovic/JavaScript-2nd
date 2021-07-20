@@ -15,6 +15,8 @@ showList.addEventListener("click", (e) => {
     document.querySelector("#btnShowDeveloper").disabled = true;
     hiring.style.display = "flex";
     btnHireDevloper.style.display = "block";
+    btnHireDevloper.disabled = false;
+ 
     console.log(e.target.parentElement.parentElement.children[1].children[0].children[0].textContent)
     arrayOfHiredDevelopers.push(
      e.target.parentElement.parentElement.children[1].children[0].children[0].textContent)
@@ -203,7 +205,7 @@ hireNow.addEventListener("click", (e) => {
             console.log("Mistake! You must pick future date!");
             document.querySelector(".feedback").innerHTML =
               "<p>Mistake! You must pick future date!</p>";
-              btnHireDevloper.disabled = false;
+              btnHireDevloper.disabled = true;
               hireDevelopersForm.style.display = "none";
           }
         });
@@ -248,7 +250,7 @@ hireNow.addEventListener("click", (e) => {
         document.querySelector(
           ".feedback"
         ).innerHTML += `<p>You succesfully hire ${q.length===1?'developer':'developers'} <b>${miniHtml.innerHTML}</b> from ${x.start1} to ${x.end1}!</p>`;
-        btnHireDevloper.disabled = false;
+        btnHireDevloper.disabled = true;
         hireDevelopersForm.style.display = "none";
       });
       console.log(JSON.parse(localStorage.getItem(
@@ -285,11 +287,15 @@ hireNow.addEventListener("click", (e) => {
       if (!c()) {
         document.querySelector(".feedback").innerHTML =
           "<p>Mistake! You must pick future date!</p>";
+          btnHireDevloper.disabled = true;
+        hireDevelopersForm.style.display = "none";
         
       } else {
         document.querySelector(
           ".feedback"
         ).innerHTML = `<p>'You cannot hire same user two times in same period of time!</p>`;
+        btnHireDevloper.disabled = true;
+        hireDevelopersForm.style.display = "none";
       
       }
     }
