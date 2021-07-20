@@ -1,0 +1,190 @@
+<!-- width: 1024px, height:657px, dimension of my desktop screen -->
+<!-- Baza podataka u firebase-u je u okviru Application manager, a hosting 
+u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">   -->
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" type="image/jpg" href="./img/businessman.png" />
+    <title>Prime Hiring</title>
+  </head>
+  <body>
+
+    <h1 class="mainTitle">Hire Developer!</h1>
+    <nav>
+      <div class="customerNav">
+        <input type="button" value="Add developer" id="addDeveloper" />
+        <input type="button" value="Show developer" id="btnShowDeveloper" />
+      </div>
+    </nav>
+
+    <form class="addDeveloper">
+      <div class="x">X</div>
+
+      <input type="text" placeholder="Full name" id="fullName" required />
+      <input
+        type="email"
+        placeholder="Email address"
+        id="emailAddress"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        required
+      />
+      <input
+        type="tel"
+        maxlength="12"
+        min="9"
+        pattern="([0-9])\w+"
+        placeholder="Phone number (min 9 numbers)"
+        id="phoneNumber"
+        oninvalid='alert("neisparvno")'
+        required
+      />
+      <!--pattern="([0-9])\w+"  nece da radi kad postavim listener na formu na nacin na koji sam postavio-->
+      <input type="text" placeholder="Location" id="location" required />
+      <input
+        type="url"
+        name="profilePicture"
+        id="profilePicture"
+        placeholder="Profile image url"
+      />
+      <input
+        type="number"
+        name="pricePerHour"
+        id="pricePerHour"
+        placeholder="Price per hour ($)"
+      />
+      <select name="Technology" id="technology">
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+        <option value=".NET">.NET</option>
+        <option value="Flutter">Flutter</option>
+        <option value="Python">Python</option>
+        <option value="PHP">PHP</option>
+      </select>
+      <input
+        type="text"
+        name="Description"
+        id="description"
+        placeholder="Description"
+      />
+      <input
+        type="number"
+        name="YearsOfExpirience"
+        id="yearsOfExpirience"
+        placeholder="Years of expirience"
+        required
+      />
+      <select name="NativeLanguage" id="nativeLanguage" required>
+        <option value="Serbian">Serbian</option>
+        <option value="Bulgarian">Bulgarian</option>
+        <option value="English">English</option>
+      </select>
+      <input
+        type="url"
+        name="Linkedin"
+        id="linkedin"
+        placeholder="Linkedin profile link"
+      />
+
+      <input type="submit" value="Add developer" id="submitAddDeveloper" />
+      <input
+        type="submit"
+        value="Update developer"
+        id="submitUpdateDeveloper"
+        style="display: none"
+      />
+    </form>
+    <div class="searchMain">
+      <span class="searchInputSpan">
+
+        <input
+          type="text"
+          class="search"
+          placeholder="Search by developer name..."
+          id="search"
+        />
+      </span>
+      <!-- <label class="borderBottom" for="search">sss</label> -->
+      <button class="search1" onmousedown="a()" onmouseup="b()">Search</button>
+    </div>
+    <div>
+      <ul class="showList"></ul>
+    </div>
+
+    
+    <!-- Hiring process -->
+    <div class="hiring">
+      <div class="hiringProcess">
+        <div class="xHiring">X</div>
+        <div class="listOfDevelopersPriperedToHire">
+          <ul></ul>
+          <button class="HireDeveloper">Hire!</button>
+        </div>
+
+        <form action="" class="hireDevelopers">
+          <button class="addPeriod">Add new hiring period!</button>
+          <div class="mainHireDevelopers">
+              <div class="section">
+
+                <input type="date" name="startDate" class="startDate" />
+                <input type="date" name="endDate" class="endDate" />
+                <button class="removePeriod">X</button>
+              </div>
+          </div>
+          <button class="hireNow">Hire Now!</button>
+        </form>
+        <div class="feedback"></div>
+      </div>
+      <div class="developersSchedule"></div>
+    </div>
+
+
+    <!-- Hiring periods table -->
+    <div class="hiringTable">
+
+      <h2>Table of hired developers and already taken periods</h2>
+      <table class="table">
+        <tr>
+          <th>Developer name</th>
+          <th>Already taken periods</th>
+        </tr>
+
+      </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script>
+      let a = ()=>{document.querySelector('.search1').style.transform = 'translateY(0.5rem)';
+      document.querySelector('.search1').style.boxShadow = '0 .25rem 1rem rgba(0, 0, 0, 0.4)';
+    };
+      let b = ()=>{document.querySelector('.search1').style.transform = 'translateX(-.5rem)';
+      document.querySelector('.search1').style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.4)';
+    };
+
+
+
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBZ3mSI1nAIrT4_7zF5GWNf1oTXrmi56bw",
+        authDomain: "application-manager-715eb.firebaseapp.com",
+        databaseURL: "https://application-manager-715eb.firebaseio.com",
+        projectId: "application-manager-715eb",
+        storageBucket: "application-manager-715eb.appspot.com",
+        messagingSenderId: "929073867254",
+        appId: "1:929073867254:web:61db9e2699d90151993fd7",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+    <script src="./scripts/script.js" type="module"></script>
+    <script src="./scripts/hire.js" type="module"></script>
+  </body>
+</html>

@@ -1,190 +1,89 @@
-<!-- width: 1024px, height:657px, dimension of my desktop screen -->
-<!-- Baza podataka u firebase-u je u okviru Application manager, a hosting 
-u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">   -->
-    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="shortcut icon" type="image/jpg" href="./img/businessman.png" />
-    <title>Prime Hiring</title>
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.7.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.7.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.7.1/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
   </head>
   <body>
-
-    <h1 class="mainTitle">Hire Developer!</h1>
-    <nav>
-      <div class="customerNav">
-        <input type="button" value="Add developer" id="addDeveloper" />
-        <input type="button" value="Show developer" id="btnShowDeveloper" />
-      </div>
-    </nav>
-
-    <form class="addDeveloper">
-      <div class="x">X</div>
-
-      <input type="text" placeholder="Full name" id="fullName" required />
-      <input
-        type="email"
-        placeholder="Email address"
-        id="emailAddress"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-        required
-      />
-      <input
-        type="tel"
-        maxlength="12"
-        min="9"
-        pattern="([0-9])\w+"
-        placeholder="Phone number (min 9 numbers)"
-        id="phoneNumber"
-        oninvalid='alert("neisparvno")'
-        required
-      />
-      <!--pattern="([0-9])\w+"  nece da radi kad postavim listener na formu na nacin na koji sam postavio-->
-      <input type="text" placeholder="Location" id="location" required />
-      <input
-        type="url"
-        name="profilePicture"
-        id="profilePicture"
-        placeholder="Profile image url"
-      />
-      <input
-        type="number"
-        name="pricePerHour"
-        id="pricePerHour"
-        placeholder="Price per hour ($)"
-      />
-      <select name="Technology" id="technology">
-        <option value="JavaScript">JavaScript</option>
-        <option value="Java">Java</option>
-        <option value=".NET">.NET</option>
-        <option value="Flutter">Flutter</option>
-        <option value="Python">Python</option>
-        <option value="PHP">PHP</option>
-      </select>
-      <input
-        type="text"
-        name="Description"
-        id="description"
-        placeholder="Description"
-      />
-      <input
-        type="number"
-        name="YearsOfExpirience"
-        id="yearsOfExpirience"
-        placeholder="Years of expirience"
-        required
-      />
-      <select name="NativeLanguage" id="nativeLanguage" required>
-        <option value="Serbian">Serbian</option>
-        <option value="Bulgarian">Bulgarian</option>
-        <option value="English">English</option>
-      </select>
-      <input
-        type="url"
-        name="Linkedin"
-        id="linkedin"
-        placeholder="Linkedin profile link"
-      />
-
-      <input type="submit" value="Add developer" id="submitAddDeveloper" />
-      <input
-        type="submit"
-        value="Update developer"
-        id="submitUpdateDeveloper"
-        style="display: none"
-      />
-    </form>
-    <div class="searchMain">
-      <span class="searchInputSpan">
-
-        <input
-          type="text"
-          class="search"
-          placeholder="Search by developer name..."
-          id="search"
-        />
-      </span>
-      <!-- <label class="borderBottom" for="search">sss</label> -->
-      <button class="search1" onmousedown="a()" onmouseup="b()">Search</button>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
-    <div>
-      <ul class="showList"></ul>
-    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    
-    <!-- Hiring process -->
-    <div class="hiring">
-      <div class="hiringProcess">
-        <div class="xHiring">X</div>
-        <div class="listOfDevelopersPriperedToHire">
-          <ul></ul>
-          <button class="HireDeveloper">Hire!</button>
-        </div>
-
-        <form action="" class="hireDevelopers">
-          <button class="addPeriod">Add new hiring period!</button>
-          <div class="mainHireDevelopers">
-              <div class="section">
-
-                <input type="date" name="startDate" class="startDate" />
-                <input type="date" name="endDate" class="endDate" />
-                <button class="removePeriod">X</button>
-              </div>
-          </div>
-          <button class="hireNow">Hire Now!</button>
-        </form>
-        <div class="feedback"></div>
-      </div>
-      <div class="developersSchedule"></div>
-    </div>
-
-
-    <!-- Hiring periods table -->
-    <div class="hiringTable">
-
-      <h2>Table of hired developers and already taken periods</h2>
-      <table class="table">
-        <tr>
-          <th>Developer name</th>
-          <th>Already taken periods</th>
-        </tr>
-
-      </table>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script>
-      let a = ()=>{document.querySelector('.search1').style.transform = 'translateY(0.5rem)';
-      document.querySelector('.search1').style.boxShadow = '0 .25rem 1rem rgba(0, 0, 0, 0.4)';
-    };
-      let b = ()=>{document.querySelector('.search1').style.transform = 'translateX(-.5rem)';
-      document.querySelector('.search1').style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.4)';
-    };
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-
-
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBZ3mSI1nAIrT4_7zF5GWNf1oTXrmi56bw",
-        authDomain: "application-manager-715eb.firebaseapp.com",
-        databaseURL: "https://application-manager-715eb.firebaseio.com",
-        projectId: "application-manager-715eb",
-        storageBucket: "application-manager-715eb.appspot.com",
-        messagingSenderId: "929073867254",
-        appId: "1:929073867254:web:61db9e2699d90151993fd7",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      let db = firebase.firestore();
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
     </script>
-    <script src="./scripts/script.js" type="module"></script>
-    <script src="./scripts/hire.js" type="module"></script>
   </body>
 </html>
