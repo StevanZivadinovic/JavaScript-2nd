@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  box-sizing: border-box;
+  body {
+    background: rgba(198, 21, 137, 0.1);
+
+    main {
+      width: 75%;
+      float: right;
+    }
+    
+  }
+
+  .progressBar {
+    color: rgba(12, 61, 116, 255);
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    border: 0.3rem solid rgba(212, 212, 212, 255);
+    meter::-webkit-meter-optimum-value {
+      background: none; /* Green */
+      background-color: rgba(12, 61, 116, 255);
+    }
+
+    .exit {
+      color: rgba(212, 212, 212, 255);
+      font-weight: 600;
+      font-size: 3rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    width: 150px;
+  }
+
+  .progress-done {
+    background: rgba(12, 61, 116, 255);
+    box-shadow: 0 3px 3px -5px rgba(12, 61, 116, 255),
+      0 2px 5px rgba(12, 61, 116, 255);
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+  }
+
+  .keyPoints {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 0.2rem solid rgba(198, 21, 137, 255);
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    margin-top: 3rem;
+    color: rgba(12, 61, 116, 255);
+    background-color: rgba(76, 181, 176, 0.3);
+    box-shadow: 1rem 1rem 1rem rgba(198, 21, 137, 0.2);
+    border-radius: 1rem;
+    h2 {
+      text-align: center;
+    }
+    .listOfKeyPoints {
+      margin-top: 1rem;
+      list-style: none;
+    }
+  }
+  .modeling {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 1rem;
+    color: rgba(12, 61, 116, 255);
+    p {
+      margin-top: 1rem;
+    }
+    b {
+      display: block;
+      text-align: center;
+      margin-top: 1.2rem;
+      span {
+        float: right;
+      }
+    }
+  }
+  .external {
+    margin: 0 auto;
+    width: 90%;
+    margin: 1rem auto 1rem auto;
+    color: rgba(12, 61, 116, 255);
+    hr {
+      border: 2px solid rgb(122, 73, 105);
+    }
+  }
+  aside {
+    width: 25%;
+    height: 50vh;
+    background: rgba(122, 73, 105,.1);
+    .tabs{
+        
+        border: none;
+        padding: .3rem 2rem;
+        margin-top: .5rem;
+        margin-left: .2rem;
+
+        
+    }
+    .checked{
+        background: rgba(122, 73, 105, .2);
+        border-bottom: 2px solid rgb(122, 73, 105);
+        color: rgba(12, 61, 116, 255);
+        font-weight: bold;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+
+    }
+    .ulStyle{
+     
+        padding: 0 .4rem;
+        color: rgba(12, 61, 116, 255);
+        li{
+            &:hover{
+                font-weight: bold;
+                background: rgba(122, 73, 105, .2);
+            }
+        }
+    }
+  }
+
+}
+

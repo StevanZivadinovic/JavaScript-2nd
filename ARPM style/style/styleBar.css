@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* body {
+  background: rgba(198, 21, 137, 0.1);
+}
+
+* body main {
+  width: 75%;
+  float: right;
+}
+
+* .progressBar {
+  color: #0c3d74;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 0.3rem solid #d4d4d4;
+}
+
+* .progressBar meter::-webkit-meter-optimum-value {
+  background: none;
+  /* Green */
+  background-color: #0c3d74;
+}
+
+* .progressBar .exit {
+  color: #d4d4d4;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+* .progressBar .exit:hover {
+  cursor: pointer;
+}
+
+* .progress {
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  position: relative;
+  margin: 15px 0;
+  height: 30px;
+  width: 150px;
+}
+
+* .progress-done {
+  background: #0c3d74;
+  -webkit-box-shadow: 0 3px 3px -5px #0c3d74, 0 2px 5px #0c3d74;
+          box-shadow: 0 3px 3px -5px #0c3d74, 0 2px 5px #0c3d74;
+  border-radius: 20px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  -webkit-transition: 1s ease 0.3s;
+  transition: 1s ease 0.3s;
+}
+
+* .keyPoints {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 0.2rem solid #c61589;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 3rem;
+  color: #0c3d74;
+  background-color: rgba(76, 181, 176, 0.3);
+  -webkit-box-shadow: 1rem 1rem 1rem rgba(198, 21, 137, 0.2);
+          box-shadow: 1rem 1rem 1rem rgba(198, 21, 137, 0.2);
+  border-radius: 1rem;
+}
+
+* .keyPoints h2 {
+  text-align: center;
+}
+
+* .keyPoints .listOfKeyPoints {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+* .modeling {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 1rem;
+  color: #0c3d74;
+}
+
+* .modeling p {
+  margin-top: 1rem;
+}
+
+* .modeling b {
+  display: block;
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+* .modeling b span {
+  float: right;
+}
+
+* .external {
+  margin: 0 auto;
+  width: 90%;
+  margin: 1rem auto 1rem auto;
+  color: #0c3d74;
+}
+
+* .external hr {
+  border: 2px solid #7a4969;
+}
+
+* aside {
+  width: 25%;
+  height: 50vh;
+  background: rgba(122, 73, 105, 0.1);
+}
+
+* aside .tabs {
+  border: none;
+  padding: .3rem 2rem;
+  margin-top: .5rem;
+  margin-left: .2rem;
+}
+
+* aside .checked {
+  background: rgba(122, 73, 105, 0.2);
+  border-bottom: 2px solid #7a4969;
+  color: #0c3d74;
+  font-weight: bold;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+* aside .ulStyle {
+  padding: 0 .4rem;
+  color: #0c3d74;
+}
+
+* aside .ulStyle li:hover {
+  font-weight: bold;
+  background: rgba(122, 73, 105, 0.2);
+}
+/*# sourceMappingURL=styleBar.css.map */

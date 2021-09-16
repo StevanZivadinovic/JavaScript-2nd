@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-body .hiring .hireDevelopers button, body .hiring .listOfDevelopersPriperedToHire button {
-  align-self: center;
-  justify-content: center;
+body .hiring .listOfDevelopersPriperedToHire button, body .hiring .hireDevelopers button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.5rem 2rem;
+  -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
   outline: none;
   border: none;
@@ -15,7 +20,8 @@ body .hiring .hireDevelopers button, body .hiring .listOfDevelopersPriperedToHir
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -23,6 +29,7 @@ body {
   font-size: 10px;
   font-family: "Poppins", sans-serif;
 }
+
 body .mainTitle {
   color: red;
   margin: 3rem auto;
@@ -38,24 +45,37 @@ body .mainTitle {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+
 @media screen and (max-width: 600px) {
   body .mainTitle {
     font-size: 1rem;
-    letter-spacing: 0.5rem;
+    letter-spacing: .5rem;
   }
 }
+
 body nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 8vh;
   padding: 2rem 0;
 }
+
 @media screen and (max-width: 600px) {
   body nav .customerNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
+
 body nav .customerNav #addDeveloper,
 body nav .customerNav #btnShowDeveloper {
   padding: 0.5rem 2rem;
@@ -65,44 +85,63 @@ body nav .customerNav #btnShowDeveloper {
   border: none;
   font-family: "Poppins", sans-serif;
 }
+
 body nav .customerNav #addDeveloper:hover,
 body nav .customerNav #btnShowDeveloper:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(lightcoral), to(#be2e2e));
   background-image: linear-gradient(to right, lightcoral, #be2e2e);
 }
+
 @media screen and (max-width: 600px) {
   body nav .customerNav #addDeveloper,
-body nav .customerNav #btnShowDeveloper {
+  body nav .customerNav #btnShowDeveloper {
     margin-bottom: 0.1rem;
   }
 }
+
 body .searchMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 8vh;
   margin: 2rem auto;
 }
+
 @media screen and (max-width: 600px) {
   body .searchMain {
     font-size: 0.5rem;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 90%;
     margin: 5rem auto 2rem auto;
   }
 }
+
 body .searchMain span {
   width: 25%;
   position: relative;
+  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   display: none;
 }
+
 @media screen and (max-width: 600px) {
   body .searchMain span {
     font-size: 0.5rem;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     margin: 0rem auto 0.5rem auto;
   }
 }
+
 body .searchMain span::after {
   content: "";
   position: absolute;
@@ -112,12 +151,15 @@ body .searchMain span::after {
   width: 10%;
   visibility: visible;
   background-color: rgba(199, 90, 90, 0.8);
+  -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
 }
+
 body .searchMain span:hover::after {
   width: 100%;
   visibility: visible;
 }
+
 body .searchMain span input {
   height: 100%;
   background-color: transparent;
@@ -127,56 +169,81 @@ body .searchMain span input {
   outline: none;
   color: rgba(255, 255, 255, 0.8);
 }
-body .searchMain span input::-moz-placeholder {
+
+body .searchMain span input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
+
 body .searchMain span input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
+
+body .searchMain span input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 body .searchMain span input::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
+
 @media screen and (max-width: 600px) {
-  body .searchMain span input::-moz-placeholder {
+  body .searchMain span input::-webkit-input-placeholder {
     text-align: center;
   }
   body .searchMain span input:-ms-input-placeholder {
+    text-align: center;
+  }
+  body .searchMain span input::-ms-input-placeholder {
     text-align: center;
   }
   body .searchMain span input::placeholder {
     text-align: center;
   }
 }
+
 body .searchMain button {
   padding: 0.5rem 2rem;
+  -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
   outline: none;
   border: none;
   border-radius: 0.1rem;
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
   font-family: "Poppins", sans-serif;
 }
+
 body .searchMain button:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(lightcoral), to(#be2e2e));
   background-image: linear-gradient(to right, lightcoral, #be2e2e);
   cursor: pointer;
 }
+
 body .addDeveloper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   width: 80%;
   margin: -3rem auto 0 auto;
   outline: 1rem solid rgba(199, 90, 90, 0.8);
   border-radius: 0.3rem;
 }
+
 body .addDeveloper input {
   font-family: "Poppins", sans-serif;
 }
+
 body .addDeveloper #submitAddDeveloper,
 body .addDeveloper #submitUpdateDeveloper,
 body .addDeveloper .x {
   font-family: "Poppins", sans-serif;
 }
+
 body .addDeveloper .x {
   position: absolute;
   right: -0.6rem;
@@ -184,35 +251,48 @@ body .addDeveloper .x {
   cursor: pointer;
   font-weight: 600;
 }
+
 body .listShowDeveloper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: white;
   font-size: 1.4rem;
   background-color: rgba(240, 128, 128, 0.15);
   margin-bottom: 0.3rem;
   border-radius: 1rem;
 }
+
 @media screen and (max-width: 1024px) {
   body .listShowDeveloper {
     font-size: 0.9rem;
   }
 }
+
 @media screen and (max-width: 600px) {
   body .listShowDeveloper {
-    padding-bottom: 0.5rem;
-    flex-direction: column;
+    padding-bottom: .5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 90%;
     margin: 0 auto 0.3rem auto;
-    font-size: 0.7rem;
+    font-size: .7rem;
   }
 }
+
 body .listShowDeveloper img {
   border-top-left-radius: 1rem;
   border-bottom-right-radius: 1.5rem;
-  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
 }
+
 @media screen and (max-width: 600px) {
   body .listShowDeveloper img {
     width: 100% !important;
@@ -222,75 +302,122 @@ body .listShowDeveloper img {
     border-top-right-radius: 0.5rem;
   }
 }
+
 body .listShowDeveloper li .mainData {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   text-align: center;
 }
+
 body .listShowDeveloper li .mainData .firstMain,
 body .listShowDeveloper li .mainData .secondMain {
   background-color: rgba(88, 100, 96, 0.1);
   height: 100%;
   width: 50%;
   text-align: center;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 body .listShowDeveloper li .mainData .firstMain div,
 body .listShowDeveloper li .mainData .secondMain div {
   text-align: center;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 body .listShowDeveloper div {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
+
 body .listShowDeveloper .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 20%;
 }
+
 @media screen and (max-width: 600px) {
   body .listShowDeveloper .btns {
     width: 100%;
   }
 }
+
 body .listShowDeveloper .btns .dugmeDelete,
 body .listShowDeveloper .btns .dugmeUpdate,
 body .listShowDeveloper .btns .btnHire {
   width: 80%;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding: 0.5rem 2rem;
+  -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
   outline: none;
   border: none;
   margin-bottom: 0.2rem;
   font-family: "Poppins", sans-serif;
 }
+
 body .listShowDeveloper .btns .dugmeDelete:hover,
 body .listShowDeveloper .btns .dugmeUpdate:hover,
 body .listShowDeveloper .btns .btnHire:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(lightcoral), to(#be2e2e)) !important;
   background-image: linear-gradient(to right, lightcoral, #be2e2e) !important;
   cursor: pointer;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  transform: scale(1.2);
+  -webkit-box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
+
 body .hiring {
   background-color: #b33a3a;
   display: none;
   position: relative;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 3rem 0;
 }
+
 body .hiring .hiringProcess {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 @media screen and (max-width: 600px) {
   body .hiring .hiringProcess {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
+
 body .hiring .xHiring {
   position: absolute;
   top: 0;
@@ -300,76 +427,109 @@ body .hiring .xHiring {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
+
 body .hiring .listOfDevelopersPriperedToHire {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
   height: 80%;
   margin: 2rem auto 0 0;
 }
+
 @media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire {
     margin: 0 auto;
   }
 }
+
 body .hiring .listOfDevelopersPriperedToHire ul {
-  align-self: center;
-  justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 60%;
   margin: 0 0 0 0;
 }
+
 @media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire ul {
     width: 80%;
     margin-bottom: 1rem;
   }
 }
+
 body .hiring .listOfDevelopersPriperedToHire ul li {
   font-size: 2rem;
   list-style-type: none;
   text-align: center;
 }
+
 body .hiring .listOfDevelopersPriperedToHire button {
   font-family: "Poppins", sans-serif;
 }
+
 @media screen and (max-width: 600px) {
   body .hiring .listOfDevelopersPriperedToHire button {
     width: 80%;
     margin-bottom: 1rem;
   }
 }
+
 body .hiring .HireDeveloper {
   display: none;
 }
+
 body .hiring .hireDevelopers {
   display: none;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
-  align-self: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 body .hiring .hireDevelopers button {
   width: 60%;
   font-family: "Poppins", sans-serif;
   margin-bottom: 0.5rem;
 }
+
 body .hiring .hireDevelopers .mainHireDevelopers .section {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-align: center;
 }
+
 body .hiring .hireDevelopers .mainHireDevelopers .section .removePeriod {
   width: 1.5rem;
   padding: 0.2rem 0;
   color: red;
   font-size: 0.8rem;
 }
+
 body .hiring .feedback {
   width: 80%;
   margin: 0 auto;
   text-align: center;
   font-size: 1rem;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .hiringTable {
@@ -378,38 +538,51 @@ body .hiring .feedback {
   text-align: center;
   margin: 5vh auto;
 }
+
 .hiringTable h2 {
   color: #c75a5a;
   text-transform: uppercase;
   margin-bottom: 2vh;
 }
+
 .hiringTable .table {
   margin: 0 auto;
   width: 80%;
 }
+
 .hiringTable .table td,
 .hiringTable .table th {
   border: 1px solid #dddddd;
   padding: 8px;
 }
+
 .hiringTable .table td li,
 .hiringTable .table th li {
   list-style-type: none;
   font-size: 0.8rem;
 }
+
 .hiringTable .table th {
   text-align: center;
 }
+
 .hiringTable .table td:nth-child(1) {
   font-size: 1rem;
 }
+
 .hiringTable .table tr {
   background-color: rgba(199, 90, 90, 0.6);
 }
+
 @media screen and (max-width: 600px) {
   .hiringTable .table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -435,4 +608,5 @@ body .hiring .feedback {
   100% {
     color: red;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
