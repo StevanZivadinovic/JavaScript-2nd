@@ -1,0 +1,94 @@
+*{
+    font-size: 10px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+ 
+
+  #container {
+    width: 100rem;
+    height: 55rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./../assets/bgImg.jpg);
+    #calculator {
+      width: 32rem;
+      height: 52rem;
+      background-color: #eaedef;
+      margin: 0 auto;
+      top: 20px;
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 3px 10px 8px 0px rgba(226, 27, 27, 0.616),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        #result{
+            height: 120px;
+        }
+        #history{
+            text-align: right;
+            height: 2rem;
+            margin: 0 2rem;
+            padding-top: 2rem;
+            font-size: 1.5rem;
+            color: #919191;
+        }
+        #output{
+            text-align: right;
+            height: 6rem;
+            margin: 1rem 2rem;
+            font-size: 3rem;
+        }
+        #keyboard{
+            height: 40rem;
+        }
+        .operator, .number, .empty{
+            width: 5rem;
+            height: 5rem;
+            margin: 1.5rem;
+            float: left;
+            border-radius: 50%;
+            border-width: 0;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .number, .empty{
+            background-color: #eaedef;
+        }
+        .number, .operator{
+            cursor: pointer;
+        }
+        .operator:active, .number:active{
+            font-size: 1.3rem;
+        }
+        .operator:focus, .number:focus, .empty:focus{
+            outline: 0;
+        }
+        button:nth-child(4){
+            font-size: 2rem;
+            background-color: #20b2aa;
+        }
+        button:nth-child(8){
+            font-size: 2rem;
+            background-color: #ffa500;
+        }
+        button:nth-child(12){
+            font-size: 2rem;
+            background-color: #f08080;
+        }
+        button:nth-child(16){
+            font-size: 2rem;
+            background-color: #7d93e0;
+        }
+        button:nth-child(20){
+            font-size: 2rem;
+            background-color: #9477af;
+        }
+    }
+  }
+}

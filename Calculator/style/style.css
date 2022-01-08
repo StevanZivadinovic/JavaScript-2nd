@@ -1,0 +1,115 @@
+* {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+body #container {
+  width: 100rem;
+  height: 55rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(./../assets/bgImg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./../assets/bgImg.jpg);
+}
+
+body #container #calculator {
+  width: 32rem;
+  height: 52rem;
+  background-color: #eaedef;
+  margin: 0 auto;
+  top: 20px;
+  position: relative;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 10px 8px 0px rgba(226, 27, 27, 0.616), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 3px 10px 8px 0px rgba(226, 27, 27, 0.616), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body #container #calculator #result {
+  height: 120px;
+}
+
+body #container #calculator #history {
+  text-align: right;
+  height: 2rem;
+  margin: 0 2rem;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  color: #919191;
+}
+
+body #container #calculator #output {
+  text-align: right;
+  height: 6rem;
+  margin: 1rem 2rem;
+  font-size: 3rem;
+}
+
+body #container #calculator #keyboard {
+  height: 40rem;
+}
+
+body #container #calculator .operator, body #container #calculator .number, body #container #calculator .empty {
+  width: 5rem;
+  height: 5rem;
+  margin: 1.5rem;
+  float: left;
+  border-radius: 50%;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+body #container #calculator .number, body #container #calculator .empty {
+  background-color: #eaedef;
+}
+
+body #container #calculator .number, body #container #calculator .operator {
+  cursor: pointer;
+}
+
+body #container #calculator .operator:active, body #container #calculator .number:active {
+  font-size: 1.3rem;
+}
+
+body #container #calculator .operator:focus, body #container #calculator .number:focus, body #container #calculator .empty:focus {
+  outline: 0;
+}
+
+body #container #calculator button:nth-child(4) {
+  font-size: 2rem;
+  background-color: #20b2aa;
+}
+
+body #container #calculator button:nth-child(8) {
+  font-size: 2rem;
+  background-color: #ffa500;
+}
+
+body #container #calculator button:nth-child(12) {
+  font-size: 2rem;
+  background-color: #f08080;
+}
+
+body #container #calculator button:nth-child(16) {
+  font-size: 2rem;
+  background-color: #7d93e0;
+}
+
+body #container #calculator button:nth-child(20) {
+  font-size: 2rem;
+  background-color: #9477af;
+}
+/*# sourceMappingURL=style.css.map */
