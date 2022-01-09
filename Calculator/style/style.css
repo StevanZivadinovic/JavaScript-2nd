@@ -41,20 +41,27 @@ body #container #calculator #result {
   height: 120px;
 }
 
-body #container #calculator #history {
+body #container #calculator #result #history {
   text-align: right;
-  height: 2rem;
   margin: 0 2rem;
-  padding-top: 2rem;
-  font-size: 1.5rem;
+  padding-top: .2rem;
   color: #919191;
 }
 
-body #container #calculator #output {
-  text-align: right;
-  height: 6rem;
-  margin: 1rem 2rem;
+body #container #calculator #result #history #history-value {
+  height: 2rem;
   font-size: 3rem;
+}
+
+body #container #calculator #result #output {
+  text-align: right;
+  height: 3rem;
+  margin: 1rem 2rem;
+}
+
+body #container #calculator #result #output #output-value {
+  font-size: 3rem;
+  color: red;
 }
 
 body #container #calculator #keyboard {

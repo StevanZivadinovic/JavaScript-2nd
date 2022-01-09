@@ -29,20 +29,28 @@ body {
 
         #result{
             height: 120px;
-        }
-        #history{
-            text-align: right;
-            height: 2rem;
-            margin: 0 2rem;
-            padding-top: 2rem;
-            font-size: 1.5rem;
-            color: #919191;
-        }
-        #output{
-            text-align: right;
-            height: 6rem;
-            margin: 1rem 2rem;
-            font-size: 3rem;
+            #history{
+                text-align: right;
+                margin: 0 2rem;
+                padding-top: .2rem;
+                color: #919191;
+                #history-value{
+                    height: 2rem;
+                    font-size: 3rem;
+
+                }
+            }
+            #output{
+                text-align: right;
+                height: 3rem;
+                margin: 1rem 2rem;
+                
+                #output-value{
+                    font-size: 3rem;
+                    color: red;
+
+                }
+            }
         }
         #keyboard{
             height: 40rem;
