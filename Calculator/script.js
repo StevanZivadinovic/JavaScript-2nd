@@ -19,7 +19,7 @@ try {
     if (e.target.textContent == "=") {
       output.textContent = "";
       console.log(history.textContent.slice(0, -1));
-      let text = history.textContent.slice(0, -1);
+      let text = history.textContent
       console.log(typeof text);
       console.log(text.includes("x"));
       if (text.includes("x")) {
@@ -56,3 +56,6 @@ CE.addEventListener("click", (e) => {
     history.textContent.length - 1
   );
 });
+
+
+
