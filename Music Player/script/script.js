@@ -73,7 +73,9 @@ function nextSong() {
 
 // Update progress bar
 function updateProgress(e) {
+  console.log(e.srcElement)
   const { duration, currentTime } = e.srcElement;
+  console.log(duration, currentTime)
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
   console.log('update')
