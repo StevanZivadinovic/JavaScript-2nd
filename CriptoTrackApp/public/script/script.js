@@ -3,15 +3,21 @@ let table = document.querySelector('.tableTopFifty');
 
 
 
-
-
-
 let getApi = async (city) => {
     let apiKey = "667a77e6-24eb-4a0a-9aab-db6ac3165140";
     
-    let url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`;
+    let url = `https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`;
     qString = "?CMC_PRO_API_KEY=" + apiKey + "&start=1&limit=5000&convert=USD";
-    let data = await fetch(url+qString);
+    let data = await fetch(url+qString,{
+    
+        headers: {
+            "Access-Control-Allow-Origin":"*",
+            "Access-Control-Allow-Origin":"Origin, X-Requested-With, Content-Type, Accept",
+            'Content-Type': 'application/json'
+        },
+        // 'Access-Control-Allow-Origin':'*'
+    });
+
     let data1 = await data.json();
     
     return data1;
@@ -19,7 +25,7 @@ let getApi = async (city) => {
 
 getApi().then(data=>{
     let niz=[]
-    niz=data.data.sort((a,b) => b.quote.USD.price-a.quote.USD.price).slice(0,50)
+    niz=data.data.sort((a,b) => b.quote.USD.price-a.quote.USD.price).slice(0,10)
     // console.log(niz)
     localStorage.setItem('topFifty', JSON.stringify(niz))
     
@@ -148,5 +154,5 @@ document.querySelectorAll('.link').forEach(a=>{
 setInterval(()=>{
     location.reload();
     console.log('haj')
-},60000)
+},160000)
 
