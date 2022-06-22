@@ -5,8 +5,9 @@ let table = document.querySelector('.tableTopFifty');
 
 let getApi = async (city) => {
     let apiKey = "667a77e6-24eb-4a0a-9aab-db6ac3165140";
+    let herocuCORSHelp = `https://cors-anywhere.herokuapp.com/`
     
-    let url = `https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`;
+    let url = `${herocuCORSHelp}https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`;
     qString = "?CMC_PRO_API_KEY=" + apiKey + "&start=1&limit=5000&convert=USD";
     let data = await fetch(url+qString,{
     
