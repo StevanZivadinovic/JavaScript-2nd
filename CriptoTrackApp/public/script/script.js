@@ -16,7 +16,6 @@ let getApi = async (city) => {
             "Access-Control-Allow-Origin":"Origin, X-Requested-With, Content-Type, Accept",
             'Content-Type': 'application/json'
         },
-        // 'Access-Control-Allow-Origin':'*'
     });
 
     let data1 = await data.json();
@@ -27,25 +26,17 @@ let getApi = async (city) => {
 getApi().then(data=>{
     let niz=[]
     niz=data.data.sort((a,b) => b.quote.USD.price-a.quote.USD.price).slice(0,10)
-    // console.log(niz)
     localStorage.setItem('topFifty', JSON.stringify(niz))
-    
     document.querySelector('.keepLoader').style.display='none';
     
-})
-console.log('haj')
+});
 
 let topFifty=JSON.parse(localStorage.getItem('topFifty'))
-
-// console.log(topFifty);
-
-
 
 //ispis tabele
 let enable = ()=>{
 
     document.querySelectorAll('.dugmici').forEach(a=>{
-    //    console.log(a.previousElementSibling.value.length) 
         if(a.previousElementSibling.value.length>0){
     
             a.disabled=false
@@ -53,30 +44,33 @@ let enable = ()=>{
         else{
             a.disabled=true
         }
-    
       
     })
 }
 
-
-
-// let inputValue = document.querySelector('.amount').value;
 let arrayOfSymbols=[];
-topFifty.forEach(element => {
-    // console.log(element)
-    table.innerHTML+=`<tr>
-    <td><a class='link' href='./../specificData.html' >${element.name}</a></td>
-    <td>${element.symbol}</td>
-    <td>${element.quote.USD.price.toFixed(2)}</td>
-    <td class='${element.quote.USD.percent_change_24h.toFixed(2)>0 ? 'positive': 'negative'}' >${element.quote.USD.percent_change_24h.toFixed(2)}%</td>
-    <td><form class='inputField'><input pattern='[0-9]+' onkeyup='enable()' value='${(localStorage.getItem(element.symbol) && localStorage.getItem(element.symbol)!==null ) ? JSON.parse(localStorage.getItem(element.symbol))[0]:''}'  class='amount' type='text'><button class='dugmici' disabled='true'>Submit</button></form></td>
-    <td>${(localStorage.getItem(element.symbol) && localStorage.getItem(element.symbol)!==null ) ? JSON.parse(localStorage.getItem(element.symbol))[1] :''}</td>
-    </tr>`
 
+try{
+
+    topFifty.forEach(element => {
+        
     
-    arrayOfSymbols.push(element.symbol)
-    localStorage.setItem('arrayOfSymbols',arrayOfSymbols)
-});
+        table.innerHTML+=`<tr>
+        <td><a class='link' href='./../specificData.html' >${element.name}</a></td>
+        <td>${element.symbol}</td>
+        <td>${element.quote.USD.price.toFixed(2)}</td>
+        <td class='${element.quote.USD.percent_change_24h.toFixed(2)>0 ? 'positive': 'negative'}' >${element.quote.USD.percent_change_24h.toFixed(2)}%</td>
+        <td><form class='inputField'><input pattern='[0-9]+' onkeyup='enable()' value='${(localStorage.getItem(element.symbol) && localStorage.getItem(element.symbol)!==null ) ? JSON.parse(localStorage.getItem(element.symbol))[0]:''}'  class='amount' type='text'><button class='dugmici' disabled='true'>Submit</button></form></td>
+        <td>${(localStorage.getItem(element.symbol) && localStorage.getItem(element.symbol)!==null ) ? JSON.parse(localStorage.getItem(element.symbol))[1] :''}</td>
+        </tr>`
+    
+        
+        arrayOfSymbols.push(element.symbol)
+        localStorage.setItem('arrayOfSymbols',arrayOfSymbols)
+    });
+}catch(err){
+    console.log(err);
+}
 
 
 let sum=0;
@@ -86,7 +80,6 @@ arrayOfSymbols.forEach(a=>{
 
         topFifty.forEach(b=>{
             if(b.symbol===a){
-                // console.log(JSON.parse(localStorage.getItem(`${a}`))[0])
                 let q=parseInt(b.quote.USD.price)*JSON.parse(localStorage.getItem(`${a}`))[0]
                 sumPromena+= q
             }
@@ -115,7 +108,6 @@ document.querySelectorAll('.inputField').forEach(a=>{
     a.addEventListener('submit',e=>{
         e.preventDefault()
         let nameOfCurrency=a.parentElement.parentElement.children[1].innerText;
-//   console.log(a.firstChild.value, parseInt(a.parentElement.previousElementSibling.previousElementSibling.innerText))
         let vrednost = parseInt(a.firstChild.value)*parseInt(a.parentElement.previousElementSibling.previousElementSibling.innerText)
         a.parentElement.nextElementSibling.innerText=`$${vrednost}`
        localStorage.setItem(nameOfCurrency, JSON.stringify([parseInt(a.firstChild.value),vrednost]))
